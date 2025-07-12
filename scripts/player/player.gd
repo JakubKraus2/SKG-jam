@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export_group("Movement")
-@export var run_speed := 6.0
+@export var run_speed := 5.0
 @export var run_acceleration := 50.0
 @export var rotation_speed := 10.0
 @export var stop_threshold := 5.0
@@ -18,7 +18,13 @@ var camera_input := Vector2.ZERO
 
 @onready var camera_pivot: Node3D = $CamOrigin
 @onready var camera: Camera3D = $CamOrigin/SpringArm3D/Camera3D
-@onready var body_mesh = $Cube
+@onready var body_mesh = $Armature
+
+@export_group("Lock-on")
+var is_locked_on: bool = false
+var lock_target = null #make this characterBody3D in the future
+@export var lock_range: float = 15.0
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -29,13 +35,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera_input.x = -event.relative.x * mouse_sensitivity
 		camera_input.y = -event.relative.y * mouse_sensitivity
 
-func _physics_process(delta: float) -> void:
-	# Camera rotation
-	camera_pivot.rotation.x += camera_input.y * delta
-	camera_pivot.rotation.x = clamp(camera_pivot.rotation.x, camera_tilt_down_limit, camera_tilt_up_limit)
-	camera_pivot.rotation.y += camera_input.x * delta
-	camera_input = Vector2.ZERO
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("lock_on"):
+		if is_locked_on:
+			lock_target.get_node("LockOn").hide()
+			is_locked_on = false
+			lock_target = null
+		else:
+			lock_target = find_closest_target()
+			is_locked_on = lock_target != null
 
+
+func _physics_process(delta: float) -> void:
 	# Movement input
 	var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down", 0.4)
 	var cam_forward := camera.global_basis.z
@@ -46,17 +57,56 @@ func _physics_process(delta: float) -> void:
 
 	if move_input.length() > 0.2:
 		movement_direction = move_input
-
+	
 	var target_yaw := Vector3.FORWARD.signed_angle_to(movement_direction, Vector3.UP)
 	body_mesh.global_rotation.y = lerp_angle(body_mesh.rotation.y, target_yaw, rotation_speed * delta)
-
+	
 	# Movement and gravity
 	var vertical_velocity := velocity.y
 	velocity.y = 0.0
 	velocity = velocity.move_toward(move_input * run_speed, run_acceleration * delta)
-
+	
 	if move_input.is_zero_approx() and velocity.length_squared() < stop_threshold:
 		velocity = Vector3.ZERO
-
+	
 	velocity.y = vertical_velocity + gravity * delta
+	
+	# Target lock
+	if is_locked_on and lock_target:
+		var to_target = (lock_target.global_position - global_position)
+		to_target.y = 0
+		movement_direction = to_target.normalized()
+	
+		var look_dir := movement_direction
+		var new_rot_y := atan2(-look_dir.x, -look_dir.z)
+		camera_pivot.rotation.y = lerp_angle(camera_pivot.rotation.y, new_rot_y, rotation_speed * delta)
+		camera_pivot.rotation.x = lerp_angle(camera_pivot.rotation.x, -0.2, rotation_speed * delta)
+		target_yaw = Vector3.FORWARD.signed_angle_to(movement_direction, Vector3.UP)
+		body_mesh.global_rotation.y = lerp_angle(body_mesh.rotation.y, target_yaw, rotation_speed * delta)
+	else:
+		camera_pivot.rotation.x += camera_input.y * delta
+		camera_pivot.rotation.x = clamp(camera_pivot.rotation.x, camera_tilt_down_limit, camera_tilt_up_limit)
+		camera_pivot.rotation.y += camera_input.x * delta
+		camera_input = Vector2.ZERO
+	
+		if move_input.length() > 0.2:
+			movement_direction = move_input
+			target_yaw = Vector3.FORWARD.signed_angle_to(movement_direction, Vector3.UP)
+			body_mesh.global_rotation.y = lerp_angle(body_mesh.rotation.y, target_yaw, rotation_speed * delta)
+	
 	move_and_slide()
+
+
+func find_closest_target() -> Node3D:
+	var space_state = get_world_3d().direct_space_state
+	var result = null
+	var min_distance := lock_range
+	
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		if not enemy is Node3D: continue
+		var distance = global_position.distance_to(enemy.global_position)
+		if distance < min_distance:
+			min_distance = distance
+			result = enemy
+	result.get_node("LockOn").show()
+	return result

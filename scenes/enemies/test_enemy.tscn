@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://4bnqtp5en5pb"]
+
+[ext_resource type="Texture2D" uid="uid://crxehkc407msw" path="res://assets/ui/hud/lockon.png" id="1_pnhpx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rnbc0"]
+radius = 0.75
+height = 3.0
+
+[node name="TestEnemy" type="Node3D" groups=["enemies"]]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("CapsuleMesh_rnbc0")
+
+[node name="LockOn" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+fixed_size = true
+texture_filter = 2
+texture = ExtResource("1_pnhpx")

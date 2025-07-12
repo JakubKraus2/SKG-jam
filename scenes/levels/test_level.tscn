@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgvwdpglor4g5"]
+[gd_scene load_steps=10 format=3 uid="uid://cgvwdpglor4g5"]
 
 [ext_resource type="PackedScene" uid="uid://dgfda6utyfxjn" path="res://scenes/player/player.tscn" id="1_jbqir"]
+[ext_resource type="PackedScene" uid="uid://4bnqtp5en5pb" path="res://scenes/enemies/test_enemy.tscn" id="2_yautc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jbqir"]
 sky_top_color = Color(0.328419, 0.0721566, 0.114309, 1)
@@ -54,4 +55,6 @@ mesh = SubResource("PlaneMesh_v45ci")
 shape = SubResource("ConcavePolygonShape3D_48ne7")
 
 [node name="Player" parent="." instance=ExtResource("1_jbqir")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08424, -4.76837e-07, -0.0553875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29456, -4.76837e-07, 6.54269)
+
+[node name="TestEnemy" parent="." instance=ExtResource("2_yautc")]
