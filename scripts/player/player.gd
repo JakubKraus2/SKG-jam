@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export_group("Movement")
 @export var run_speed := 6.0
 @export var run_acceleration := 50.0
-@export var rotation_speed := 8.0
+@export var rotation_speed := 10.0
 @export var stop_threshold := 5.0
 
 @export_group("Camera")
@@ -13,7 +13,7 @@ extends CharacterBody3D
 
 var gravity := -9.8
 var camera_input := Vector2.ZERO
-@onready var movement_direction := global_basis.z
+@onready var movement_direction := Vector3.FORWARD
 @onready var spawn_position := global_position
 
 @onready var camera_pivot: Node3D = $CamOrigin
