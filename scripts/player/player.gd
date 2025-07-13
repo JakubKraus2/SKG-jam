@@ -19,6 +19,7 @@ var camera_input := Vector2.ZERO
 @onready var camera_pivot: Node3D = $CamOrigin
 @onready var camera: Camera3D = $CamOrigin/SpringArm3D/Camera3D
 @onready var body_mesh = $Armature
+@onready var anim_player = $AnimationPlayer
 
 @export_group("Lock-on")
 var is_locked_on: bool = false
@@ -47,34 +48,6 @@ func _input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	# Movement input
-	var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down", 0.4)
-	var cam_forward := camera.global_basis.z
-	var cam_right := camera.global_basis.x
-	var move_input := cam_forward * input_vector.y + cam_right * input_vector.x
-	move_input.y = 0.0
-	move_input = move_input.normalized()
-
-	if move_input.length() > 0.2:
-		$AnimationPlayer.play("movement")
-		movement_direction = move_input
-	else:
-		$AnimationPlayer.play("idle")
-	
-	var target_yaw := Vector3.FORWARD.signed_angle_to(movement_direction, Vector3.UP)
-	body_mesh.global_rotation.y = lerp_angle(body_mesh.rotation.y, target_yaw, rotation_speed * delta)
-	
-	# Movement and gravity
-	var vertical_velocity := velocity.y
-	velocity.y = 0.0
-	velocity = velocity.move_toward(move_input * run_speed, run_acceleration * delta)
-	
-	if move_input.is_zero_approx() and velocity.length_squared() < stop_threshold:
-		velocity = Vector3.ZERO
-	
-	velocity.y = vertical_velocity + gravity * delta
-	
-	# Target lock
 	if is_locked_on and lock_target:
 		var to_target = (lock_target.global_position - global_position)
 		to_target.y = 0
@@ -84,20 +57,11 @@ func _physics_process(delta: float) -> void:
 		var new_rot_y := atan2(-look_dir.x, -look_dir.z)
 		camera_pivot.rotation.y = lerp_angle(camera_pivot.rotation.y, new_rot_y, rotation_speed * delta)
 		camera_pivot.rotation.x = lerp_angle(camera_pivot.rotation.x, -0.2, rotation_speed * delta)
-		target_yaw = Vector3.FORWARD.signed_angle_to(movement_direction, Vector3.UP)
-		#body_mesh.global_rotation.y = lerp_angle(body_mesh.rotation.y, target_yaw, rotation_speed * delta)
 	else:
 		camera_pivot.rotation.x += camera_input.y * delta
 		camera_pivot.rotation.x = clamp(camera_pivot.rotation.x, camera_tilt_down_limit, camera_tilt_up_limit)
 		camera_pivot.rotation.y += camera_input.x * delta
 		camera_input = Vector2.ZERO
-	
-		if move_input.length() > 0.2:
-			movement_direction = move_input
-			target_yaw = Vector3.FORWARD.signed_angle_to(movement_direction, Vector3.UP)
-			body_mesh.global_rotation.y = lerp_angle(body_mesh.rotation.y, target_yaw, rotation_speed * delta)
-	
-	move_and_slide()
 
 
 func find_closest_target() -> Node3D:
