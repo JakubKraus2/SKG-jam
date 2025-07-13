@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export_group("Movement")
-@export var run_speed := 5.0
+@export var run_speed := 6.0
 @export var run_acceleration := 50.0
 @export var rotation_speed := 10.0
 @export var stop_threshold := 5.0
@@ -56,7 +56,10 @@ func _physics_process(delta: float) -> void:
 	move_input = move_input.normalized()
 
 	if move_input.length() > 0.2:
+		$AnimationPlayer.play("movement")
 		movement_direction = move_input
+	else:
+		$AnimationPlayer.play("idle")
 	
 	var target_yaw := Vector3.FORWARD.signed_angle_to(movement_direction, Vector3.UP)
 	body_mesh.global_rotation.y = lerp_angle(body_mesh.rotation.y, target_yaw, rotation_speed * delta)
@@ -82,7 +85,7 @@ func _physics_process(delta: float) -> void:
 		camera_pivot.rotation.y = lerp_angle(camera_pivot.rotation.y, new_rot_y, rotation_speed * delta)
 		camera_pivot.rotation.x = lerp_angle(camera_pivot.rotation.x, -0.2, rotation_speed * delta)
 		target_yaw = Vector3.FORWARD.signed_angle_to(movement_direction, Vector3.UP)
-		body_mesh.global_rotation.y = lerp_angle(body_mesh.rotation.y, target_yaw, rotation_speed * delta)
+		#body_mesh.global_rotation.y = lerp_angle(body_mesh.rotation.y, target_yaw, rotation_speed * delta)
 	else:
 		camera_pivot.rotation.x += camera_input.y * delta
 		camera_pivot.rotation.x = clamp(camera_pivot.rotation.x, camera_tilt_down_limit, camera_tilt_up_limit)
@@ -98,7 +101,6 @@ func _physics_process(delta: float) -> void:
 
 
 func find_closest_target() -> Node3D:
-	var space_state = get_world_3d().direct_space_state
 	var result = null
 	var min_distance := lock_range
 	
@@ -108,5 +110,6 @@ func find_closest_target() -> Node3D:
 		if distance < min_distance:
 			min_distance = distance
 			result = enemy
-	result.get_node("LockOn").show()
+	if result:
+		result.get_node("LockOn").show()
 	return result
