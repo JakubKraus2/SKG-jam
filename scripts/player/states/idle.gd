@@ -12,6 +12,9 @@ func physics_update(delta: float) -> void:
 	if Input.is_action_just_pressed("roll"):
 		state_machine.transition_to("Roll")
 	
+	if Input.is_action_just_pressed("light_attack"):
+		state_machine.transition_to("LightAttack1")
+	
 	var player = state_machine.owner
 	var body_mesh = player.body_mesh
 	

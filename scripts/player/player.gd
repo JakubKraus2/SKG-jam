@@ -19,7 +19,7 @@ var camera_input := Vector2.ZERO
 @onready var camera_pivot: Node3D = $CamOrigin
 @onready var camera: Camera3D = $CamOrigin/SpringArm3D/Camera3D
 @onready var body_mesh = $Armature
-@onready var anim_player = $AnimationPlayer
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 @export_group("Lock-on")
 var is_locked_on: bool = false
