@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://dgfda6utyfxjn"]
+[gd_scene load_steps=53 format=4 uid="uid://dgfda6utyfxjn"]
 
 [ext_resource type="Script" uid="uid://5jg3xaed6ptd" path="res://scripts/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://fg6ya7s7dcc0" path="res://assets/models/entities/player/player_player_metal.png" id="2_ugbui"]
@@ -15,11 +15,18 @@
 [ext_resource type="Texture2D" uid="uid://d2q4i4er7f2fy" path="res://assets/models/entities/player/player_player_chain.png" id="13_cnsyf"]
 [ext_resource type="Texture2D" uid="uid://dxtctjkayijsn" path="res://assets/models/entities/player/player_player_chain_n.png" id="14_007i1"]
 [ext_resource type="PackedScene" uid="uid://bdvagu1jw6j8i" path="res://scenes/player/weapons/Dismounter.tscn" id="15_8ydkj"]
+[ext_resource type="Script" uid="uid://b2x20p65ytyb2" path="res://scripts/player/camera_shake.gd" id="16_3j4b4"]
+[ext_resource type="AudioStream" uid="uid://d0qvyf2k852rb" path="res://assets/sounds/player/Stone Walk 1.wav" id="22_j4nxn"]
 [ext_resource type="Script" uid="uid://c145w7w6co43c" path="res://scripts/common/state_machine.gd" id="22_yj68g"]
+[ext_resource type="AudioStream" uid="uid://bm1mgpa5yg0xd" path="res://assets/sounds/player/Stone Walk 2.wav" id="23_28m0y"]
 [ext_resource type="Script" uid="uid://cgi4tcj7354d1" path="res://scripts/player/states/idle.gd" id="23_ioxgp"]
 [ext_resource type="Script" uid="uid://bmnmpq1mknju4" path="res://scripts/player/states/movement.gd" id="24_cnsyf"]
+[ext_resource type="AudioStream" uid="uid://cw0w85pf8crhf" path="res://assets/sounds/player/Stone Walk 3.wav" id="24_uniwh"]
 [ext_resource type="Script" uid="uid://b685ioq3nh3xy" path="res://scripts/player/states/roll.gd" id="25_007i1"]
+[ext_resource type="AudioStream" uid="uid://butyad0r7ic1i" path="res://assets/sounds/player/Stone Walk 4.wav" id="25_iqsei"]
 [ext_resource type="Script" uid="uid://c2g7s47u4806v" path="res://scripts/player/states/light_attack_1.gd" id="26_6cv16"]
+[ext_resource type="AudioStream" uid="uid://x5nmdsx06rr1" path="res://assets/sounds/player/Stone Walk 5.wav" id="26_tffgl"]
+[ext_resource type="Script" uid="uid://bdebqtlbkjsfs" path="res://scripts/player/footstep_audio.gd" id="27_j4nxn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28obt"]
 resource_name = "plate"
@@ -308,12 +315,27 @@ bind/27/name = &"Leg.Pole.L"
 bind/27/bone = -1
 bind/27/pose = Transform3D(-0.999895, 0.0145072, 0, 0, 0, -1, -0.0145072, -0.999895, 0, -0.125004, -0.510897, 0.441781)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ydkj"]
+radius = 0.1
+height = 1.6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_28m0y"]
+radius = 0.1
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_28m0y"]
 radius = 0.4
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ugbui"]
 radius = 0.4
 height = 1.8
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3j4b4"]
+noise_type = 3
+frequency = 0.091
+fractal_octaves = 4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yj68g"]
+radius = 3.0
 
 [sub_resource type="Animation" id="Animation_j4nxn"]
 length = 0.001
@@ -424,6 +446,18 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Armature/Skeleton3D/Weapon/Cube_003/Hitbox/CollisionShape3D:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_glrtk"]
@@ -918,6 +952,18 @@ tracks/34/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Armature/Skeleton3D/Weapon/Cube_003/Hitbox/CollisionShape3D:disabled")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_uniwh"]
 resource_name = "light_attack_2_2"
@@ -1165,7 +1211,7 @@ tracks/33/path = NodePath("StateMachine/LightAttack2:can_transition")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
-"times": PackedFloat32Array(0, 0.766667),
+"times": PackedFloat32Array(0, 0.866667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -1177,10 +1223,22 @@ tracks/34/path = NodePath("StateMachine/LightAttack2:ready_to_attack")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
-"times": PackedFloat32Array(0, 0.633333),
+"times": PackedFloat32Array(0, 0.766667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Armature/Skeleton3D/Weapon/Cube_003/Hitbox/CollisionShape3D:disabled")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_v56av"]
@@ -1886,7 +1944,7 @@ tracks/33/path = NodePath("StateMachine/RollAttack:ready_to_attack")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
-"times": PackedFloat32Array(0.733333),
+"times": PackedFloat32Array(0.8),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -1898,10 +1956,22 @@ tracks/34/path = NodePath("StateMachine/RollAttack:can_transition")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(1.03333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Armature/Skeleton3D/Weapon/Cube_003/Hitbox/CollisionShape3D:disabled")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ejbo0"]
@@ -1914,6 +1984,14 @@ _data = {
 &"roll": SubResource("Animation_k2ong"),
 &"roll_attack": SubResource("Animation_28m0y")
 }
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tffgl"]
+streams_count = 5
+stream_0/stream = ExtResource("22_j4nxn")
+stream_1/stream = ExtResource("23_28m0y")
+stream_2/stream = ExtResource("24_uniwh")
+stream_3/stream = ExtResource("25_iqsei")
+stream_4/stream = ExtResource("26_tffgl")
 
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 6
@@ -2130,29 +2208,64 @@ bones/28/scale = Vector3(1, 1, 1)
 mesh = SubResource("ArrayMesh_6cv16")
 skin = SubResource("Skin_j4nxn")
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
+[node name="BaseAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999896, 0.0144407, 0, -0.0144407, 0.999896, 0, 0.878873, 0)
 bone_name = "Base"
 bone_idx = 0
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Armature/Skeleton3D/BoneAttachment3D"]
+[node name="HurtboxRemoteTransform" type="RemoteTransform3D" parent="Armature/Skeleton3D/BaseAttachment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, -0.05)
 remote_path = NodePath("../../../../HurtBox")
 update_scale = false
 
-[node name="Cube_003" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.928919, -0.369897, 0.0169322, 0.128728, 0.279721, -0.951412, 0.347188, 0.885964, 0.307454, 0.348971, 1.45293, -0.288091)
+[node name="Weapon" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
+transform = Transform3D(0.928918, -0.369896, 0.0169326, 0.128727, 0.27972, -0.951411, 0.347188, 0.885964, 0.307454, 0.348971, 1.45293, -0.288091)
 bone_name = "Cube.003"
 bone_idx = 10
 
-[node name="Cube_003" parent="Armature/Skeleton3D/Cube_003" instance=ExtResource("15_8ydkj")]
+[node name="Cube_003" parent="Armature/Skeleton3D/Weapon" instance=ExtResource("15_8ydkj")]
+
+[node name="Hitbox" type="Area3D" parent="Armature/Skeleton3D/Weapon/Cube_003"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/Weapon/Cube_003/Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.682512, 0)
+shape = SubResource("CapsuleShape3D_8ydkj")
+disabled = true
+
+[node name="LeftFoot" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
+transform = Transform3D(-0.985185, -0.169927, 0.0231278, 0.0248677, -0.274988, -0.961126, 0.169681, -0.946312, 0.27514, -0.146637, 0.0696406, 0.00320504)
+bone_name = "Foot.L"
+bone_idx = 20
+
+[node name="Area3D" type="Area3D" parent="Armature/Skeleton3D/LeftFoot"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/LeftFoot/Area3D"]
+shape = SubResource("SphereShape3D_28m0y")
+
+[node name="RightFoot" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
+transform = Transform3D(-0.985185, 0.169927, -0.0231277, -0.0248677, -0.274988, -0.961126, -0.169681, -0.946312, 0.27514, 0.146637, 0.0696407, 0.00320505)
+bone_name = "Foot.R"
+bone_idx = 17
+
+[node name="Area3D" type="Area3D" parent="Armature/Skeleton3D/RightFoot"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/RightFoot/Area3D"]
+shape = SubResource("SphereShape3D_28m0y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 shape = SubResource("CapsuleShape3D_28m0y")
 
 [node name="HurtBox" type="Area3D" parent="."]
-transform = Transform3D(0.999939, 0, 0, 0, 0.999829, 0.0144398, 0, -0.0144397, 0.999834, 0, -0.0217552, -0.0369982)
+transform = Transform3D(0.999923, 0, 0, 0, 0.999813, 0.0144396, 0, -0.0144395, 0.999817, 0, -0.0217552, -0.0369982)
+visible = false
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
@@ -2169,6 +2282,16 @@ margin = 0.5
 [node name="Camera3D" type="Camera3D" parent="CamOrigin/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 0.994522, 0.104528, 0, -0.104528, 0.994522, 0, 0, 2.5)
 current = true
+
+[node name="CameraShake" type="Area3D" parent="CamOrigin/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+visible = false
+script = ExtResource("16_3j4b4")
+noise = SubResource("FastNoiseLite_3j4b4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CamOrigin/SpringArm3D/CameraShake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_yj68g")
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("22_yj68g")
@@ -2207,3 +2330,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_ejbo0")
 }
 blend_times = [&"idle", &"idle", 0.3, &"idle", &"light_attack_1", 0.1, &"idle", &"movement", 0.3, &"idle", &"roll", 0.1, &"light_attack_1", &"light_attack_1", 0.1, &"light_attack_1", &"light_attack_2", 0.1, &"light_attack_1", &"movement", 0.3, &"light_attack_1", &"roll", 0.1, &"light_attack_2", &"light_attack_1", 0.3, &"light_attack_2", &"light_attack_2", 0.1, &"light_attack_2", &"movement", 0.3, &"light_attack_2", &"roll", 0.1, &"movement", &"idle", 0.3, &"movement", &"light_attack_1", 0.1, &"movement", &"movement", 0.3, &"movement", &"roll", 0.1, &"roll", &"idle", 0.3, &"roll", &"light_attack_1", 0.1, &"roll", &"movement", 0.3, &"roll", &"roll", 0.1, &"roll_attack", &"light_attack_1", 0.3, &"roll_attack", &"light_attack_2", 0.3, &"roll_attack", &"movement", 0.3, &"roll_attack", &"roll", 0.1]
+
+[node name="FootstepAudio" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_tffgl")
+max_distance = 10.0
+script = ExtResource("27_j4nxn")
+
+[connection signal="body_entered" from="Armature/Skeleton3D/LeftFoot/Area3D" to="FootstepAudio" method="_on_footstep"]
+[connection signal="body_entered" from="Armature/Skeleton3D/RightFoot/Area3D" to="FootstepAudio" method="_on_footstep"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bdvagu1jw6j8i"]
+[gd_scene load_steps=16 format=4 uid="uid://bdvagu1jw6j8i"]
 
 [ext_resource type="Texture2D" uid="uid://djbtnayr7em0x" path="res://assets/models/entities/player/player_metal_2.png" id="1_umo3n"]
 [ext_resource type="Texture2D" uid="uid://b1g55e3uyv8x2" path="res://assets/models/entities/player/player_metal_2_m-metal_2_r.png" id="2_qttv6"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bn8p7gia5motx" path="res://assets/models/entities/player/player_wood2.png" id="6_r0rk6"]
 [ext_resource type="Texture2D" uid="uid://c8rssqsranhrt" path="res://assets/models/entities/player/player_wood_bright_n.png" id="7_8nni0"]
 [ext_resource type="Script" uid="uid://cnx310tqjhleg" path="res://scripts/player/weapons/weapon.gd" id="8_qttv6"]
+[ext_resource type="PackedScene" uid="uid://cu6htjii2v2px" path="res://scenes/common/trauma_causer.tscn" id="9_mjha1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqfhy"]
 resource_name = "Blade.001"
@@ -124,19 +125,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mwbgq")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_umo3n"]
-radius = 0.1
-height = 1.6
+[sub_resource type="SphereShape3D" id="SphereShape3D_yb4hg"]
+radius = 1.2
 
 [node name="Dismounter" type="MeshInstance3D"]
 mesh = SubResource("ArrayMesh_j4nxn")
 skeleton = NodePath("")
 script = ExtResource("8_qttv6")
 
-[node name="Area3D" type="Area3D" parent="."]
-collision_layer = 8
-collision_mask = 2
+[node name="TraumaCauser" parent="." instance=ExtResource("9_mjha1")]
+trauma_amount = 0.4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.682512, 0)
-shape = SubResource("CapsuleShape3D_umo3n")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TraumaCauser"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("SphereShape3D_yb4hg")
