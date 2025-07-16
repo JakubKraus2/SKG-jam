@@ -17,15 +17,27 @@ func enter(_msg := {}) -> void:
 	can_transition = false
 	can_move = false
 	var player = state_machine.owner
-	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down", 0.4)
-	
 	player.anim_player.animation_finished.connect(_on_animation_finished)
-	
-	# Calculate attack direction
-	var cam_forward = player.camera.global_basis.z
-	var cam_right = player.camera.global_basis.x
-	attack_direction = (cam_forward * input_vector.y + cam_right * input_vector.x).normalized()
-	attack_direction.y = 0
+
+	# Determine attack direction
+	if player.is_locked_on and player.lock_target:
+		attack_direction = player.lock_target.global_position - player.global_position
+		attack_direction.y = 0
+		attack_direction = attack_direction.normalized()
+	else:
+		var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down", 0.4)
+		var cam_forward = player.camera.global_basis.z
+		var cam_right = player.camera.global_basis.x
+		attack_direction = (cam_forward * input_vector.y + cam_right * input_vector.x).normalized()
+		attack_direction.y = 0
+
+		if attack_direction.length() == 0:
+			attack_direction = -player.body_mesh.global_transform.basis.z.normalized()
+			attack_direction.y = 0
+
+	player.movement_direction = attack_direction
+	player.anim_player.play(animation)
+
 	
 	# If no input, attack forward relative to players mesh
 	if attack_direction.length() == 0:
@@ -46,7 +58,7 @@ func exit() -> void:
 func physics_update(delta: float) -> void:
 	var player = state_machine.owner
 	var target_yaw = Vector3.FORWARD.signed_angle_to(attack_direction, Vector3.UP)
-	player.body_mesh.rotation.y = lerp_angle(player.body_mesh.rotation.y, target_yaw, delta * 10.0)
+	player.body_mesh.rotation.y = lerp_angle(player.body_mesh.rotation.y, target_yaw, delta * 12.0)
 	
 	if can_move:
 		player.velocity = attack_direction * speed

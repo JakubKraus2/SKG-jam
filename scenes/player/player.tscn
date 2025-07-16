@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://dgfda6utyfxjn"]
+[gd_scene load_steps=62 format=4 uid="uid://dgfda6utyfxjn"]
 
 [ext_resource type="Script" uid="uid://5jg3xaed6ptd" path="res://scripts/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://fg6ya7s7dcc0" path="res://assets/models/entities/player/player_player_metal.png" id="2_ugbui"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dxtctjkayijsn" path="res://assets/models/entities/player/player_player_chain_n.png" id="14_007i1"]
 [ext_resource type="PackedScene" uid="uid://bdvagu1jw6j8i" path="res://scenes/player/weapons/Dismounter.tscn" id="15_8ydkj"]
 [ext_resource type="Script" uid="uid://b2x20p65ytyb2" path="res://scripts/player/camera_shake.gd" id="16_3j4b4"]
+[ext_resource type="PackedScene" uid="uid://djvtwfwfw7h43" path="res://scenes/particles/impact_particle.tscn" id="16_4hvnv"]
 [ext_resource type="AudioStream" uid="uid://d0qvyf2k852rb" path="res://assets/sounds/player/Stone Walk 1.wav" id="22_j4nxn"]
 [ext_resource type="Script" uid="uid://c145w7w6co43c" path="res://scripts/common/state_machine.gd" id="22_yj68g"]
 [ext_resource type="AudioStream" uid="uid://bm1mgpa5yg0xd" path="res://assets/sounds/player/Stone Walk 2.wav" id="23_28m0y"]
@@ -27,6 +28,12 @@
 [ext_resource type="Script" uid="uid://c2g7s47u4806v" path="res://scripts/player/states/light_attack_1.gd" id="26_6cv16"]
 [ext_resource type="AudioStream" uid="uid://x5nmdsx06rr1" path="res://assets/sounds/player/Stone Walk 5.wav" id="26_tffgl"]
 [ext_resource type="Script" uid="uid://bdebqtlbkjsfs" path="res://scripts/player/footstep_audio.gd" id="27_j4nxn"]
+[ext_resource type="AudioStream" uid="uid://ctjxrng4m3k0v" path="res://assets/sounds/player/weapons/sword_attack_1.wav" id="28_iqsei"]
+[ext_resource type="AudioStream" uid="uid://da8fjl0cr6h0l" path="res://assets/sounds/player/weapons/sword_attack_2.wav" id="29_tffgl"]
+[ext_resource type="AudioStream" uid="uid://b28mud536132b" path="res://assets/sounds/player/weapons/sword_attack_3.wav" id="30_pk8ii"]
+[ext_resource type="AudioStream" uid="uid://xe14acxt6ib7" path="res://assets/sounds/player/weapons/sword_impact_hit_1.ogg" id="31_5mf0n"]
+[ext_resource type="AudioStream" uid="uid://b21liil2ji86e" path="res://assets/sounds/player/weapons/sword_impact_hit_2.ogg" id="32_4hvnv"]
+[ext_resource type="AudioStream" uid="uid://c38fnjy468kps" path="res://assets/sounds/player/weapons/sword_impact_hit_3.ogg" id="33_bbmj2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28obt"]
 resource_name = "plate"
@@ -964,6 +971,20 @@ tracks/35/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/36/type = "method"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("AttackAudio")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_uniwh"]
 resource_name = "light_attack_2_2"
@@ -1239,6 +1260,20 @@ tracks/35/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
+}
+tracks/36/type = "method"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("AttackAudio")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0.333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_v56av"]
@@ -1973,6 +2008,20 @@ tracks/35/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/36/type = "method"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("AttackAudio")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0.433333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ejbo0"]
 _data = {
@@ -1986,12 +2035,27 @@ _data = {
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tffgl"]
+random_pitch = 1.2
 streams_count = 5
 stream_0/stream = ExtResource("22_j4nxn")
 stream_1/stream = ExtResource("23_28m0y")
 stream_2/stream = ExtResource("24_uniwh")
 stream_3/stream = ExtResource("25_iqsei")
 stream_4/stream = ExtResource("26_tffgl")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5mf0n"]
+random_pitch = 1.1
+streams_count = 3
+stream_0/stream = ExtResource("28_iqsei")
+stream_1/stream = ExtResource("29_tffgl")
+stream_2/stream = ExtResource("30_pk8ii")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kxw46"]
+random_pitch = 1.1
+streams_count = 3
+stream_0/stream = ExtResource("31_5mf0n")
+stream_1/stream = ExtResource("32_4hvnv")
+stream_2/stream = ExtResource("33_bbmj2")
 
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 6
@@ -2234,6 +2298,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.682512, 0)
 shape = SubResource("CapsuleShape3D_8ydkj")
 disabled = true
 
+[node name="ImpactParticle" parent="Armature/Skeleton3D/Weapon" instance=ExtResource("16_4hvnv")]
+transform = Transform3D(0.92892, 0.128728, 0.347188, -0.369897, 0.279721, 0.885965, 0.0169327, -0.951415, 0.307454, 0.163534, 0.350598, -0.246642)
+emitting = false
+one_shot = true
+
 [node name="LeftFoot" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
 transform = Transform3D(-0.985185, -0.169927, 0.0231278, 0.0248677, -0.274988, -0.961126, 0.169681, -0.946312, 0.27514, -0.146637, 0.0696406, 0.00320504)
 bone_name = "Foot.L"
@@ -2264,7 +2333,7 @@ visible = false
 shape = SubResource("CapsuleShape3D_28m0y")
 
 [node name="HurtBox" type="Area3D" parent="."]
-transform = Transform3D(0.999923, 0, 0, 0, 0.999813, 0.0144396, 0, -0.0144395, 0.999817, 0, -0.0217552, -0.0369982)
+transform = Transform3D(0.999919, 0, 0, 0, 0.999809, 0.0144395, 0, -0.0144395, 0.999813, 0, -0.0217552, -0.0369982)
 visible = false
 collision_mask = 2
 
@@ -2311,7 +2380,7 @@ script = ExtResource("25_007i1")
 script = ExtResource("26_6cv16")
 animation = "roll_attack"
 nextState = NodePath("../LightAttack2")
-speed = 7.0
+speed = 8.0
 
 [node name="LightAttack1" type="Node" parent="StateMachine" node_paths=PackedStringArray("nextState")]
 script = ExtResource("26_6cv16")
@@ -2335,6 +2404,14 @@ blend_times = [&"idle", &"idle", 0.3, &"idle", &"light_attack_1", 0.1, &"idle", 
 stream = SubResource("AudioStreamRandomizer_tffgl")
 max_distance = 10.0
 script = ExtResource("27_j4nxn")
+
+[node name="AttackAudio" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_5mf0n")
+max_distance = 10.0
+
+[node name="ImpactAudio" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_kxw46")
+max_distance = 10.0
 
 [connection signal="body_entered" from="Armature/Skeleton3D/LeftFoot/Area3D" to="FootstepAudio" method="_on_footstep"]
 [connection signal="body_entered" from="Armature/Skeleton3D/RightFoot/Area3D" to="FootstepAudio" method="_on_footstep"]
