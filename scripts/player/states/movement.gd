@@ -7,8 +7,16 @@ func physics_update(delta: float) -> void:
 	var player = state_machine.owner
 	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down", 0.4)
 	var camera = player.camera
-	var move_input = (camera.global_basis.z * input_vector.y + camera.global_basis.x * input_vector.x).normalized()
-	move_input.y = 0.0
+	var cam_forward = camera.global_basis.z
+	var cam_right = camera.global_basis.x
+
+	# Flatten the vectors
+	cam_forward.y = 0
+	cam_right.y = 0
+	cam_forward = cam_forward.normalized()
+	cam_right = cam_right.normalized()
+
+	var move_input = (cam_forward * input_vector.y + cam_right * input_vector.x).normalized()
 
 	if move_input.length() < 0.1:
 		state_machine.transition_to("Idle")

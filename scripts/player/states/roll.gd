@@ -14,8 +14,15 @@ func enter(_msg := {}) -> void:
 	# Calculate roll direction
 	var cam_forward = player.camera.global_basis.z
 	var cam_right = player.camera.global_basis.x
+
+	# Flatten the camera vectors
+	cam_forward.y = 0
+	cam_right.y = 0
+	cam_forward = cam_forward.normalized()
+	cam_right = cam_right.normalized()
+
+	# Calculate roll direction
 	roll_direction = (cam_forward * input_vector.y + cam_right * input_vector.x).normalized()
-	roll_direction.y = 0
 	
 	# If no input, roll forward relative to players mesh
 	if roll_direction.length() == 0:
