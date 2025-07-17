@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://nk22ypd2jwx2"]
+
+[ext_resource type="ArrayMesh" uid="uid://bn36wy5wf0id5" path="res://resources/environment/rocks_and_twigs.tres" id="1_yduvj"]
+
+[node name="Twigs" type="MeshInstance3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("1_yduvj")
+skeleton = NodePath("")

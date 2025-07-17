@@ -26,6 +26,11 @@ var is_locked_on: bool = false
 var lock_target = null #make this characterBody3D in the future
 @export var lock_range: float = 15.0
 
+var footsteps_water = load("res://resources/player/footsteps_water.tres")
+var footsteps_ground = load("res://resources/player/footsteps_ground.tres")
+
+var current_surface_type = "ground"
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -77,3 +82,10 @@ func find_closest_target() -> Node3D:
 	if result:
 		result.get_node("LockOn").show()
 	return result
+
+
+func _on_water_entered(area: Area3D):
+	current_surface_type = "water"
+
+func _on_water_exited(area: Area3D):
+	current_surface_type = "ground"

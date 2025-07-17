@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1684rqtqkrv0"
+uid="uid://3cwckhgj4276"
 path.s3tc="res://.godot/imported/arena_leafes.png-c839669e433787fea07bc6aab966393f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "235e7da3eed75c025888383f2a2279c8"
 }
 
 [deps]

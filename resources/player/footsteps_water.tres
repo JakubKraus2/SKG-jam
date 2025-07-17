@@ -1,0 +1,16 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=6 format=3 uid="uid://esqeyhviw3e"]
+
+[ext_resource type="AudioStream" uid="uid://dgufg6o4wjerv" path="res://assets/sounds/player/Water Walk 1.wav" id="1_ph24i"]
+[ext_resource type="AudioStream" uid="uid://yhq7g1tc2kqc" path="res://assets/sounds/player/Water Walk 2.wav" id="2_wauwc"]
+[ext_resource type="AudioStream" uid="uid://bkronb56rkryc" path="res://assets/sounds/player/Water Walk 3.wav" id="3_kcv77"]
+[ext_resource type="AudioStream" uid="uid://cg6ds152ddphn" path="res://assets/sounds/player/Water Walk 4.wav" id="4_o671v"]
+[ext_resource type="AudioStream" uid="uid://bq8iu2aqfna48" path="res://assets/sounds/player/Water Walk 5.wav" id="5_bpk48"]
+
+[resource]
+random_pitch = 1.1
+streams_count = 5
+stream_0/stream = ExtResource("1_ph24i")
+stream_1/stream = ExtResource("2_wauwc")
+stream_2/stream = ExtResource("3_kcv77")
+stream_3/stream = ExtResource("4_o671v")
+stream_4/stream = ExtResource("5_bpk48")

@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baj7umg5f27f3"
+uid="uid://drs4pcvd37ipq"
 path.s3tc="res://.godot/imported/arena_ground.png-f3c11e8f95f79c96d02ee585928d9c0e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "7e1473458621be118e9fd95751f5013f"
 }
 
 [deps]
