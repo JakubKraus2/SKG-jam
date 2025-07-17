@@ -19,6 +19,7 @@ func _on_area_entered(area: Area3D):
 	play_sound()
 	spawn_particle()
 	increase_blood_decal()
+	gain_hp()
 
 func slow_down_animation():
 	player.anim_player.set_speed_scale(0.1)
@@ -38,3 +39,6 @@ func increase_blood_decal():
 	for decal in blood_decals:
 		var opacity_increase = clamp(decal.modulate.a + 0.04, 0.0, 1.0)
 		decal.set_modulate(Color(1, 1, 1, opacity_increase))
+
+func gain_hp():
+	PlayerEvents.take_damage.emit(-10)

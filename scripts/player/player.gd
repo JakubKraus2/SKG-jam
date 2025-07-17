@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+
 @export_group("Movement")
 @export var run_speed := 6.0
 @export var run_acceleration := 50.0
@@ -35,6 +36,7 @@ var current_surface_type = "ground"
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$CamOrigin/SpringArm3D.add_excluded_object(self)
+	PlayerEvents.death.connect(_on_death)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -51,8 +53,9 @@ func _input(event: InputEvent) -> void:
 			lock_target = find_closest_target()
 			is_locked_on = lock_target != null
 	
-	if event.is_action("ui_down"):
-		$StateMachine.transition_to("Death")
+	if event.is_action_pressed("ui_left"):
+		PlayerEvents.take_damage.emit(30)
+		$TakeDamageTrauma.cause_trauma()
 
 
 func _physics_process(delta: float) -> void:
@@ -92,3 +95,11 @@ func _on_water_entered(area: Area3D):
 
 func _on_water_exited(area: Area3D):
 	current_surface_type = "ground"
+
+# Player takes damage
+func _on_hurt_box_area_entered(area: Area3D) -> void:
+	PlayerEvents.take_damage.emit(10)
+	$TakeDamageTrauma.cause_trauma()
+
+func _on_death():
+	$StateMachine.transition_to("Death")
