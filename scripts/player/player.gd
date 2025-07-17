@@ -50,6 +50,9 @@ func _input(event: InputEvent) -> void:
 		else:
 			lock_target = find_closest_target()
 			is_locked_on = lock_target != null
+	
+	if event.is_action("ui_down"):
+		$StateMachine.transition_to("Death")
 
 
 func _physics_process(delta: float) -> void:

@@ -36,6 +36,12 @@ func enter(_msg := {}) -> void:
 	
 	timer = 0.0
 	player.anim_player.play("roll")
+	
+	# Remove blood decal
+	if player.current_surface_type == "water":
+		var tween = get_tree().create_tween()
+		tween.tween_property($"../../Armature/Skeleton3D/BaseAttachment/BloodDecal", "modulate", Color(1, 1, 1, 0), 0.5)
+		tween.tween_property($"../../Armature/Skeleton3D/BaseAttachment/BloodDecal2", "modulate", Color(1, 1, 1, 0), 0.5)
 
 func physics_update(delta: float) -> void:
 	var player = state_machine.owner
