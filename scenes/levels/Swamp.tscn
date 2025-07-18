@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpyt1yg1ipqft"]
+
+[ext_resource type="PackedScene" uid="uid://btilft4p30xgk" path="res://assets/models/levels/swamp.glb" id="1_17vtv"]
+[ext_resource type="Material" uid="uid://b7q8tg41ex4qw" path="res://scenes/materials/water.tres" id="2_vhno2"]
+[ext_resource type="PackedScene" uid="uid://dgfda6utyfxjn" path="res://scenes/player/player.tscn" id="2_x3acc"]
+[ext_resource type="PackedScene" uid="uid://j6rl5kx3adni" path="res://scenes/ui/hud/health_bar.tscn" id="3_vhno2"]
+
+[sub_resource type="Gradient" id="Gradient_xrwi1"]
+offsets = PackedFloat32Array(0, 0.576271, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.210351, 0.267982, 0.277812, 1, 0.303708, 0.362399, 0.354899, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tqryr"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vhno2"]
+seamless = true
+color_ramp = SubResource("Gradient_xrwi1")
+noise = SubResource("FastNoiseLite_tqryr")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_n1tup"]
+panorama = SubResource("NoiseTexture2D_vhno2")
+
+[sub_resource type="Sky" id="Sky_xrwi1"]
+sky_material = SubResource("PanoramaSkyMaterial_n1tup")
+
+[sub_resource type="Environment" id="Environment_c8tg7"]
+background_mode = 2
+background_color = Color(0.195224, 0.220272, 0.15288, 1)
+sky = SubResource("Sky_xrwi1")
+tonemap_mode = 3
+ssr_fade_in = 4.63649
+sdfgi_enabled = true
+sdfgi_bounce_feedback = 1.99
+fog_enabled = true
+fog_light_color = Color(0.337255, 0.380392, 0.360784, 1)
+fog_density = 0.02
+fog_aerial_perspective = 0.5
+fog_height = 1.0
+fog_height_density = 0.5
+volumetric_fog_enabled = true
+volumetric_fog_detail_spread = 1.0
+
+[node name="Swamp" instance=ExtResource("1_17vtv")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+environment = SubResource("Environment_c8tg7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1"]
+transform = Transform3D(-0.642788, -0.541675, 0.541675, 0, 0.707107, 0.707107, -0.766045, 0.454519, -0.454519, 0.0599403, 25.1944, -52.2239)
+light_color = Color(0.50281, 0.640423, 0.682992, 1)
+light_specular = 2.0
+shadow_enabled = true
+
+[node name="StaticBody3D" parent="MainTree" index="0"]
+visible = false
+collision_layer = 4
+
+[node name="StaticBody3D" parent="Path" index="0"]
+visible = false
+collision_layer = 4
+
+[node name="Water1" parent="." index="4"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.144, -0.374, -0.134)
+material_override = ExtResource("2_vhno2")
+
+[node name="Water2" parent="." index="5"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -7.902, -0.538, 9.836)
+material_override = ExtResource("2_vhno2")
+
+[node name="Water6" parent="." index="6"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 10.813, -0.774, 11.1851)
+material_override = ExtResource("2_vhno2")
+
+[node name="Water3" parent="." index="7"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -10.513, -0.703, -7.704)
+material_override = ExtResource("2_vhno2")
+
+[node name="Water4" parent="." index="8"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 7.636, -0.566, -10.62)
+material_override = ExtResource("2_vhno2")
+
+[node name="Water5" parent="." index="9"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 12.6845, -0.774, -0.82719)
+material_override = ExtResource("2_vhno2")
+
+[node name="StaticBody3D" parent="Arena" index="0"]
+visible = false
+collision_layer = 4
+
+[node name="Water7" parent="." index="11"]
+transform = Transform3D(0.35, 0, -0.606218, 0, 0.7, 0, 0.606218, 0, 0.35, -2.557, -0.466, -15.374)
+material_override = ExtResource("2_vhno2")
+
+[node name="Pond" parent="." index="18"]
+transform = Transform3D(5.88293, 0.21688, 0, -0.307889, 4.13265, -0.21688, -0.0161358, 0.216583, 4.13832, 28.969, -3, 163.057)
+material_override = ExtResource("2_vhno2")
+
+[node name="HealthBar" parent="." index="20" instance=ExtResource("3_vhno2")]
+
+[node name="Player2" parent="." index="21" instance=ExtResource("2_x3acc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5589, -0.284537, 158.421)
+
+[node name="Cylinder_001" parent="." index="22"]
+visible = false
+
+[node name="Cylinder_002" parent="." index="24"]
+visible = false
+
+[node name="Cylinder_003" parent="." index="25"]
+visible = false
+
+[node name="Cylinder_004" parent="." index="26"]
+visible = false
+
+[node name="Cylinder_005" parent="." index="27"]
+visible = false
+
+[node name="Cylinder_006" parent="." index="28"]
+visible = false
+
+[node name="Cylinder_007" parent="." index="29"]
+visible = false
+
+[node name="Cylinder_008" parent="." index="30"]
+visible = false

@@ -1,0 +1,3739 @@
+[gd_scene load_steps=11 format=3 uid="uid://btjt151j26kvy"]
+
+[ext_resource type="PackedScene" uid="uid://bklp7vflcp26y" path="res://assets/models/levels/swamp2.glb" id="1_rrkde"]
+[ext_resource type="PackedScene" uid="uid://j6rl5kx3adni" path="res://scenes/ui/hud/health_bar.tscn" id="2_w65bo"]
+[ext_resource type="PackedScene" uid="uid://dgfda6utyfxjn" path="res://scenes/player/player.tscn" id="3_ckna2"]
+[ext_resource type="ArrayOccluder3D" uid="uid://df2nfko4c2kpk" path="res://resources/occluders/swamp_2_occluder_test.occ" id="4_ckna2"]
+
+[sub_resource type="Gradient" id="Gradient_rrkde"]
+offsets = PackedFloat32Array(0, 0.576271, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.210351, 0.267982, 0.277812, 1, 0.303708, 0.362399, 0.354899, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_eek7f"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7x1jh"]
+seamless = true
+color_ramp = SubResource("Gradient_rrkde")
+noise = SubResource("FastNoiseLite_eek7f")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w65bo"]
+panorama = SubResource("NoiseTexture2D_7x1jh")
+
+[sub_resource type="Sky" id="Sky_yautc"]
+sky_material = SubResource("PanoramaSkyMaterial_w65bo")
+
+[sub_resource type="Environment" id="Environment_ckna2"]
+background_mode = 2
+background_color = Color(0.195224, 0.220272, 0.15288, 1)
+sky = SubResource("Sky_yautc")
+tonemap_mode = 3
+ssr_fade_in = 4.63649
+sdfgi_enabled = true
+sdfgi_bounce_feedback = 1.99
+fog_enabled = true
+fog_light_color = Color(0.337255, 0.380392, 0.360784, 1)
+fog_density = 0.02
+fog_aerial_perspective = 0.5
+fog_height = 1.0
+fog_height_density = 0.5
+volumetric_fog_enabled = true
+volumetric_fog_detail_spread = 1.0
+
+[node name="swamp2" instance=ExtResource("1_rrkde")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+environment = SubResource("Environment_ckna2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1"]
+transform = Transform3D(-0.642788, -0.541675, 0.541675, 0, 0.707107, 0.707107, -0.766045, 0.454519, -0.454519, 0.0599403, 25.1944, -52.2239)
+light_color = Color(0.50281, 0.640423, 0.682992, 1)
+light_specular = 2.0
+shadow_enabled = true
+
+[node name="Grass" parent="Plane" index="0"]
+visibility_range_end = 70.0
+
+[node name="Grass2" parent="Plane" index="1"]
+visibility_range_end = 70.0
+
+[node name="Grass3" parent="Plane" index="2"]
+visibility_range_end = 70.0
+
+[node name="Grass4" parent="Plane" index="3"]
+visibility_range_end = 70.0
+
+[node name="Grass5" parent="Plane" index="4"]
+visibility_range_end = 70.0
+
+[node name="Grass6" parent="Plane" index="5"]
+visibility_range_end = 70.0
+
+[node name="Grass7" parent="Plane" index="6"]
+visibility_range_end = 70.0
+
+[node name="Grass8" parent="Plane" index="7"]
+visibility_range_end = 70.0
+
+[node name="Grass9" parent="Plane" index="8"]
+visibility_range_end = 70.0
+
+[node name="Grass10" parent="Plane" index="9"]
+visibility_range_end = 70.0
+
+[node name="Grass11" parent="Plane" index="10"]
+visibility_range_end = 70.0
+
+[node name="Grass12" parent="Plane" index="11"]
+visibility_range_end = 70.0
+
+[node name="Grass13" parent="Plane" index="12"]
+visibility_range_end = 70.0
+
+[node name="Grass14" parent="Plane" index="13"]
+visibility_range_end = 70.0
+
+[node name="Grass15" parent="Plane" index="14"]
+visibility_range_end = 70.0
+
+[node name="Grass16" parent="Plane" index="15"]
+visibility_range_end = 70.0
+
+[node name="Grass17" parent="Plane" index="16"]
+visibility_range_end = 70.0
+
+[node name="Grass18" parent="Plane" index="17"]
+visibility_range_end = 70.0
+
+[node name="Grass19" parent="Plane" index="18"]
+visibility_range_end = 70.0
+
+[node name="Grass20" parent="Plane" index="19"]
+visibility_range_end = 70.0
+
+[node name="Grass21" parent="Plane" index="20"]
+visibility_range_end = 70.0
+
+[node name="Grass22" parent="Plane" index="21"]
+visibility_range_end = 70.0
+
+[node name="Grass23" parent="Plane" index="22"]
+visibility_range_end = 70.0
+
+[node name="Grass24" parent="Plane" index="23"]
+visibility_range_end = 70.0
+
+[node name="Grass25" parent="Plane" index="24"]
+visibility_range_end = 70.0
+
+[node name="Grass26" parent="Plane" index="25"]
+visibility_range_end = 70.0
+
+[node name="Grass27" parent="Plane" index="26"]
+visibility_range_end = 70.0
+
+[node name="Grass28" parent="Plane" index="27"]
+visibility_range_end = 70.0
+
+[node name="Grass29" parent="Plane" index="28"]
+visibility_range_end = 70.0
+
+[node name="Grass30" parent="Plane" index="29"]
+visibility_range_end = 70.0
+
+[node name="Grass31" parent="Plane" index="30"]
+visibility_range_end = 70.0
+
+[node name="Grass32" parent="Plane" index="31"]
+visibility_range_end = 70.0
+
+[node name="Grass33" parent="Plane" index="32"]
+visibility_range_end = 70.0
+
+[node name="Grass34" parent="Plane" index="33"]
+visibility_range_end = 70.0
+
+[node name="Grass35" parent="Plane" index="34"]
+visibility_range_end = 70.0
+
+[node name="Grass36" parent="Plane" index="35"]
+visibility_range_end = 70.0
+
+[node name="Grass37" parent="Plane" index="36"]
+visibility_range_end = 70.0
+
+[node name="Grass38" parent="Plane" index="37"]
+visibility_range_end = 70.0
+
+[node name="Grass39" parent="Plane" index="38"]
+visibility_range_end = 70.0
+
+[node name="Grass40" parent="Plane" index="39"]
+visibility_range_end = 70.0
+
+[node name="Grass41" parent="Plane" index="40"]
+visibility_range_end = 70.0
+
+[node name="Grass42" parent="Plane" index="41"]
+visibility_range_end = 70.0
+
+[node name="Grass43" parent="Plane" index="42"]
+visibility_range_end = 70.0
+
+[node name="Grass44" parent="Plane" index="43"]
+visibility_range_end = 70.0
+
+[node name="Grass45" parent="Plane" index="44"]
+visibility_range_end = 70.0
+
+[node name="Grass46" parent="Plane" index="45"]
+visibility_range_end = 70.0
+
+[node name="Grass47" parent="Plane" index="46"]
+visibility_range_end = 70.0
+
+[node name="Grass48" parent="Plane" index="47"]
+visibility_range_end = 70.0
+
+[node name="Grass49" parent="Plane" index="48"]
+visibility_range_end = 70.0
+
+[node name="Grass50" parent="Plane" index="49"]
+visibility_range_end = 70.0
+
+[node name="Grass51" parent="Plane" index="50"]
+visibility_range_end = 70.0
+
+[node name="Grass52" parent="Plane" index="51"]
+visibility_range_end = 70.0
+
+[node name="Grass53" parent="Plane" index="52"]
+visibility_range_end = 70.0
+
+[node name="Grass54" parent="Plane" index="53"]
+visibility_range_end = 70.0
+
+[node name="Grass55" parent="Plane" index="54"]
+visibility_range_end = 70.0
+
+[node name="Grass56" parent="Plane" index="55"]
+visibility_range_end = 70.0
+
+[node name="Grass57" parent="Plane" index="56"]
+visibility_range_end = 70.0
+
+[node name="Grass58" parent="Plane" index="57"]
+visibility_range_end = 70.0
+
+[node name="Grass59" parent="Plane" index="58"]
+visibility_range_end = 70.0
+
+[node name="Grass60" parent="Plane" index="59"]
+visibility_range_end = 70.0
+
+[node name="Grass61" parent="Plane" index="60"]
+visibility_range_end = 70.0
+
+[node name="Grass62" parent="Plane" index="61"]
+visibility_range_end = 70.0
+
+[node name="Grass63" parent="Plane" index="62"]
+visibility_range_end = 70.0
+
+[node name="Grass64" parent="Plane" index="63"]
+visibility_range_end = 70.0
+
+[node name="Grass65" parent="Plane" index="64"]
+visibility_range_end = 70.0
+
+[node name="Grass66" parent="Plane" index="65"]
+visibility_range_end = 70.0
+
+[node name="Grass67" parent="Plane" index="66"]
+visibility_range_end = 70.0
+
+[node name="Grass68" parent="Plane" index="67"]
+visibility_range_end = 70.0
+
+[node name="Grass69" parent="Plane" index="68"]
+visibility_range_end = 70.0
+
+[node name="Grass70" parent="Plane" index="69"]
+visibility_range_end = 70.0
+
+[node name="Grass71" parent="Plane" index="70"]
+visibility_range_end = 70.0
+
+[node name="Grass72" parent="Plane" index="71"]
+visibility_range_end = 70.0
+
+[node name="Grass73" parent="Plane" index="72"]
+visibility_range_end = 70.0
+
+[node name="Grass74" parent="Plane" index="73"]
+visibility_range_end = 70.0
+
+[node name="Grass75" parent="Plane" index="74"]
+visibility_range_end = 70.0
+
+[node name="Grass76" parent="Plane" index="75"]
+visibility_range_end = 70.0
+
+[node name="Grass77" parent="Plane" index="76"]
+visibility_range_end = 70.0
+
+[node name="Grass78" parent="Plane" index="77"]
+visibility_range_end = 70.0
+
+[node name="Grass79" parent="Plane" index="78"]
+visibility_range_end = 70.0
+
+[node name="Grass80" parent="Plane" index="79"]
+visibility_range_end = 70.0
+
+[node name="Grass81" parent="Plane" index="80"]
+visibility_range_end = 70.0
+
+[node name="Grass82" parent="Plane" index="81"]
+visibility_range_end = 70.0
+
+[node name="Grass83" parent="Plane" index="82"]
+visibility_range_end = 70.0
+
+[node name="Grass84" parent="Plane" index="83"]
+visibility_range_end = 70.0
+
+[node name="Grass85" parent="Plane" index="84"]
+visibility_range_end = 70.0
+
+[node name="Grass86" parent="Plane" index="85"]
+visibility_range_end = 70.0
+
+[node name="Grass87" parent="Plane" index="86"]
+visibility_range_end = 70.0
+
+[node name="Grass88" parent="Plane" index="87"]
+visibility_range_end = 70.0
+
+[node name="Grass89" parent="Plane" index="88"]
+visibility_range_end = 70.0
+
+[node name="Grass90" parent="Plane" index="89"]
+visibility_range_end = 70.0
+
+[node name="Grass91" parent="Plane" index="90"]
+visibility_range_end = 70.0
+
+[node name="Grass92" parent="Plane" index="91"]
+visibility_range_end = 70.0
+
+[node name="Grass93" parent="Plane" index="92"]
+visibility_range_end = 70.0
+
+[node name="Grass94" parent="Plane" index="93"]
+visibility_range_end = 70.0
+
+[node name="Grass95" parent="Plane" index="94"]
+visibility_range_end = 70.0
+
+[node name="Grass96" parent="Plane" index="95"]
+visibility_range_end = 70.0
+
+[node name="Grass97" parent="Plane" index="96"]
+visibility_range_end = 70.0
+
+[node name="Grass98" parent="Plane" index="97"]
+visibility_range_end = 70.0
+
+[node name="Grass99" parent="Plane" index="98"]
+visibility_range_end = 70.0
+
+[node name="Grass100" parent="Plane" index="99"]
+visibility_range_end = 70.0
+
+[node name="Grass101" parent="Plane" index="100"]
+visibility_range_end = 70.0
+
+[node name="Grass102" parent="Plane" index="101"]
+visibility_range_end = 70.0
+
+[node name="Grass103" parent="Plane" index="102"]
+visibility_range_end = 70.0
+
+[node name="Grass104" parent="Plane" index="103"]
+visibility_range_end = 70.0
+
+[node name="Grass105" parent="Plane" index="104"]
+visibility_range_end = 70.0
+
+[node name="Grass106" parent="Plane" index="105"]
+visibility_range_end = 70.0
+
+[node name="Grass107" parent="Plane" index="106"]
+visibility_range_end = 70.0
+
+[node name="Grass108" parent="Plane" index="107"]
+visibility_range_end = 70.0
+
+[node name="Grass109" parent="Plane" index="108"]
+visibility_range_end = 70.0
+
+[node name="Grass110" parent="Plane" index="109"]
+visibility_range_end = 70.0
+
+[node name="Grass111" parent="Plane" index="110"]
+visibility_range_end = 70.0
+
+[node name="Grass112" parent="Plane" index="111"]
+visibility_range_end = 70.0
+
+[node name="Grass113" parent="Plane" index="112"]
+visibility_range_end = 70.0
+
+[node name="Grass114" parent="Plane" index="113"]
+visibility_range_end = 70.0
+
+[node name="Grass115" parent="Plane" index="114"]
+visibility_range_end = 70.0
+
+[node name="Grass116" parent="Plane" index="115"]
+visibility_range_end = 70.0
+
+[node name="Grass117" parent="Plane" index="116"]
+visibility_range_end = 70.0
+
+[node name="Grass118" parent="Plane" index="117"]
+visibility_range_end = 70.0
+
+[node name="Grass119" parent="Plane" index="118"]
+visibility_range_end = 70.0
+
+[node name="Grass120" parent="Plane" index="119"]
+visibility_range_end = 70.0
+
+[node name="Grass121" parent="Plane" index="120"]
+visibility_range_end = 70.0
+
+[node name="Grass122" parent="Plane" index="121"]
+visibility_range_end = 70.0
+
+[node name="Grass123" parent="Plane" index="122"]
+visibility_range_end = 70.0
+
+[node name="Grass124" parent="Plane" index="123"]
+visibility_range_end = 70.0
+
+[node name="Grass125" parent="Plane" index="124"]
+visibility_range_end = 70.0
+
+[node name="Grass126" parent="Plane" index="125"]
+visibility_range_end = 70.0
+
+[node name="Grass127" parent="Plane" index="126"]
+visibility_range_end = 70.0
+
+[node name="Grass128" parent="Plane" index="127"]
+visibility_range_end = 70.0
+
+[node name="Grass129" parent="Plane" index="128"]
+visibility_range_end = 70.0
+
+[node name="Grass130" parent="Plane" index="129"]
+visibility_range_end = 70.0
+
+[node name="Grass131" parent="Plane" index="130"]
+visibility_range_end = 70.0
+
+[node name="Grass132" parent="Plane" index="131"]
+visibility_range_end = 70.0
+
+[node name="Grass133" parent="Plane" index="132"]
+visibility_range_end = 70.0
+
+[node name="Grass134" parent="Plane" index="133"]
+visibility_range_end = 70.0
+
+[node name="Grass135" parent="Plane" index="134"]
+visibility_range_end = 70.0
+
+[node name="Grass136" parent="Plane" index="135"]
+visibility_range_end = 70.0
+
+[node name="Grass137" parent="Plane" index="136"]
+visibility_range_end = 70.0
+
+[node name="Grass138" parent="Plane" index="137"]
+visibility_range_end = 70.0
+
+[node name="Grass139" parent="Plane" index="138"]
+visibility_range_end = 70.0
+
+[node name="Grass140" parent="Plane" index="139"]
+visibility_range_end = 70.0
+
+[node name="Grass141" parent="Plane" index="140"]
+visibility_range_end = 70.0
+
+[node name="Grass142" parent="Plane" index="141"]
+visibility_range_end = 70.0
+
+[node name="Grass143" parent="Plane" index="142"]
+visibility_range_end = 70.0
+
+[node name="Grass144" parent="Plane" index="143"]
+visibility_range_end = 70.0
+
+[node name="Grass145" parent="Plane" index="144"]
+visibility_range_end = 70.0
+
+[node name="Grass146" parent="Plane" index="145"]
+visibility_range_end = 70.0
+
+[node name="Grass147" parent="Plane" index="146"]
+visibility_range_end = 70.0
+
+[node name="Grass148" parent="Plane" index="147"]
+visibility_range_end = 70.0
+
+[node name="Grass149" parent="Plane" index="148"]
+visibility_range_end = 70.0
+
+[node name="Grass150" parent="Plane" index="149"]
+visibility_range_end = 70.0
+
+[node name="Grass151" parent="Plane" index="150"]
+visibility_range_end = 70.0
+
+[node name="Grass152" parent="Plane" index="151"]
+visibility_range_end = 70.0
+
+[node name="Grass153" parent="Plane" index="152"]
+visibility_range_end = 70.0
+
+[node name="Grass154" parent="Plane" index="153"]
+visibility_range_end = 70.0
+
+[node name="Grass155" parent="Plane" index="154"]
+visibility_range_end = 70.0
+
+[node name="Grass156" parent="Plane" index="155"]
+visibility_range_end = 70.0
+
+[node name="Grass157" parent="Plane" index="156"]
+visibility_range_end = 70.0
+
+[node name="Grass158" parent="Plane" index="157"]
+visibility_range_end = 70.0
+
+[node name="Grass159" parent="Plane" index="158"]
+visibility_range_end = 70.0
+
+[node name="Grass160" parent="Plane" index="159"]
+visibility_range_end = 70.0
+
+[node name="Grass161" parent="Plane" index="160"]
+visibility_range_end = 70.0
+
+[node name="Grass162" parent="Plane" index="161"]
+visibility_range_end = 70.0
+
+[node name="Grass163" parent="Plane" index="162"]
+visibility_range_end = 70.0
+
+[node name="Grass164" parent="Plane" index="163"]
+visibility_range_end = 70.0
+
+[node name="Grass165" parent="Plane" index="164"]
+visibility_range_end = 70.0
+
+[node name="Grass166" parent="Plane" index="165"]
+visibility_range_end = 70.0
+
+[node name="Grass167" parent="Plane" index="166"]
+visibility_range_end = 70.0
+
+[node name="Grass168" parent="Plane" index="167"]
+visibility_range_end = 70.0
+
+[node name="Grass169" parent="Plane" index="168"]
+visibility_range_end = 70.0
+
+[node name="Grass170" parent="Plane" index="169"]
+visibility_range_end = 70.0
+
+[node name="Grass171" parent="Plane" index="170"]
+visibility_range_end = 70.0
+
+[node name="Grass172" parent="Plane" index="171"]
+visibility_range_end = 70.0
+
+[node name="Grass173" parent="Plane" index="172"]
+visibility_range_end = 70.0
+
+[node name="Grass174" parent="Plane" index="173"]
+visibility_range_end = 70.0
+
+[node name="Grass175" parent="Plane" index="174"]
+visibility_range_end = 70.0
+
+[node name="Grass176" parent="Plane" index="175"]
+visibility_range_end = 70.0
+
+[node name="Grass177" parent="Plane" index="176"]
+visibility_range_end = 70.0
+
+[node name="Grass178" parent="Plane" index="177"]
+visibility_range_end = 70.0
+
+[node name="Grass179" parent="Plane" index="178"]
+visibility_range_end = 70.0
+
+[node name="Grass180" parent="Plane" index="179"]
+visibility_range_end = 70.0
+
+[node name="Grass181" parent="Plane" index="180"]
+visibility_range_end = 70.0
+
+[node name="Grass182" parent="Plane" index="181"]
+visibility_range_end = 70.0
+
+[node name="Grass183" parent="Plane" index="182"]
+visibility_range_end = 70.0
+
+[node name="Grass184" parent="Plane" index="183"]
+visibility_range_end = 70.0
+
+[node name="Grass185" parent="Plane" index="184"]
+visibility_range_end = 70.0
+
+[node name="Grass186" parent="Plane" index="185"]
+visibility_range_end = 70.0
+
+[node name="Grass187" parent="Plane" index="186"]
+visibility_range_end = 70.0
+
+[node name="Grass188" parent="Plane" index="187"]
+visibility_range_end = 70.0
+
+[node name="Grass189" parent="Plane" index="188"]
+visibility_range_end = 70.0
+
+[node name="Grass190" parent="Plane" index="189"]
+visibility_range_end = 70.0
+
+[node name="Grass191" parent="Plane" index="190"]
+visibility_range_end = 70.0
+
+[node name="Grass192" parent="Plane" index="191"]
+visibility_range_end = 70.0
+
+[node name="Grass193" parent="Plane" index="192"]
+visibility_range_end = 70.0
+
+[node name="Grass194" parent="Plane" index="193"]
+visibility_range_end = 70.0
+
+[node name="Grass195" parent="Plane" index="194"]
+visibility_range_end = 70.0
+
+[node name="Grass196" parent="Plane" index="195"]
+visibility_range_end = 70.0
+
+[node name="Grass197" parent="Plane" index="196"]
+visibility_range_end = 70.0
+
+[node name="Grass198" parent="Plane" index="197"]
+visibility_range_end = 70.0
+
+[node name="Grass199" parent="Plane" index="198"]
+visibility_range_end = 70.0
+
+[node name="Grass200" parent="Plane" index="199"]
+visibility_range_end = 70.0
+
+[node name="Grass201" parent="Plane" index="200"]
+visibility_range_end = 70.0
+
+[node name="Grass202" parent="Plane" index="201"]
+visibility_range_end = 70.0
+
+[node name="Grass203" parent="Plane" index="202"]
+visibility_range_end = 70.0
+
+[node name="Grass204" parent="Plane" index="203"]
+visibility_range_end = 70.0
+
+[node name="Grass205" parent="Plane" index="204"]
+visibility_range_end = 70.0
+
+[node name="Grass206" parent="Plane" index="205"]
+visibility_range_end = 70.0
+
+[node name="Grass207" parent="Plane" index="206"]
+visibility_range_end = 70.0
+
+[node name="Grass208" parent="Plane" index="207"]
+visibility_range_end = 70.0
+
+[node name="Grass209" parent="Plane" index="208"]
+visibility_range_end = 70.0
+
+[node name="Grass210" parent="Plane" index="209"]
+visibility_range_end = 70.0
+
+[node name="Grass211" parent="Plane" index="210"]
+visibility_range_end = 70.0
+
+[node name="Grass212" parent="Plane" index="211"]
+visibility_range_end = 70.0
+
+[node name="Grass213" parent="Plane" index="212"]
+visibility_range_end = 70.0
+
+[node name="Grass214" parent="Plane" index="213"]
+visibility_range_end = 70.0
+
+[node name="Grass215" parent="Plane" index="214"]
+visibility_range_end = 70.0
+
+[node name="Grass216" parent="Plane" index="215"]
+visibility_range_end = 70.0
+
+[node name="Grass217" parent="Plane" index="216"]
+visibility_range_end = 70.0
+
+[node name="Grass218" parent="Plane" index="217"]
+visibility_range_end = 70.0
+
+[node name="Grass219" parent="Plane" index="218"]
+visibility_range_end = 70.0
+
+[node name="Grass220" parent="Plane" index="219"]
+visibility_range_end = 70.0
+
+[node name="Grass221" parent="Plane" index="220"]
+visibility_range_end = 70.0
+
+[node name="Grass222" parent="Plane" index="221"]
+visibility_range_end = 70.0
+
+[node name="Grass223" parent="Plane" index="222"]
+visibility_range_end = 70.0
+
+[node name="Grass224" parent="Plane" index="223"]
+visibility_range_end = 70.0
+
+[node name="Grass225" parent="Plane" index="224"]
+visibility_range_end = 70.0
+
+[node name="Grass226" parent="Plane" index="225"]
+visibility_range_end = 70.0
+
+[node name="Grass227" parent="Plane" index="226"]
+visibility_range_end = 70.0
+
+[node name="Grass228" parent="Plane" index="227"]
+visibility_range_end = 70.0
+
+[node name="Grass229" parent="Plane" index="228"]
+visibility_range_end = 70.0
+
+[node name="Grass230" parent="Plane" index="229"]
+visibility_range_end = 70.0
+
+[node name="Grass231" parent="Plane" index="230"]
+visibility_range_end = 70.0
+
+[node name="Grass232" parent="Plane" index="231"]
+visibility_range_end = 70.0
+
+[node name="Grass233" parent="Plane" index="232"]
+visibility_range_end = 70.0
+
+[node name="Grass234" parent="Plane" index="233"]
+visibility_range_end = 70.0
+
+[node name="Grass235" parent="Plane" index="234"]
+visibility_range_end = 70.0
+
+[node name="Grass236" parent="Plane" index="235"]
+visibility_range_end = 70.0
+
+[node name="Grass237" parent="Plane" index="236"]
+visibility_range_end = 70.0
+
+[node name="Grass238" parent="Plane" index="237"]
+visibility_range_end = 70.0
+
+[node name="Grass239" parent="Plane" index="238"]
+visibility_range_end = 70.0
+
+[node name="Grass240" parent="Plane" index="239"]
+visibility_range_end = 70.0
+
+[node name="Grass241" parent="Plane" index="240"]
+visibility_range_end = 70.0
+
+[node name="Grass242" parent="Plane" index="241"]
+visibility_range_end = 70.0
+
+[node name="Grass243" parent="Plane" index="242"]
+visibility_range_end = 70.0
+
+[node name="Grass244" parent="Plane" index="243"]
+visibility_range_end = 70.0
+
+[node name="Grass245" parent="Plane" index="244"]
+visibility_range_end = 70.0
+
+[node name="Grass246" parent="Plane" index="245"]
+visibility_range_end = 70.0
+
+[node name="Grass247" parent="Plane" index="246"]
+visibility_range_end = 70.0
+
+[node name="Grass248" parent="Plane" index="247"]
+visibility_range_end = 70.0
+
+[node name="Grass249" parent="Plane" index="248"]
+visibility_range_end = 70.0
+
+[node name="Grass250" parent="Plane" index="249"]
+visibility_range_end = 70.0
+
+[node name="Grass251" parent="Plane" index="250"]
+visibility_range_end = 70.0
+
+[node name="Grass252" parent="Plane" index="251"]
+visibility_range_end = 70.0
+
+[node name="Grass253" parent="Plane" index="252"]
+visibility_range_end = 70.0
+
+[node name="Grass254" parent="Plane" index="253"]
+visibility_range_end = 70.0
+
+[node name="Grass255" parent="Plane" index="254"]
+visibility_range_end = 70.0
+
+[node name="Grass256" parent="Plane" index="255"]
+visibility_range_end = 70.0
+
+[node name="Grass257" parent="Plane" index="256"]
+visibility_range_end = 70.0
+
+[node name="Grass258" parent="Plane" index="257"]
+visibility_range_end = 70.0
+
+[node name="Grass259" parent="Plane" index="258"]
+visibility_range_end = 70.0
+
+[node name="Grass260" parent="Plane" index="259"]
+visibility_range_end = 70.0
+
+[node name="Grass261" parent="Plane" index="260"]
+visibility_range_end = 70.0
+
+[node name="Grass262" parent="Plane" index="261"]
+visibility_range_end = 70.0
+
+[node name="Grass263" parent="Plane" index="262"]
+visibility_range_end = 70.0
+
+[node name="Grass264" parent="Plane" index="263"]
+visibility_range_end = 70.0
+
+[node name="Grass265" parent="Plane" index="264"]
+visibility_range_end = 70.0
+
+[node name="Grass266" parent="Plane" index="265"]
+visibility_range_end = 70.0
+
+[node name="Grass267" parent="Plane" index="266"]
+visibility_range_end = 70.0
+
+[node name="Grass268" parent="Plane" index="267"]
+visibility_range_end = 70.0
+
+[node name="Grass269" parent="Plane" index="268"]
+visibility_range_end = 70.0
+
+[node name="Grass270" parent="Plane" index="269"]
+visibility_range_end = 70.0
+
+[node name="Grass271" parent="Plane" index="270"]
+visibility_range_end = 70.0
+
+[node name="Grass272" parent="Plane" index="271"]
+visibility_range_end = 70.0
+
+[node name="Grass273" parent="Plane" index="272"]
+visibility_range_end = 70.0
+
+[node name="Grass274" parent="Plane" index="273"]
+visibility_range_end = 70.0
+
+[node name="Grass275" parent="Plane" index="274"]
+visibility_range_end = 70.0
+
+[node name="Grass276" parent="Plane" index="275"]
+visibility_range_end = 70.0
+
+[node name="Grass277" parent="Plane" index="276"]
+visibility_range_end = 70.0
+
+[node name="Grass278" parent="Plane" index="277"]
+visibility_range_end = 70.0
+
+[node name="Grass279" parent="Plane" index="278"]
+visibility_range_end = 70.0
+
+[node name="Grass280" parent="Plane" index="279"]
+visibility_range_end = 70.0
+
+[node name="Grass281" parent="Plane" index="280"]
+visibility_range_end = 70.0
+
+[node name="Grass282" parent="Plane" index="281"]
+visibility_range_end = 70.0
+
+[node name="Grass283" parent="Plane" index="282"]
+visibility_range_end = 70.0
+
+[node name="Grass284" parent="Plane" index="283"]
+visibility_range_end = 70.0
+
+[node name="Grass285" parent="Plane" index="284"]
+visibility_range_end = 70.0
+
+[node name="Grass286" parent="Plane" index="285"]
+visibility_range_end = 70.0
+
+[node name="Grass287" parent="Plane" index="286"]
+visibility_range_end = 70.0
+
+[node name="Grass288" parent="Plane" index="287"]
+visibility_range_end = 70.0
+
+[node name="Grass289" parent="Plane" index="288"]
+visibility_range_end = 70.0
+
+[node name="Grass290" parent="Plane" index="289"]
+visibility_range_end = 70.0
+
+[node name="Grass291" parent="Plane" index="290"]
+visibility_range_end = 70.0
+
+[node name="Grass292" parent="Plane" index="291"]
+visibility_range_end = 70.0
+
+[node name="Grass293" parent="Plane" index="292"]
+visibility_range_end = 70.0
+
+[node name="Grass294" parent="Plane" index="293"]
+visibility_range_end = 70.0
+
+[node name="Grass295" parent="Plane" index="294"]
+visibility_range_end = 70.0
+
+[node name="Grass296" parent="Plane" index="295"]
+visibility_range_end = 70.0
+
+[node name="Grass297" parent="Plane" index="296"]
+visibility_range_end = 70.0
+
+[node name="Grass298" parent="Plane" index="297"]
+visibility_range_end = 70.0
+
+[node name="Grass299" parent="Plane" index="298"]
+visibility_range_end = 70.0
+
+[node name="Grass300" parent="Plane" index="299"]
+visibility_range_end = 70.0
+
+[node name="Grass301" parent="Plane" index="300"]
+visibility_range_end = 70.0
+
+[node name="Grass302" parent="Plane" index="301"]
+visibility_range_end = 70.0
+
+[node name="Grass303" parent="Plane" index="302"]
+visibility_range_end = 70.0
+
+[node name="Grass304" parent="Plane" index="303"]
+visibility_range_end = 70.0
+
+[node name="Grass305" parent="Plane" index="304"]
+visibility_range_end = 70.0
+
+[node name="Grass306" parent="Plane" index="305"]
+visibility_range_end = 70.0
+
+[node name="Grass307" parent="Plane" index="306"]
+visibility_range_end = 70.0
+
+[node name="Grass308" parent="Plane" index="307"]
+visibility_range_end = 70.0
+
+[node name="Grass309" parent="Plane" index="308"]
+visibility_range_end = 70.0
+
+[node name="Grass310" parent="Plane" index="309"]
+visibility_range_end = 70.0
+
+[node name="Grass311" parent="Plane" index="310"]
+visibility_range_end = 70.0
+
+[node name="Grass312" parent="Plane" index="311"]
+visibility_range_end = 70.0
+
+[node name="Grass313" parent="Plane" index="312"]
+visibility_range_end = 70.0
+
+[node name="Grass314" parent="Plane" index="313"]
+visibility_range_end = 70.0
+
+[node name="Grass315" parent="Plane" index="314"]
+visibility_range_end = 70.0
+
+[node name="Grass316" parent="Plane" index="315"]
+visibility_range_end = 70.0
+
+[node name="Grass317" parent="Plane" index="316"]
+visibility_range_end = 70.0
+
+[node name="Grass318" parent="Plane" index="317"]
+visibility_range_end = 70.0
+
+[node name="Grass319" parent="Plane" index="318"]
+visibility_range_end = 70.0
+
+[node name="Grass320" parent="Plane" index="319"]
+visibility_range_end = 70.0
+
+[node name="Grass321" parent="Plane" index="320"]
+visibility_range_end = 70.0
+
+[node name="Grass322" parent="Plane" index="321"]
+visibility_range_end = 70.0
+
+[node name="Grass323" parent="Plane" index="322"]
+visibility_range_end = 70.0
+
+[node name="Grass324" parent="Plane" index="323"]
+visibility_range_end = 70.0
+
+[node name="Grass325" parent="Plane" index="324"]
+visibility_range_end = 70.0
+
+[node name="Grass326" parent="Plane" index="325"]
+visibility_range_end = 70.0
+
+[node name="Grass327" parent="Plane" index="326"]
+visibility_range_end = 70.0
+
+[node name="Grass328" parent="Plane" index="327"]
+visibility_range_end = 70.0
+
+[node name="Grass329" parent="Plane" index="328"]
+visibility_range_end = 70.0
+
+[node name="Grass330" parent="Plane" index="329"]
+visibility_range_end = 70.0
+
+[node name="Grass331" parent="Plane" index="330"]
+visibility_range_end = 70.0
+
+[node name="Grass332" parent="Plane" index="331"]
+visibility_range_end = 70.0
+
+[node name="Grass333" parent="Plane" index="332"]
+visibility_range_end = 70.0
+
+[node name="Grass334" parent="Plane" index="333"]
+visibility_range_end = 70.0
+
+[node name="Grass335" parent="Plane" index="334"]
+visibility_range_end = 70.0
+
+[node name="Grass336" parent="Plane" index="335"]
+visibility_range_end = 70.0
+
+[node name="Grass337" parent="Plane" index="336"]
+visibility_range_end = 70.0
+
+[node name="Grass338" parent="Plane" index="337"]
+visibility_range_end = 70.0
+
+[node name="Grass339" parent="Plane" index="338"]
+visibility_range_end = 70.0
+
+[node name="Grass340" parent="Plane" index="339"]
+visibility_range_end = 70.0
+
+[node name="Grass341" parent="Plane" index="340"]
+visibility_range_end = 70.0
+
+[node name="Grass342" parent="Plane" index="341"]
+visibility_range_end = 70.0
+
+[node name="Grass343" parent="Plane" index="342"]
+visibility_range_end = 70.0
+
+[node name="Grass344" parent="Plane" index="343"]
+visibility_range_end = 70.0
+
+[node name="Grass345" parent="Plane" index="344"]
+visibility_range_end = 70.0
+
+[node name="Grass346" parent="Plane" index="345"]
+visibility_range_end = 70.0
+
+[node name="Grass347" parent="Plane" index="346"]
+visibility_range_end = 70.0
+
+[node name="Grass348" parent="Plane" index="347"]
+visibility_range_end = 70.0
+
+[node name="Grass349" parent="Plane" index="348"]
+visibility_range_end = 70.0
+
+[node name="Grass350" parent="Plane" index="349"]
+visibility_range_end = 70.0
+
+[node name="Grass351" parent="Plane" index="350"]
+visibility_range_end = 70.0
+
+[node name="Grass352" parent="Plane" index="351"]
+visibility_range_end = 70.0
+
+[node name="Grass353" parent="Plane" index="352"]
+visibility_range_end = 70.0
+
+[node name="Grass354" parent="Plane" index="353"]
+visibility_range_end = 70.0
+
+[node name="Grass355" parent="Plane" index="354"]
+visibility_range_end = 70.0
+
+[node name="Grass356" parent="Plane" index="355"]
+visibility_range_end = 70.0
+
+[node name="Grass357" parent="Plane" index="356"]
+visibility_range_end = 70.0
+
+[node name="Grass358" parent="Plane" index="357"]
+visibility_range_end = 70.0
+
+[node name="Grass359" parent="Plane" index="358"]
+visibility_range_end = 70.0
+
+[node name="Grass360" parent="Plane" index="359"]
+visibility_range_end = 70.0
+
+[node name="Grass361" parent="Plane" index="360"]
+visibility_range_end = 70.0
+
+[node name="Grass362" parent="Plane" index="361"]
+visibility_range_end = 70.0
+
+[node name="Grass363" parent="Plane" index="362"]
+visibility_range_end = 70.0
+
+[node name="Grass364" parent="Plane" index="363"]
+visibility_range_end = 70.0
+
+[node name="Grass365" parent="Plane" index="364"]
+visibility_range_end = 70.0
+
+[node name="Grass366" parent="Plane" index="365"]
+visibility_range_end = 70.0
+
+[node name="Grass367" parent="Plane" index="366"]
+visibility_range_end = 70.0
+
+[node name="Grass368" parent="Plane" index="367"]
+visibility_range_end = 70.0
+
+[node name="Grass369" parent="Plane" index="368"]
+visibility_range_end = 70.0
+
+[node name="Grass370" parent="Plane" index="369"]
+visibility_range_end = 70.0
+
+[node name="Grass371" parent="Plane" index="370"]
+visibility_range_end = 70.0
+
+[node name="Grass372" parent="Plane" index="371"]
+visibility_range_end = 70.0
+
+[node name="Grass373" parent="Plane" index="372"]
+visibility_range_end = 70.0
+
+[node name="Grass374" parent="Plane" index="373"]
+visibility_range_end = 70.0
+
+[node name="Grass375" parent="Plane" index="374"]
+visibility_range_end = 70.0
+
+[node name="Grass376" parent="Plane" index="375"]
+visibility_range_end = 70.0
+
+[node name="Grass377" parent="Plane" index="376"]
+visibility_range_end = 70.0
+
+[node name="Grass378" parent="Plane" index="377"]
+visibility_range_end = 70.0
+
+[node name="Grass379" parent="Plane" index="378"]
+visibility_range_end = 70.0
+
+[node name="Grass380" parent="Plane" index="379"]
+visibility_range_end = 70.0
+
+[node name="Grass381" parent="Plane" index="380"]
+visibility_range_end = 70.0
+
+[node name="Grass382" parent="Plane" index="381"]
+visibility_range_end = 70.0
+
+[node name="Grass383" parent="Plane" index="382"]
+visibility_range_end = 70.0
+
+[node name="Grass384" parent="Plane" index="383"]
+visibility_range_end = 70.0
+
+[node name="Grass385" parent="Plane" index="384"]
+visibility_range_end = 70.0
+
+[node name="Grass386" parent="Plane" index="385"]
+visibility_range_end = 70.0
+
+[node name="Grass387" parent="Plane" index="386"]
+visibility_range_end = 70.0
+
+[node name="Grass388" parent="Plane" index="387"]
+visibility_range_end = 70.0
+
+[node name="Grass389" parent="Plane" index="388"]
+visibility_range_end = 70.0
+
+[node name="Grass390" parent="Plane" index="389"]
+visibility_range_end = 70.0
+
+[node name="Grass391" parent="Plane" index="390"]
+visibility_range_end = 70.0
+
+[node name="Grass392" parent="Plane" index="391"]
+visibility_range_end = 70.0
+
+[node name="Grass393" parent="Plane" index="392"]
+visibility_range_end = 70.0
+
+[node name="Grass394" parent="Plane" index="393"]
+visibility_range_end = 70.0
+
+[node name="Grass395" parent="Plane" index="394"]
+visibility_range_end = 70.0
+
+[node name="Grass396" parent="Plane" index="395"]
+visibility_range_end = 70.0
+
+[node name="Grass397" parent="Plane" index="396"]
+visibility_range_end = 70.0
+
+[node name="Grass398" parent="Plane" index="397"]
+visibility_range_end = 70.0
+
+[node name="Grass399" parent="Plane" index="398"]
+visibility_range_end = 70.0
+
+[node name="Grass400" parent="Plane" index="399"]
+visibility_range_end = 70.0
+
+[node name="Grass401" parent="Plane" index="400"]
+visibility_range_end = 70.0
+
+[node name="Grass402" parent="Plane" index="401"]
+visibility_range_end = 70.0
+
+[node name="Grass403" parent="Plane" index="402"]
+visibility_range_end = 70.0
+
+[node name="Grass404" parent="Plane" index="403"]
+visibility_range_end = 70.0
+
+[node name="Grass405" parent="Plane" index="404"]
+visibility_range_end = 70.0
+
+[node name="Grass406" parent="Plane" index="405"]
+visibility_range_end = 70.0
+
+[node name="Grass407" parent="Plane" index="406"]
+visibility_range_end = 70.0
+
+[node name="Grass408" parent="Plane" index="407"]
+visibility_range_end = 70.0
+
+[node name="Grass409" parent="Plane" index="408"]
+visibility_range_end = 70.0
+
+[node name="Grass410" parent="Plane" index="409"]
+visibility_range_end = 70.0
+
+[node name="Grass411" parent="Plane" index="410"]
+visibility_range_end = 70.0
+
+[node name="Grass412" parent="Plane" index="411"]
+visibility_range_end = 70.0
+
+[node name="Grass413" parent="Plane" index="412"]
+visibility_range_end = 70.0
+
+[node name="Grass414" parent="Plane" index="413"]
+visibility_range_end = 70.0
+
+[node name="Grass415" parent="Plane" index="414"]
+visibility_range_end = 70.0
+
+[node name="Grass416" parent="Plane" index="415"]
+visibility_range_end = 70.0
+
+[node name="Grass417" parent="Plane" index="416"]
+visibility_range_end = 70.0
+
+[node name="Grass418" parent="Plane" index="417"]
+visibility_range_end = 70.0
+
+[node name="Grass419" parent="Plane" index="418"]
+visibility_range_end = 70.0
+
+[node name="Grass420" parent="Plane" index="419"]
+visibility_range_end = 70.0
+
+[node name="Grass421" parent="Plane" index="420"]
+visibility_range_end = 70.0
+
+[node name="Grass422" parent="Plane" index="421"]
+visibility_range_end = 70.0
+
+[node name="Grass423" parent="Plane" index="422"]
+visibility_range_end = 70.0
+
+[node name="Grass424" parent="Plane" index="423"]
+visibility_range_end = 70.0
+
+[node name="Grass425" parent="Plane" index="424"]
+visibility_range_end = 70.0
+
+[node name="Grass426" parent="Plane" index="425"]
+visibility_range_end = 70.0
+
+[node name="Grass427" parent="Plane" index="426"]
+visibility_range_end = 70.0
+
+[node name="Grass428" parent="Plane" index="427"]
+visibility_range_end = 70.0
+
+[node name="Grass429" parent="Plane" index="428"]
+visibility_range_end = 70.0
+
+[node name="Grass430" parent="Plane" index="429"]
+visibility_range_end = 70.0
+
+[node name="Grass431" parent="Plane" index="430"]
+visibility_range_end = 70.0
+
+[node name="Grass432" parent="Plane" index="431"]
+visibility_range_end = 70.0
+
+[node name="Grass433" parent="Plane" index="432"]
+visibility_range_end = 70.0
+
+[node name="Grass434" parent="Plane" index="433"]
+visibility_range_end = 70.0
+
+[node name="Grass435" parent="Plane" index="434"]
+visibility_range_end = 70.0
+
+[node name="Grass436" parent="Plane" index="435"]
+visibility_range_end = 70.0
+
+[node name="Grass437" parent="Plane" index="436"]
+visibility_range_end = 70.0
+
+[node name="Grass438" parent="Plane" index="437"]
+visibility_range_end = 70.0
+
+[node name="Grass439" parent="Plane" index="438"]
+visibility_range_end = 70.0
+
+[node name="Grass440" parent="Plane" index="439"]
+visibility_range_end = 70.0
+
+[node name="Grass441" parent="Plane" index="440"]
+visibility_range_end = 70.0
+
+[node name="Grass442" parent="Plane" index="441"]
+visibility_range_end = 70.0
+
+[node name="Grass443" parent="Plane" index="442"]
+visibility_range_end = 70.0
+
+[node name="Grass444" parent="Plane" index="443"]
+visibility_range_end = 70.0
+
+[node name="Grass445" parent="Plane" index="444"]
+visibility_range_end = 70.0
+
+[node name="Grass446" parent="Plane" index="445"]
+visibility_range_end = 70.0
+
+[node name="Grass447" parent="Plane" index="446"]
+visibility_range_end = 70.0
+
+[node name="Grass448" parent="Plane" index="447"]
+visibility_range_end = 70.0
+
+[node name="Grass449" parent="Plane" index="448"]
+visibility_range_end = 70.0
+
+[node name="Grass450" parent="Plane" index="449"]
+visibility_range_end = 70.0
+
+[node name="Grass451" parent="Plane" index="450"]
+visibility_range_end = 70.0
+
+[node name="Grass452" parent="Plane" index="451"]
+visibility_range_end = 70.0
+
+[node name="Grass453" parent="Plane" index="452"]
+visibility_range_end = 70.0
+
+[node name="Grass454" parent="Plane" index="453"]
+visibility_range_end = 70.0
+
+[node name="Grass455" parent="Plane" index="454"]
+visibility_range_end = 70.0
+
+[node name="Grass456" parent="Plane" index="455"]
+visibility_range_end = 70.0
+
+[node name="Grass457" parent="Plane" index="456"]
+visibility_range_end = 70.0
+
+[node name="Grass458" parent="Plane" index="457"]
+visibility_range_end = 70.0
+
+[node name="Grass459" parent="Plane" index="458"]
+visibility_range_end = 70.0
+
+[node name="Grass460" parent="Plane" index="459"]
+visibility_range_end = 70.0
+
+[node name="Grass461" parent="Plane" index="460"]
+visibility_range_end = 70.0
+
+[node name="Grass462" parent="Plane" index="461"]
+visibility_range_end = 70.0
+
+[node name="Grass463" parent="Plane" index="462"]
+visibility_range_end = 70.0
+
+[node name="Grass464" parent="Plane" index="463"]
+visibility_range_end = 70.0
+
+[node name="Grass465" parent="Plane" index="464"]
+visibility_range_end = 70.0
+
+[node name="Grass466" parent="Plane" index="465"]
+visibility_range_end = 70.0
+
+[node name="Grass467" parent="Plane" index="466"]
+visibility_range_end = 70.0
+
+[node name="Grass468" parent="Plane" index="467"]
+visibility_range_end = 70.0
+
+[node name="Grass469" parent="Plane" index="468"]
+visibility_range_end = 70.0
+
+[node name="Grass470" parent="Plane" index="469"]
+visibility_range_end = 70.0
+
+[node name="Grass471" parent="Plane" index="470"]
+visibility_range_end = 70.0
+
+[node name="Grass472" parent="Plane" index="471"]
+visibility_range_end = 70.0
+
+[node name="Grass473" parent="Plane" index="472"]
+visibility_range_end = 70.0
+
+[node name="Grass474" parent="Plane" index="473"]
+visibility_range_end = 70.0
+
+[node name="Grass475" parent="Plane" index="474"]
+visibility_range_end = 70.0
+
+[node name="Grass476" parent="Plane" index="475"]
+visibility_range_end = 70.0
+
+[node name="Grass477" parent="Plane" index="476"]
+visibility_range_end = 70.0
+
+[node name="Grass478" parent="Plane" index="477"]
+visibility_range_end = 70.0
+
+[node name="Grass479" parent="Plane" index="478"]
+visibility_range_end = 70.0
+
+[node name="Grass480" parent="Plane" index="479"]
+visibility_range_end = 70.0
+
+[node name="Grass481" parent="Plane" index="480"]
+visibility_range_end = 70.0
+
+[node name="Grass482" parent="Plane" index="481"]
+visibility_range_end = 70.0
+
+[node name="Grass483" parent="Plane" index="482"]
+visibility_range_end = 70.0
+
+[node name="Grass484" parent="Plane" index="483"]
+visibility_range_end = 70.0
+
+[node name="Grass485" parent="Plane" index="484"]
+visibility_range_end = 70.0
+
+[node name="Grass486" parent="Plane" index="485"]
+visibility_range_end = 70.0
+
+[node name="Grass487" parent="Plane" index="486"]
+visibility_range_end = 70.0
+
+[node name="Grass488" parent="Plane" index="487"]
+visibility_range_end = 70.0
+
+[node name="Grass489" parent="Plane" index="488"]
+visibility_range_end = 70.0
+
+[node name="Grass490" parent="Plane" index="489"]
+visibility_range_end = 70.0
+
+[node name="Grass491" parent="Plane" index="490"]
+visibility_range_end = 70.0
+
+[node name="Grass492" parent="Plane" index="491"]
+visibility_range_end = 70.0
+
+[node name="Grass493" parent="Plane" index="492"]
+visibility_range_end = 70.0
+
+[node name="Grass494" parent="Plane" index="493"]
+visibility_range_end = 70.0
+
+[node name="Grass495" parent="Plane" index="494"]
+visibility_range_end = 70.0
+
+[node name="Grass496" parent="Plane" index="495"]
+visibility_range_end = 70.0
+
+[node name="Grass497" parent="Plane" index="496"]
+visibility_range_end = 70.0
+
+[node name="Grass498" parent="Plane" index="497"]
+visibility_range_end = 70.0
+
+[node name="Grass499" parent="Plane" index="498"]
+visibility_range_end = 70.0
+
+[node name="Grass500" parent="Plane" index="499"]
+visibility_range_end = 70.0
+
+[node name="Grass501" parent="Plane" index="500"]
+visibility_range_end = 70.0
+
+[node name="Grass502" parent="Plane" index="501"]
+visibility_range_end = 70.0
+
+[node name="Grass503" parent="Plane" index="502"]
+visibility_range_end = 70.0
+
+[node name="Grass504" parent="Plane" index="503"]
+visibility_range_end = 70.0
+
+[node name="Grass505" parent="Plane" index="504"]
+visibility_range_end = 70.0
+
+[node name="Grass506" parent="Plane" index="505"]
+visibility_range_end = 70.0
+
+[node name="Grass507" parent="Plane" index="506"]
+visibility_range_end = 70.0
+
+[node name="Grass508" parent="Plane" index="507"]
+visibility_range_end = 70.0
+
+[node name="Grass509" parent="Plane" index="508"]
+visibility_range_end = 70.0
+
+[node name="Grass510" parent="Plane" index="509"]
+visibility_range_end = 70.0
+
+[node name="Grass511" parent="Plane" index="510"]
+visibility_range_end = 70.0
+
+[node name="Grass512" parent="Plane" index="511"]
+visibility_range_end = 70.0
+
+[node name="Grass513" parent="Plane" index="512"]
+visibility_range_end = 70.0
+
+[node name="Grass514" parent="Plane" index="513"]
+visibility_range_end = 70.0
+
+[node name="Grass515" parent="Plane" index="514"]
+visibility_range_end = 70.0
+
+[node name="Grass516" parent="Plane" index="515"]
+visibility_range_end = 70.0
+
+[node name="Grass517" parent="Plane" index="516"]
+visibility_range_end = 70.0
+
+[node name="Grass518" parent="Plane" index="517"]
+visibility_range_end = 70.0
+
+[node name="Grass519" parent="Plane" index="518"]
+visibility_range_end = 70.0
+
+[node name="Grass520" parent="Plane" index="519"]
+visibility_range_end = 70.0
+
+[node name="Grass521" parent="Plane" index="520"]
+visibility_range_end = 70.0
+
+[node name="Grass522" parent="Plane" index="521"]
+visibility_range_end = 70.0
+
+[node name="Grass523" parent="Plane" index="522"]
+visibility_range_end = 70.0
+
+[node name="Grass524" parent="Plane" index="523"]
+visibility_range_end = 70.0
+
+[node name="Grass525" parent="Plane" index="524"]
+visibility_range_end = 70.0
+
+[node name="Grass526" parent="Plane" index="525"]
+visibility_range_end = 70.0
+
+[node name="Grass527" parent="Plane" index="526"]
+visibility_range_end = 70.0
+
+[node name="Grass528" parent="Plane" index="527"]
+visibility_range_end = 70.0
+
+[node name="Grass529" parent="Plane" index="528"]
+visibility_range_end = 70.0
+
+[node name="Grass530" parent="Plane" index="529"]
+visibility_range_end = 70.0
+
+[node name="Grass531" parent="Plane" index="530"]
+visibility_range_end = 70.0
+
+[node name="Grass532" parent="Plane" index="531"]
+visibility_range_end = 70.0
+
+[node name="Grass533" parent="Plane" index="532"]
+visibility_range_end = 70.0
+
+[node name="Grass534" parent="Plane" index="533"]
+visibility_range_end = 70.0
+
+[node name="Grass535" parent="Plane" index="534"]
+visibility_range_end = 70.0
+
+[node name="Grass536" parent="Plane" index="535"]
+visibility_range_end = 70.0
+
+[node name="Grass537" parent="Plane" index="536"]
+visibility_range_end = 70.0
+
+[node name="Grass538" parent="Plane" index="537"]
+visibility_range_end = 70.0
+
+[node name="Grass539" parent="Plane" index="538"]
+visibility_range_end = 70.0
+
+[node name="Grass540" parent="Plane" index="539"]
+visibility_range_end = 70.0
+
+[node name="Grass541" parent="Plane" index="540"]
+visibility_range_end = 70.0
+
+[node name="Grass542" parent="Plane" index="541"]
+visibility_range_end = 70.0
+
+[node name="Grass543" parent="Plane" index="542"]
+visibility_range_end = 70.0
+
+[node name="Grass544" parent="Plane" index="543"]
+visibility_range_end = 70.0
+
+[node name="Grass545" parent="Plane" index="544"]
+visibility_range_end = 70.0
+
+[node name="Grass546" parent="Plane" index="545"]
+visibility_range_end = 70.0
+
+[node name="Grass547" parent="Plane" index="546"]
+visibility_range_end = 70.0
+
+[node name="Grass548" parent="Plane" index="547"]
+visibility_range_end = 70.0
+
+[node name="Grass549" parent="Plane" index="548"]
+visibility_range_end = 70.0
+
+[node name="Grass550" parent="Plane" index="549"]
+visibility_range_end = 70.0
+
+[node name="Grass551" parent="Plane" index="550"]
+visibility_range_end = 70.0
+
+[node name="Grass552" parent="Plane" index="551"]
+visibility_range_end = 70.0
+
+[node name="Grass553" parent="Plane" index="552"]
+visibility_range_end = 70.0
+
+[node name="Grass554" parent="Plane" index="553"]
+visibility_range_end = 70.0
+
+[node name="Grass555" parent="Plane" index="554"]
+visibility_range_end = 70.0
+
+[node name="Grass556" parent="Plane" index="555"]
+visibility_range_end = 70.0
+
+[node name="Grass557" parent="Plane" index="556"]
+visibility_range_end = 70.0
+
+[node name="Grass558" parent="Plane" index="557"]
+visibility_range_end = 70.0
+
+[node name="Grass559" parent="Plane" index="558"]
+visibility_range_end = 70.0
+
+[node name="Grass560" parent="Plane" index="559"]
+visibility_range_end = 70.0
+
+[node name="Grass561" parent="Plane" index="560"]
+visibility_range_end = 70.0
+
+[node name="Grass562" parent="Plane" index="561"]
+visibility_range_end = 70.0
+
+[node name="Grass563" parent="Plane" index="562"]
+visibility_range_end = 70.0
+
+[node name="Grass564" parent="Plane" index="563"]
+visibility_range_end = 70.0
+
+[node name="Grass565" parent="Plane" index="564"]
+visibility_range_end = 70.0
+
+[node name="Grass566" parent="Plane" index="565"]
+visibility_range_end = 70.0
+
+[node name="Grass567" parent="Plane" index="566"]
+visibility_range_end = 70.0
+
+[node name="Grass568" parent="Plane" index="567"]
+visibility_range_end = 70.0
+
+[node name="Grass569" parent="Plane" index="568"]
+visibility_range_end = 70.0
+
+[node name="Grass570" parent="Plane" index="569"]
+visibility_range_end = 70.0
+
+[node name="Grass571" parent="Plane" index="570"]
+visibility_range_end = 70.0
+
+[node name="Grass572" parent="Plane" index="571"]
+visibility_range_end = 70.0
+
+[node name="Grass573" parent="Plane" index="572"]
+visibility_range_end = 70.0
+
+[node name="Grass574" parent="Plane" index="573"]
+visibility_range_end = 70.0
+
+[node name="Grass575" parent="Plane" index="574"]
+visibility_range_end = 70.0
+
+[node name="Grass576" parent="Plane" index="575"]
+visibility_range_end = 70.0
+
+[node name="Grass577" parent="Plane" index="576"]
+visibility_range_end = 70.0
+
+[node name="Grass578" parent="Plane" index="577"]
+visibility_range_end = 70.0
+
+[node name="Grass579" parent="Plane" index="578"]
+visibility_range_end = 70.0
+
+[node name="Grass580" parent="Plane" index="579"]
+visibility_range_end = 70.0
+
+[node name="Grass581" parent="Plane" index="580"]
+visibility_range_end = 70.0
+
+[node name="Grass582" parent="Plane" index="581"]
+visibility_range_end = 70.0
+
+[node name="Grass583" parent="Plane" index="582"]
+visibility_range_end = 70.0
+
+[node name="Grass584" parent="Plane" index="583"]
+visibility_range_end = 70.0
+
+[node name="Grass585" parent="Plane" index="584"]
+visibility_range_end = 70.0
+
+[node name="Grass586" parent="Plane" index="585"]
+visibility_range_end = 70.0
+
+[node name="Grass587" parent="Plane" index="586"]
+visibility_range_end = 70.0
+
+[node name="Grass588" parent="Plane" index="587"]
+visibility_range_end = 70.0
+
+[node name="Grass589" parent="Plane" index="588"]
+visibility_range_end = 70.0
+
+[node name="Grass590" parent="Plane" index="589"]
+visibility_range_end = 70.0
+
+[node name="Grass591" parent="Plane" index="590"]
+visibility_range_end = 70.0
+
+[node name="Grass592" parent="Plane" index="591"]
+visibility_range_end = 70.0
+
+[node name="Grass593" parent="Plane" index="592"]
+visibility_range_end = 70.0
+
+[node name="Grass594" parent="Plane" index="593"]
+visibility_range_end = 70.0
+
+[node name="Grass595" parent="Plane" index="594"]
+visibility_range_end = 70.0
+
+[node name="Grass596" parent="Plane" index="595"]
+visibility_range_end = 70.0
+
+[node name="Grass597" parent="Plane" index="596"]
+visibility_range_end = 70.0
+
+[node name="Grass598" parent="Plane" index="597"]
+visibility_range_end = 70.0
+
+[node name="Grass599" parent="Plane" index="598"]
+visibility_range_end = 70.0
+
+[node name="Grass600" parent="Plane" index="599"]
+visibility_range_end = 70.0
+
+[node name="Grass601" parent="Plane" index="600"]
+visibility_range_end = 70.0
+
+[node name="Grass602" parent="Plane" index="601"]
+visibility_range_end = 70.0
+
+[node name="Grass603" parent="Plane" index="602"]
+visibility_range_end = 70.0
+
+[node name="Grass604" parent="Plane" index="603"]
+visibility_range_end = 70.0
+
+[node name="Grass605" parent="Plane" index="604"]
+visibility_range_end = 70.0
+
+[node name="Grass606" parent="Plane" index="605"]
+visibility_range_end = 70.0
+
+[node name="Grass607" parent="Plane" index="606"]
+visibility_range_end = 70.0
+
+[node name="Grass608" parent="Plane" index="607"]
+visibility_range_end = 70.0
+
+[node name="Grass609" parent="Plane" index="608"]
+visibility_range_end = 70.0
+
+[node name="Grass610" parent="Plane" index="609"]
+visibility_range_end = 70.0
+
+[node name="Grass611" parent="Plane" index="610"]
+visibility_range_end = 70.0
+
+[node name="Grass612" parent="Plane" index="611"]
+visibility_range_end = 70.0
+
+[node name="Grass613" parent="Plane" index="612"]
+visibility_range_end = 70.0
+
+[node name="Grass614" parent="Plane" index="613"]
+visibility_range_end = 70.0
+
+[node name="Grass615" parent="Plane" index="614"]
+visibility_range_end = 70.0
+
+[node name="Grass616" parent="Plane" index="615"]
+visibility_range_end = 70.0
+
+[node name="Grass617" parent="Plane" index="616"]
+visibility_range_end = 70.0
+
+[node name="Grass618" parent="Plane" index="617"]
+visibility_range_end = 70.0
+
+[node name="Grass619" parent="Plane" index="618"]
+visibility_range_end = 70.0
+
+[node name="Grass620" parent="Plane" index="619"]
+visibility_range_end = 70.0
+
+[node name="Grass621" parent="Plane" index="620"]
+visibility_range_end = 70.0
+
+[node name="Grass622" parent="Plane" index="621"]
+visibility_range_end = 70.0
+
+[node name="Grass623" parent="Plane" index="622"]
+visibility_range_end = 70.0
+
+[node name="Grass624" parent="Plane" index="623"]
+visibility_range_end = 70.0
+
+[node name="Grass625" parent="Plane" index="624"]
+visibility_range_end = 70.0
+
+[node name="Grass626" parent="Plane" index="625"]
+visibility_range_end = 70.0
+
+[node name="Grass627" parent="Plane" index="626"]
+visibility_range_end = 70.0
+
+[node name="Grass628" parent="Plane" index="627"]
+visibility_range_end = 70.0
+
+[node name="Grass629" parent="Plane" index="628"]
+visibility_range_end = 70.0
+
+[node name="Grass630" parent="Plane" index="629"]
+visibility_range_end = 70.0
+
+[node name="Grass631" parent="Plane" index="630"]
+visibility_range_end = 70.0
+
+[node name="Grass632" parent="Plane" index="631"]
+visibility_range_end = 70.0
+
+[node name="Grass633" parent="Plane" index="632"]
+visibility_range_end = 70.0
+
+[node name="Grass634" parent="Plane" index="633"]
+visibility_range_end = 70.0
+
+[node name="Grass635" parent="Plane" index="634"]
+visibility_range_end = 70.0
+
+[node name="Grass636" parent="Plane" index="635"]
+visibility_range_end = 70.0
+
+[node name="Grass637" parent="Plane" index="636"]
+visibility_range_end = 70.0
+
+[node name="Grass638" parent="Plane" index="637"]
+visibility_range_end = 70.0
+
+[node name="Grass639" parent="Plane" index="638"]
+visibility_range_end = 70.0
+
+[node name="Grass640" parent="Plane" index="639"]
+visibility_range_end = 70.0
+
+[node name="Grass641" parent="Plane" index="640"]
+visibility_range_end = 70.0
+
+[node name="Grass642" parent="Plane" index="641"]
+visibility_range_end = 70.0
+
+[node name="Grass643" parent="Plane" index="642"]
+visibility_range_end = 70.0
+
+[node name="Grass644" parent="Plane" index="643"]
+visibility_range_end = 70.0
+
+[node name="Grass645" parent="Plane" index="644"]
+visibility_range_end = 70.0
+
+[node name="Grass646" parent="Plane" index="645"]
+visibility_range_end = 70.0
+
+[node name="Grass647" parent="Plane" index="646"]
+visibility_range_end = 70.0
+
+[node name="Grass648" parent="Plane" index="647"]
+visibility_range_end = 70.0
+
+[node name="Grass649" parent="Plane" index="648"]
+visibility_range_end = 70.0
+
+[node name="Grass650" parent="Plane" index="649"]
+visibility_range_end = 70.0
+
+[node name="Grass651" parent="Plane" index="650"]
+visibility_range_end = 70.0
+
+[node name="Grass652" parent="Plane" index="651"]
+visibility_range_end = 70.0
+
+[node name="Grass653" parent="Plane" index="652"]
+visibility_range_end = 70.0
+
+[node name="Grass654" parent="Plane" index="653"]
+visibility_range_end = 70.0
+
+[node name="Grass655" parent="Plane" index="654"]
+visibility_range_end = 70.0
+
+[node name="Grass656" parent="Plane" index="655"]
+visibility_range_end = 70.0
+
+[node name="Grass657" parent="Plane" index="656"]
+visibility_range_end = 70.0
+
+[node name="Grass658" parent="Plane" index="657"]
+visibility_range_end = 70.0
+
+[node name="Grass659" parent="Plane" index="658"]
+visibility_range_end = 70.0
+
+[node name="Grass660" parent="Plane" index="659"]
+visibility_range_end = 70.0
+
+[node name="Grass661" parent="Plane" index="660"]
+visibility_range_end = 70.0
+
+[node name="Grass662" parent="Plane" index="661"]
+visibility_range_end = 70.0
+
+[node name="Grass663" parent="Plane" index="662"]
+visibility_range_end = 70.0
+
+[node name="Grass664" parent="Plane" index="663"]
+visibility_range_end = 70.0
+
+[node name="Grass665" parent="Plane" index="664"]
+visibility_range_end = 70.0
+
+[node name="Grass666" parent="Plane" index="665"]
+visibility_range_end = 70.0
+
+[node name="Grass667" parent="Plane" index="666"]
+visibility_range_end = 70.0
+
+[node name="Grass668" parent="Plane" index="667"]
+visibility_range_end = 70.0
+
+[node name="Grass669" parent="Plane" index="668"]
+visibility_range_end = 70.0
+
+[node name="Grass670" parent="Plane" index="669"]
+visibility_range_end = 70.0
+
+[node name="Grass671" parent="Plane" index="670"]
+visibility_range_end = 70.0
+
+[node name="Grass672" parent="Plane" index="671"]
+visibility_range_end = 70.0
+
+[node name="Grass673" parent="Plane" index="672"]
+visibility_range_end = 70.0
+
+[node name="Grass674" parent="Plane" index="673"]
+visibility_range_end = 70.0
+
+[node name="Grass675" parent="Plane" index="674"]
+visibility_range_end = 70.0
+
+[node name="Grass676" parent="Plane" index="675"]
+visibility_range_end = 70.0
+
+[node name="Grass677" parent="Plane" index="676"]
+visibility_range_end = 70.0
+
+[node name="Grass678" parent="Plane" index="677"]
+visibility_range_end = 70.0
+
+[node name="Grass679" parent="Plane" index="678"]
+visibility_range_end = 70.0
+
+[node name="Grass680" parent="Plane" index="679"]
+visibility_range_end = 70.0
+
+[node name="Grass681" parent="Plane" index="680"]
+visibility_range_end = 70.0
+
+[node name="Grass682" parent="Plane" index="681"]
+visibility_range_end = 70.0
+
+[node name="Grass683" parent="Plane" index="682"]
+visibility_range_end = 70.0
+
+[node name="Grass684" parent="Plane" index="683"]
+visibility_range_end = 70.0
+
+[node name="Grass685" parent="Plane" index="684"]
+visibility_range_end = 70.0
+
+[node name="Grass686" parent="Plane" index="685"]
+visibility_range_end = 70.0
+
+[node name="Grass687" parent="Plane" index="686"]
+visibility_range_end = 70.0
+
+[node name="Grass688" parent="Plane" index="687"]
+visibility_range_end = 70.0
+
+[node name="Grass689" parent="Plane" index="688"]
+visibility_range_end = 70.0
+
+[node name="Grass690" parent="Plane" index="689"]
+visibility_range_end = 70.0
+
+[node name="Grass691" parent="Plane" index="690"]
+visibility_range_end = 70.0
+
+[node name="Grass692" parent="Plane" index="691"]
+visibility_range_end = 70.0
+
+[node name="Grass693" parent="Plane" index="692"]
+visibility_range_end = 70.0
+
+[node name="Grass694" parent="Plane" index="693"]
+visibility_range_end = 70.0
+
+[node name="Grass695" parent="Plane" index="694"]
+visibility_range_end = 70.0
+
+[node name="Grass696" parent="Plane" index="695"]
+visibility_range_end = 70.0
+
+[node name="Grass697" parent="Plane" index="696"]
+visibility_range_end = 70.0
+
+[node name="Grass698" parent="Plane" index="697"]
+visibility_range_end = 70.0
+
+[node name="Grass699" parent="Plane" index="698"]
+visibility_range_end = 70.0
+
+[node name="Grass700" parent="Plane" index="699"]
+visibility_range_end = 70.0
+
+[node name="Grass701" parent="Plane" index="700"]
+visibility_range_end = 70.0
+
+[node name="Grass702" parent="Plane" index="701"]
+visibility_range_end = 70.0
+
+[node name="Grass703" parent="Plane" index="702"]
+visibility_range_end = 70.0
+
+[node name="Grass704" parent="Plane" index="703"]
+visibility_range_end = 70.0
+
+[node name="Grass705" parent="Plane" index="704"]
+visibility_range_end = 70.0
+
+[node name="Grass706" parent="Plane" index="705"]
+visibility_range_end = 70.0
+
+[node name="Grass707" parent="Plane" index="706"]
+visibility_range_end = 70.0
+
+[node name="Grass708" parent="Plane" index="707"]
+visibility_range_end = 70.0
+
+[node name="Grass709" parent="Plane" index="708"]
+visibility_range_end = 70.0
+
+[node name="Grass710" parent="Plane" index="709"]
+visibility_range_end = 70.0
+
+[node name="Grass711" parent="Plane" index="710"]
+visibility_range_end = 70.0
+
+[node name="Grass712" parent="Plane" index="711"]
+visibility_range_end = 70.0
+
+[node name="Grass713" parent="Plane" index="712"]
+visibility_range_end = 70.0
+
+[node name="Grass714" parent="Plane" index="713"]
+visibility_range_end = 70.0
+
+[node name="Grass715" parent="Plane" index="714"]
+visibility_range_end = 70.0
+
+[node name="Grass716" parent="Plane" index="715"]
+visibility_range_end = 70.0
+
+[node name="Grass717" parent="Plane" index="716"]
+visibility_range_end = 70.0
+
+[node name="Grass718" parent="Plane" index="717"]
+visibility_range_end = 70.0
+
+[node name="Grass719" parent="Plane" index="718"]
+visibility_range_end = 70.0
+
+[node name="Grass720" parent="Plane" index="719"]
+visibility_range_end = 70.0
+
+[node name="Grass721" parent="Plane" index="720"]
+visibility_range_end = 70.0
+
+[node name="Grass722" parent="Plane" index="721"]
+visibility_range_end = 70.0
+
+[node name="Grass723" parent="Plane" index="722"]
+visibility_range_end = 70.0
+
+[node name="Grass724" parent="Plane" index="723"]
+visibility_range_end = 70.0
+
+[node name="Grass725" parent="Plane" index="724"]
+visibility_range_end = 70.0
+
+[node name="Grass726" parent="Plane" index="725"]
+visibility_range_end = 70.0
+
+[node name="Grass727" parent="Plane" index="726"]
+visibility_range_end = 70.0
+
+[node name="Grass728" parent="Plane" index="727"]
+visibility_range_end = 70.0
+
+[node name="Grass729" parent="Plane" index="728"]
+visibility_range_end = 70.0
+
+[node name="Grass730" parent="Plane" index="729"]
+visibility_range_end = 70.0
+
+[node name="Grass731" parent="Plane" index="730"]
+visibility_range_end = 70.0
+
+[node name="Grass732" parent="Plane" index="731"]
+visibility_range_end = 70.0
+
+[node name="Grass733" parent="Plane" index="732"]
+visibility_range_end = 70.0
+
+[node name="Grass734" parent="Plane" index="733"]
+visibility_range_end = 70.0
+
+[node name="Grass735" parent="Plane" index="734"]
+visibility_range_end = 70.0
+
+[node name="Grass736" parent="Plane" index="735"]
+visibility_range_end = 70.0
+
+[node name="Grass737" parent="Plane" index="736"]
+visibility_range_end = 70.0
+
+[node name="Grass738" parent="Plane" index="737"]
+visibility_range_end = 70.0
+
+[node name="Grass739" parent="Plane" index="738"]
+visibility_range_end = 70.0
+
+[node name="Grass740" parent="Plane" index="739"]
+visibility_range_end = 70.0
+
+[node name="Grass741" parent="Plane" index="740"]
+visibility_range_end = 70.0
+
+[node name="Grass742" parent="Plane" index="741"]
+visibility_range_end = 70.0
+
+[node name="Grass743" parent="Plane" index="742"]
+visibility_range_end = 70.0
+
+[node name="Grass744" parent="Plane" index="743"]
+visibility_range_end = 70.0
+
+[node name="Grass745" parent="Plane" index="744"]
+visibility_range_end = 70.0
+
+[node name="Grass746" parent="Plane" index="745"]
+visibility_range_end = 70.0
+
+[node name="Grass747" parent="Plane" index="746"]
+visibility_range_end = 70.0
+
+[node name="Grass748" parent="Plane" index="747"]
+visibility_range_end = 70.0
+
+[node name="Grass749" parent="Plane" index="748"]
+visibility_range_end = 70.0
+
+[node name="Grass750" parent="Plane" index="749"]
+visibility_range_end = 70.0
+
+[node name="Grass751" parent="Plane" index="750"]
+visibility_range_end = 70.0
+
+[node name="Grass752" parent="Plane" index="751"]
+visibility_range_end = 70.0
+
+[node name="Grass753" parent="Plane" index="752"]
+visibility_range_end = 70.0
+
+[node name="Grass754" parent="Plane" index="753"]
+visibility_range_end = 70.0
+
+[node name="Grass755" parent="Plane" index="754"]
+visibility_range_end = 70.0
+
+[node name="Grass756" parent="Plane" index="755"]
+visibility_range_end = 70.0
+
+[node name="Grass757" parent="Plane" index="756"]
+visibility_range_end = 70.0
+
+[node name="Grass758" parent="Plane" index="757"]
+visibility_range_end = 70.0
+
+[node name="Grass759" parent="Plane" index="758"]
+visibility_range_end = 70.0
+
+[node name="Grass760" parent="Plane" index="759"]
+visibility_range_end = 70.0
+
+[node name="Grass761" parent="Plane" index="760"]
+visibility_range_end = 70.0
+
+[node name="Grass762" parent="Plane" index="761"]
+visibility_range_end = 70.0
+
+[node name="Grass763" parent="Plane" index="762"]
+visibility_range_end = 70.0
+
+[node name="Grass764" parent="Plane" index="763"]
+visibility_range_end = 70.0
+
+[node name="Grass765" parent="Plane" index="764"]
+visibility_range_end = 70.0
+
+[node name="Grass766" parent="Plane" index="765"]
+visibility_range_end = 70.0
+
+[node name="Grass767" parent="Plane" index="766"]
+visibility_range_end = 70.0
+
+[node name="Grass768" parent="Plane" index="767"]
+visibility_range_end = 70.0
+
+[node name="Grass769" parent="Plane" index="768"]
+visibility_range_end = 70.0
+
+[node name="Grass770" parent="Plane" index="769"]
+visibility_range_end = 70.0
+
+[node name="Grass771" parent="Plane" index="770"]
+visibility_range_end = 70.0
+
+[node name="Grass772" parent="Plane" index="771"]
+visibility_range_end = 70.0
+
+[node name="Grass773" parent="Plane" index="772"]
+visibility_range_end = 70.0
+
+[node name="Grass774" parent="Plane" index="773"]
+visibility_range_end = 70.0
+
+[node name="Grass775" parent="Plane" index="774"]
+visibility_range_end = 70.0
+
+[node name="Grass776" parent="Plane" index="775"]
+visibility_range_end = 70.0
+
+[node name="Grass777" parent="Plane" index="776"]
+visibility_range_end = 70.0
+
+[node name="Grass778" parent="Plane" index="777"]
+visibility_range_end = 70.0
+
+[node name="Grass779" parent="Plane" index="778"]
+visibility_range_end = 70.0
+
+[node name="Grass780" parent="Plane" index="779"]
+visibility_range_end = 70.0
+
+[node name="Grass781" parent="Plane" index="780"]
+visibility_range_end = 70.0
+
+[node name="Grass782" parent="Plane" index="781"]
+visibility_range_end = 70.0
+
+[node name="Grass783" parent="Plane" index="782"]
+visibility_range_end = 70.0
+
+[node name="Grass784" parent="Plane" index="783"]
+visibility_range_end = 70.0
+
+[node name="Grass785" parent="Plane" index="784"]
+visibility_range_end = 70.0
+
+[node name="Grass786" parent="Plane" index="785"]
+visibility_range_end = 70.0
+
+[node name="Grass787" parent="Plane" index="786"]
+visibility_range_end = 70.0
+
+[node name="Grass788" parent="Plane" index="787"]
+visibility_range_end = 70.0
+
+[node name="Grass789" parent="Plane" index="788"]
+visibility_range_end = 70.0
+
+[node name="Grass790" parent="Plane" index="789"]
+visibility_range_end = 70.0
+
+[node name="Grass791" parent="Plane" index="790"]
+visibility_range_end = 70.0
+
+[node name="Grass792" parent="Plane" index="791"]
+visibility_range_end = 70.0
+
+[node name="Grass793" parent="Plane" index="792"]
+visibility_range_end = 70.0
+
+[node name="Grass794" parent="Plane" index="793"]
+visibility_range_end = 70.0
+
+[node name="Grass795" parent="Plane" index="794"]
+visibility_range_end = 70.0
+
+[node name="Grass796" parent="Plane" index="795"]
+visibility_range_end = 70.0
+
+[node name="Grass797" parent="Plane" index="796"]
+visibility_range_end = 70.0
+
+[node name="Grass798" parent="Plane" index="797"]
+visibility_range_end = 70.0
+
+[node name="Grass799" parent="Plane" index="798"]
+visibility_range_end = 70.0
+
+[node name="Grass800" parent="Plane" index="799"]
+visibility_range_end = 70.0
+
+[node name="Grass801" parent="Plane" index="800"]
+visibility_range_end = 70.0
+
+[node name="Grass802" parent="Plane" index="801"]
+visibility_range_end = 70.0
+
+[node name="Grass803" parent="Plane" index="802"]
+visibility_range_end = 70.0
+
+[node name="Grass804" parent="Plane" index="803"]
+visibility_range_end = 70.0
+
+[node name="Grass805" parent="Plane" index="804"]
+visibility_range_end = 70.0
+
+[node name="Grass806" parent="Plane" index="805"]
+visibility_range_end = 70.0
+
+[node name="Grass807" parent="Plane" index="806"]
+visibility_range_end = 70.0
+
+[node name="Grass808" parent="Plane" index="807"]
+visibility_range_end = 70.0
+
+[node name="Grass809" parent="Plane" index="808"]
+visibility_range_end = 70.0
+
+[node name="Grass810" parent="Plane" index="809"]
+visibility_range_end = 70.0
+
+[node name="Grass811" parent="Plane" index="810"]
+visibility_range_end = 70.0
+
+[node name="Grass812" parent="Plane" index="811"]
+visibility_range_end = 70.0
+
+[node name="Grass813" parent="Plane" index="812"]
+visibility_range_end = 70.0
+
+[node name="Grass814" parent="Plane" index="813"]
+visibility_range_end = 70.0
+
+[node name="Grass815" parent="Plane" index="814"]
+visibility_range_end = 70.0
+
+[node name="Grass816" parent="Plane" index="815"]
+visibility_range_end = 70.0
+
+[node name="Grass817" parent="Plane" index="816"]
+visibility_range_end = 70.0
+
+[node name="Grass818" parent="Plane" index="817"]
+visibility_range_end = 70.0
+
+[node name="Grass819" parent="Plane" index="818"]
+visibility_range_end = 70.0
+
+[node name="Grass820" parent="Plane" index="819"]
+visibility_range_end = 70.0
+
+[node name="Grass821" parent="Plane" index="820"]
+visibility_range_end = 70.0
+
+[node name="Grass822" parent="Plane" index="821"]
+visibility_range_end = 70.0
+
+[node name="Grass823" parent="Plane" index="822"]
+visibility_range_end = 70.0
+
+[node name="Grass824" parent="Plane" index="823"]
+visibility_range_end = 70.0
+
+[node name="Grass825" parent="Plane" index="824"]
+visibility_range_end = 70.0
+
+[node name="Grass826" parent="Plane" index="825"]
+visibility_range_end = 70.0
+
+[node name="Grass827" parent="Plane" index="826"]
+visibility_range_end = 70.0
+
+[node name="Grass828" parent="Plane" index="827"]
+visibility_range_end = 70.0
+
+[node name="Grass829" parent="Plane" index="828"]
+visibility_range_end = 70.0
+
+[node name="Grass830" parent="Plane" index="829"]
+visibility_range_end = 70.0
+
+[node name="Grass831" parent="Plane" index="830"]
+visibility_range_end = 70.0
+
+[node name="Grass832" parent="Plane" index="831"]
+visibility_range_end = 70.0
+
+[node name="Grass833" parent="Plane" index="832"]
+visibility_range_end = 70.0
+
+[node name="Grass834" parent="Plane" index="833"]
+visibility_range_end = 70.0
+
+[node name="Grass835" parent="Plane" index="834"]
+visibility_range_end = 70.0
+
+[node name="Grass836" parent="Plane" index="835"]
+visibility_range_end = 70.0
+
+[node name="Grass837" parent="Plane" index="836"]
+visibility_range_end = 70.0
+
+[node name="Grass838" parent="Plane" index="837"]
+visibility_range_end = 70.0
+
+[node name="Grass839" parent="Plane" index="838"]
+visibility_range_end = 70.0
+
+[node name="Grass840" parent="Plane" index="839"]
+visibility_range_end = 70.0
+
+[node name="Grass841" parent="Plane" index="840"]
+visibility_range_end = 70.0
+
+[node name="Grass842" parent="Plane" index="841"]
+visibility_range_end = 70.0
+
+[node name="Grass843" parent="Plane" index="842"]
+visibility_range_end = 70.0
+
+[node name="Grass844" parent="Plane" index="843"]
+visibility_range_end = 70.0
+
+[node name="Grass845" parent="Plane" index="844"]
+visibility_range_end = 70.0
+
+[node name="Grass846" parent="Plane" index="845"]
+visibility_range_end = 70.0
+
+[node name="Grass847" parent="Plane" index="846"]
+visibility_range_end = 70.0
+
+[node name="Grass848" parent="Plane" index="847"]
+visibility_range_end = 70.0
+
+[node name="Grass849" parent="Plane" index="848"]
+visibility_range_end = 70.0
+
+[node name="Grass850" parent="Plane" index="849"]
+visibility_range_end = 70.0
+
+[node name="Grass851" parent="Plane" index="850"]
+visibility_range_end = 70.0
+
+[node name="Grass852" parent="Plane" index="851"]
+visibility_range_end = 70.0
+
+[node name="Grass853" parent="Plane" index="852"]
+visibility_range_end = 70.0
+
+[node name="Grass854" parent="Plane" index="853"]
+visibility_range_end = 70.0
+
+[node name="Grass855" parent="Plane" index="854"]
+visibility_range_end = 70.0
+
+[node name="Grass856" parent="Plane" index="855"]
+visibility_range_end = 70.0
+
+[node name="Grass857" parent="Plane" index="856"]
+visibility_range_end = 70.0
+
+[node name="Grass858" parent="Plane" index="857"]
+visibility_range_end = 70.0
+
+[node name="Grass859" parent="Plane" index="858"]
+visibility_range_end = 70.0
+
+[node name="Grass860" parent="Plane" index="859"]
+visibility_range_end = 70.0
+
+[node name="Grass861" parent="Plane" index="860"]
+visibility_range_end = 70.0
+
+[node name="Grass862" parent="Plane" index="861"]
+visibility_range_end = 70.0
+
+[node name="Grass863" parent="Plane" index="862"]
+visibility_range_end = 70.0
+
+[node name="Grass864" parent="Plane" index="863"]
+visibility_range_end = 70.0
+
+[node name="Grass865" parent="Plane" index="864"]
+visibility_range_end = 70.0
+
+[node name="Grass866" parent="Plane" index="865"]
+visibility_range_end = 70.0
+
+[node name="Grass867" parent="Plane" index="866"]
+visibility_range_end = 70.0
+
+[node name="Grass868" parent="Plane" index="867"]
+visibility_range_end = 70.0
+
+[node name="Grass869" parent="Plane" index="868"]
+visibility_range_end = 70.0
+
+[node name="Grass870" parent="Plane" index="869"]
+visibility_range_end = 70.0
+
+[node name="Grass871" parent="Plane" index="870"]
+visibility_range_end = 70.0
+
+[node name="Grass872" parent="Plane" index="871"]
+visibility_range_end = 70.0
+
+[node name="Grass873" parent="Plane" index="872"]
+visibility_range_end = 70.0
+
+[node name="Grass874" parent="Plane" index="873"]
+visibility_range_end = 70.0
+
+[node name="Grass875" parent="Plane" index="874"]
+visibility_range_end = 70.0
+
+[node name="Grass876" parent="Plane" index="875"]
+visibility_range_end = 70.0
+
+[node name="Grass877" parent="Plane" index="876"]
+visibility_range_end = 70.0
+
+[node name="Grass878" parent="Plane" index="877"]
+visibility_range_end = 70.0
+
+[node name="Grass879" parent="Plane" index="878"]
+visibility_range_end = 70.0
+
+[node name="Grass880" parent="Plane" index="879"]
+visibility_range_end = 70.0
+
+[node name="Grass881" parent="Plane" index="880"]
+visibility_range_end = 70.0
+
+[node name="Grass882" parent="Plane" index="881"]
+visibility_range_end = 70.0
+
+[node name="Grass883" parent="Plane" index="882"]
+visibility_range_end = 70.0
+
+[node name="Grass884" parent="Plane" index="883"]
+visibility_range_end = 70.0
+
+[node name="Grass885" parent="Plane" index="884"]
+visibility_range_end = 70.0
+
+[node name="Grass886" parent="Plane" index="885"]
+visibility_range_end = 70.0
+
+[node name="Grass887" parent="Plane" index="886"]
+visibility_range_end = 70.0
+
+[node name="Grass888" parent="Plane" index="887"]
+visibility_range_end = 70.0
+
+[node name="Grass889" parent="Plane" index="888"]
+visibility_range_end = 70.0
+
+[node name="Grass890" parent="Plane" index="889"]
+visibility_range_end = 70.0
+
+[node name="Grass891" parent="Plane" index="890"]
+visibility_range_end = 70.0
+
+[node name="Grass892" parent="Plane" index="891"]
+visibility_range_end = 70.0
+
+[node name="Grass893" parent="Plane" index="892"]
+visibility_range_end = 70.0
+
+[node name="Grass894" parent="Plane" index="893"]
+visibility_range_end = 70.0
+
+[node name="Grass895" parent="Plane" index="894"]
+visibility_range_end = 70.0
+
+[node name="Grass896" parent="Plane" index="895"]
+visibility_range_end = 70.0
+
+[node name="Grass897" parent="Plane" index="896"]
+visibility_range_end = 70.0
+
+[node name="Grass898" parent="Plane" index="897"]
+visibility_range_end = 70.0
+
+[node name="Grass899" parent="Plane" index="898"]
+visibility_range_end = 70.0
+
+[node name="Grass900" parent="Plane" index="899"]
+visibility_range_end = 70.0
+
+[node name="Grass901" parent="Plane" index="900"]
+visibility_range_end = 70.0
+
+[node name="Grass902" parent="Plane" index="901"]
+visibility_range_end = 70.0
+
+[node name="Grass903" parent="Plane" index="902"]
+visibility_range_end = 70.0
+
+[node name="Grass904" parent="Plane" index="903"]
+visibility_range_end = 70.0
+
+[node name="Grass905" parent="Plane" index="904"]
+visibility_range_end = 70.0
+
+[node name="Grass906" parent="Plane" index="905"]
+visibility_range_end = 70.0
+
+[node name="Grass907" parent="Plane" index="906"]
+visibility_range_end = 70.0
+
+[node name="Grass908" parent="Plane" index="907"]
+visibility_range_end = 70.0
+
+[node name="Grass909" parent="Plane" index="908"]
+visibility_range_end = 70.0
+
+[node name="Grass910" parent="Plane" index="909"]
+visibility_range_end = 70.0
+
+[node name="Grass911" parent="Plane" index="910"]
+visibility_range_end = 70.0
+
+[node name="Grass912" parent="Plane" index="911"]
+visibility_range_end = 70.0
+
+[node name="Grass913" parent="Plane" index="912"]
+visibility_range_end = 70.0
+
+[node name="Grass914" parent="Plane" index="913"]
+visibility_range_end = 70.0
+
+[node name="Grass915" parent="Plane" index="914"]
+visibility_range_end = 70.0
+
+[node name="Grass916" parent="Plane" index="915"]
+visibility_range_end = 70.0
+
+[node name="Grass917" parent="Plane" index="916"]
+visibility_range_end = 70.0
+
+[node name="Grass918" parent="Plane" index="917"]
+visibility_range_end = 70.0
+
+[node name="Grass919" parent="Plane" index="918"]
+visibility_range_end = 70.0
+
+[node name="Grass920" parent="Plane" index="919"]
+visibility_range_end = 70.0
+
+[node name="Grass921" parent="Plane" index="920"]
+visibility_range_end = 70.0
+
+[node name="Grass922" parent="Plane" index="921"]
+visibility_range_end = 70.0
+
+[node name="Grass923" parent="Plane" index="922"]
+visibility_range_end = 70.0
+
+[node name="Grass924" parent="Plane" index="923"]
+visibility_range_end = 70.0
+
+[node name="Grass925" parent="Plane" index="924"]
+visibility_range_end = 70.0
+
+[node name="Grass926" parent="Plane" index="925"]
+visibility_range_end = 70.0
+
+[node name="Grass927" parent="Plane" index="926"]
+visibility_range_end = 70.0
+
+[node name="Grass928" parent="Plane" index="927"]
+visibility_range_end = 70.0
+
+[node name="Grass929" parent="Plane" index="928"]
+visibility_range_end = 70.0
+
+[node name="Grass930" parent="Plane" index="929"]
+visibility_range_end = 70.0
+
+[node name="Grass931" parent="Plane" index="930"]
+visibility_range_end = 70.0
+
+[node name="Grass932" parent="Plane" index="931"]
+visibility_range_end = 70.0
+
+[node name="Grass933" parent="Plane" index="932"]
+visibility_range_end = 70.0
+
+[node name="Grass934" parent="Plane" index="933"]
+visibility_range_end = 70.0
+
+[node name="Grass935" parent="Plane" index="934"]
+visibility_range_end = 70.0
+
+[node name="Grass936" parent="Plane" index="935"]
+visibility_range_end = 70.0
+
+[node name="Grass937" parent="Plane" index="936"]
+visibility_range_end = 70.0
+
+[node name="Grass938" parent="Plane" index="937"]
+visibility_range_end = 70.0
+
+[node name="Grass939" parent="Plane" index="938"]
+visibility_range_end = 70.0
+
+[node name="Grass940" parent="Plane" index="939"]
+visibility_range_end = 70.0
+
+[node name="Grass941" parent="Plane" index="940"]
+visibility_range_end = 70.0
+
+[node name="Grass942" parent="Plane" index="941"]
+visibility_range_end = 70.0
+
+[node name="Grass943" parent="Plane" index="942"]
+visibility_range_end = 70.0
+
+[node name="Grass944" parent="Plane" index="943"]
+visibility_range_end = 70.0
+
+[node name="Grass945" parent="Plane" index="944"]
+visibility_range_end = 70.0
+
+[node name="Grass946" parent="Plane" index="945"]
+visibility_range_end = 70.0
+
+[node name="Grass947" parent="Plane" index="946"]
+visibility_range_end = 70.0
+
+[node name="Grass948" parent="Plane" index="947"]
+visibility_range_end = 70.0
+
+[node name="Grass949" parent="Plane" index="948"]
+visibility_range_end = 70.0
+
+[node name="Grass950" parent="Plane" index="949"]
+visibility_range_end = 70.0
+
+[node name="Grass951" parent="Plane" index="950"]
+visibility_range_end = 70.0
+
+[node name="Grass952" parent="Plane" index="951"]
+visibility_range_end = 70.0
+
+[node name="Grass953" parent="Plane" index="952"]
+visibility_range_end = 70.0
+
+[node name="Grass954" parent="Plane" index="953"]
+visibility_range_end = 70.0
+
+[node name="Grass955" parent="Plane" index="954"]
+visibility_range_end = 70.0
+
+[node name="Grass956" parent="Plane" index="955"]
+visibility_range_end = 70.0
+
+[node name="Grass957" parent="Plane" index="956"]
+visibility_range_end = 70.0
+
+[node name="Grass958" parent="Plane" index="957"]
+visibility_range_end = 70.0
+
+[node name="Grass959" parent="Plane" index="958"]
+visibility_range_end = 70.0
+
+[node name="Grass960" parent="Plane" index="959"]
+visibility_range_end = 70.0
+
+[node name="Grass961" parent="Plane" index="960"]
+visibility_range_end = 70.0
+
+[node name="Grass962" parent="Plane" index="961"]
+visibility_range_end = 70.0
+
+[node name="Grass963" parent="Plane" index="962"]
+visibility_range_end = 70.0
+
+[node name="Grass964" parent="Plane" index="963"]
+visibility_range_end = 70.0
+
+[node name="Grass965" parent="Plane" index="964"]
+visibility_range_end = 70.0
+
+[node name="Grass966" parent="Plane" index="965"]
+visibility_range_end = 70.0
+
+[node name="Grass967" parent="Plane" index="966"]
+visibility_range_end = 70.0
+
+[node name="Grass968" parent="Plane" index="967"]
+visibility_range_end = 70.0
+
+[node name="Grass969" parent="Plane" index="968"]
+visibility_range_end = 70.0
+
+[node name="Grass970" parent="Plane" index="969"]
+visibility_range_end = 70.0
+
+[node name="Grass971" parent="Plane" index="970"]
+visibility_range_end = 70.0
+
+[node name="Grass972" parent="Plane" index="971"]
+visibility_range_end = 70.0
+
+[node name="Grass973" parent="Plane" index="972"]
+visibility_range_end = 70.0
+
+[node name="Grass974" parent="Plane" index="973"]
+visibility_range_end = 70.0
+
+[node name="Grass975" parent="Plane" index="974"]
+visibility_range_end = 70.0
+
+[node name="Grass976" parent="Plane" index="975"]
+visibility_range_end = 70.0
+
+[node name="Grass977" parent="Plane" index="976"]
+visibility_range_end = 70.0
+
+[node name="Grass978" parent="Plane" index="977"]
+visibility_range_end = 70.0
+
+[node name="Grass979" parent="Plane" index="978"]
+visibility_range_end = 70.0
+
+[node name="Grass980" parent="Plane" index="979"]
+visibility_range_end = 70.0
+
+[node name="Grass981" parent="Plane" index="980"]
+visibility_range_end = 70.0
+
+[node name="Grass982" parent="Plane" index="981"]
+visibility_range_end = 70.0
+
+[node name="Grass983" parent="Plane" index="982"]
+visibility_range_end = 70.0
+
+[node name="Grass984" parent="Plane" index="983"]
+visibility_range_end = 70.0
+
+[node name="Grass985" parent="Plane" index="984"]
+visibility_range_end = 70.0
+
+[node name="Grass986" parent="Plane" index="985"]
+visibility_range_end = 70.0
+
+[node name="Grass987" parent="Plane" index="986"]
+visibility_range_end = 70.0
+
+[node name="Grass988" parent="Plane" index="987"]
+visibility_range_end = 70.0
+
+[node name="Grass989" parent="Plane" index="988"]
+visibility_range_end = 70.0
+
+[node name="Grass990" parent="Plane" index="989"]
+visibility_range_end = 70.0
+
+[node name="Grass991" parent="Plane" index="990"]
+visibility_range_end = 70.0
+
+[node name="Grass992" parent="Plane" index="991"]
+visibility_range_end = 70.0
+
+[node name="Grass993" parent="Plane" index="992"]
+visibility_range_end = 70.0
+
+[node name="Grass994" parent="Plane" index="993"]
+visibility_range_end = 70.0
+
+[node name="Grass995" parent="Plane" index="994"]
+visibility_range_end = 70.0
+
+[node name="Grass996" parent="Plane" index="995"]
+visibility_range_end = 70.0
+
+[node name="Grass997" parent="Plane" index="996"]
+visibility_range_end = 70.0
+
+[node name="Grass998" parent="Plane" index="997"]
+visibility_range_end = 70.0
+
+[node name="Grass999" parent="Plane" index="998"]
+visibility_range_end = 70.0
+
+[node name="Grass1000" parent="Plane" index="999"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg2" parent="Plane" index="1000"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg" parent="Plane" index="1001"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg3" parent="Plane" index="1002"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg4" parent="Plane" index="1003"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg5" parent="Plane" index="1004"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg6" parent="Plane" index="1005"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg22" parent="Plane" index="1006"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg7" parent="Plane" index="1007"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg8" parent="Plane" index="1008"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg23" parent="Plane" index="1009"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg24" parent="Plane" index="1010"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg25" parent="Plane" index="1011"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg26" parent="Plane" index="1012"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg27" parent="Plane" index="1013"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg28" parent="Plane" index="1014"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg29" parent="Plane" index="1015"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg210" parent="Plane" index="1016"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg9" parent="Plane" index="1017"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg10" parent="Plane" index="1018"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg11" parent="Plane" index="1019"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg211" parent="Plane" index="1020"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg212" parent="Plane" index="1021"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg213" parent="Plane" index="1022"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg214" parent="Plane" index="1023"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg12" parent="Plane" index="1024"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg215" parent="Plane" index="1025"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg13" parent="Plane" index="1026"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg14" parent="Plane" index="1027"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg15" parent="Plane" index="1028"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg216" parent="Plane" index="1029"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg16" parent="Plane" index="1030"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg17" parent="Plane" index="1031"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg217" parent="Plane" index="1032"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg18" parent="Plane" index="1033"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg19" parent="Plane" index="1034"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg20" parent="Plane" index="1035"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg218" parent="Plane" index="1036"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg21" parent="Plane" index="1037"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg30" parent="Plane" index="1038"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg219" parent="Plane" index="1039"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg220" parent="Plane" index="1040"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg221" parent="Plane" index="1041"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg222" parent="Plane" index="1042"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg223" parent="Plane" index="1043"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg31" parent="Plane" index="1044"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg32" parent="Plane" index="1045"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg33" parent="Plane" index="1046"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg34" parent="Plane" index="1047"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg35" parent="Plane" index="1048"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg224" parent="Plane" index="1049"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg36" parent="Plane" index="1050"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg37" parent="Plane" index="1051"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg38" parent="Plane" index="1052"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg39" parent="Plane" index="1053"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg225" parent="Plane" index="1054"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg226" parent="Plane" index="1055"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg227" parent="Plane" index="1056"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg40" parent="Plane" index="1057"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg228" parent="Plane" index="1058"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg41" parent="Plane" index="1059"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg229" parent="Plane" index="1060"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg230" parent="Plane" index="1061"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg231" parent="Plane" index="1062"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg42" parent="Plane" index="1063"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg232" parent="Plane" index="1064"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg43" parent="Plane" index="1065"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg233" parent="Plane" index="1066"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg234" parent="Plane" index="1067"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg44" parent="Plane" index="1068"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg235" parent="Plane" index="1069"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg236" parent="Plane" index="1070"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg237" parent="Plane" index="1071"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg45" parent="Plane" index="1072"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg238" parent="Plane" index="1073"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg46" parent="Plane" index="1074"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg239" parent="Plane" index="1075"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg47" parent="Plane" index="1076"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg48" parent="Plane" index="1077"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg49" parent="Plane" index="1078"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg240" parent="Plane" index="1079"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg241" parent="Plane" index="1080"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg50" parent="Plane" index="1081"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg242" parent="Plane" index="1082"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg243" parent="Plane" index="1083"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg51" parent="Plane" index="1084"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg244" parent="Plane" index="1085"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg245" parent="Plane" index="1086"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg246" parent="Plane" index="1087"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg247" parent="Plane" index="1088"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg52" parent="Plane" index="1089"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg53" parent="Plane" index="1090"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg248" parent="Plane" index="1091"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg249" parent="Plane" index="1092"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg54" parent="Plane" index="1093"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg250" parent="Plane" index="1094"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg55" parent="Plane" index="1095"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg251" parent="Plane" index="1096"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg56" parent="Plane" index="1097"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg57" parent="Plane" index="1098"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg252" parent="Plane" index="1099"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg58" parent="Plane" index="1100"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg253" parent="Plane" index="1101"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg59" parent="Plane" index="1102"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg60" parent="Plane" index="1103"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg254" parent="Plane" index="1104"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg255" parent="Plane" index="1105"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg61" parent="Plane" index="1106"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg256" parent="Plane" index="1107"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg62" parent="Plane" index="1108"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg63" parent="Plane" index="1109"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg257" parent="Plane" index="1110"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg64" parent="Plane" index="1111"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg258" parent="Plane" index="1112"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg65" parent="Plane" index="1113"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg66" parent="Plane" index="1114"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg67" parent="Plane" index="1115"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg68" parent="Plane" index="1116"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg69" parent="Plane" index="1117"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg70" parent="Plane" index="1118"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg259" parent="Plane" index="1119"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg71" parent="Plane" index="1120"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg72" parent="Plane" index="1121"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg73" parent="Plane" index="1122"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg74" parent="Plane" index="1123"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg260" parent="Plane" index="1124"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg261" parent="Plane" index="1125"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg75" parent="Plane" index="1126"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg262" parent="Plane" index="1127"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg263" parent="Plane" index="1128"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg76" parent="Plane" index="1129"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg77" parent="Plane" index="1130"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg264" parent="Plane" index="1131"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg78" parent="Plane" index="1132"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg265" parent="Plane" index="1133"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg79" parent="Plane" index="1134"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg266" parent="Plane" index="1135"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg80" parent="Plane" index="1136"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg81" parent="Plane" index="1137"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg267" parent="Plane" index="1138"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg268" parent="Plane" index="1139"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg269" parent="Plane" index="1140"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg270" parent="Plane" index="1141"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg271" parent="Plane" index="1142"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg272" parent="Plane" index="1143"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg82" parent="Plane" index="1144"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg273" parent="Plane" index="1145"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg274" parent="Plane" index="1146"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg275" parent="Plane" index="1147"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg276" parent="Plane" index="1148"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg83" parent="Plane" index="1149"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg84" parent="Plane" index="1150"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg85" parent="Plane" index="1151"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg86" parent="Plane" index="1152"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg87" parent="Plane" index="1153"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg277" parent="Plane" index="1154"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg278" parent="Plane" index="1155"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg88" parent="Plane" index="1156"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg89" parent="Plane" index="1157"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg90" parent="Plane" index="1158"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg279" parent="Plane" index="1159"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg280" parent="Plane" index="1160"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg281" parent="Plane" index="1161"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg282" parent="Plane" index="1162"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg91" parent="Plane" index="1163"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg92" parent="Plane" index="1164"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg283" parent="Plane" index="1165"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg284" parent="Plane" index="1166"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg93" parent="Plane" index="1167"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg285" parent="Plane" index="1168"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg286" parent="Plane" index="1169"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg287" parent="Plane" index="1170"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg94" parent="Plane" index="1171"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg288" parent="Plane" index="1172"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg95" parent="Plane" index="1173"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg96" parent="Plane" index="1174"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg289" parent="Plane" index="1175"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg97" parent="Plane" index="1176"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg98" parent="Plane" index="1177"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg290" parent="Plane" index="1178"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg99" parent="Plane" index="1179"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg100" parent="Plane" index="1180"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg101" parent="Plane" index="1181"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg102" parent="Plane" index="1182"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg291" parent="Plane" index="1183"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg103" parent="Plane" index="1184"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg292" parent="Plane" index="1185"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg293" parent="Plane" index="1186"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg104" parent="Plane" index="1187"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg105" parent="Plane" index="1188"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg106" parent="Plane" index="1189"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg294" parent="Plane" index="1190"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg107" parent="Plane" index="1191"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg295" parent="Plane" index="1192"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg296" parent="Plane" index="1193"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg108" parent="Plane" index="1194"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg109" parent="Plane" index="1195"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg110" parent="Plane" index="1196"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg111" parent="Plane" index="1197"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg112" parent="Plane" index="1198"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg113" parent="Plane" index="1199"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg297" parent="Plane" index="1200"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg114" parent="Plane" index="1201"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg115" parent="Plane" index="1202"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg298" parent="Plane" index="1203"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg116" parent="Plane" index="1204"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg117" parent="Plane" index="1205"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg118" parent="Plane" index="1206"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg299" parent="Plane" index="1207"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg2100" parent="Plane" index="1208"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg2101" parent="Plane" index="1209"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg119" parent="Plane" index="1210"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg2102" parent="Plane" index="1211"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg2103" parent="Plane" index="1212"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg120" parent="Plane" index="1213"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg121" parent="Plane" index="1214"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg122" parent="Plane" index="1215"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg123" parent="Plane" index="1216"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg124" parent="Plane" index="1217"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg2104" parent="Plane" index="1218"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg125" parent="Plane" index="1219"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg126" parent="Plane" index="1220"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg2105" parent="Plane" index="1221"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg2106" parent="Plane" index="1222"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg127" parent="Plane" index="1223"]
+visibility_range_end = 70.0
+
+[node name="TreeBcg2107" parent="Plane" index="1224"]
+visibility_range_end = 70.0
+
+[node name="StaticBody3D" parent="Plane" index="1225"]
+visible = false
+collision_layer = 4
+
+[node name="HealthBar" parent="." index="3" instance=ExtResource("2_w65bo")]
+
+[node name="Player" parent="." index="4" instance=ExtResource("3_ckna2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1777, -0.692516, 116.382)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="9"]
+visible = false
+occluder = ExtResource("4_ckna2")
