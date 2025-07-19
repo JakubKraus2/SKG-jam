@@ -52,10 +52,6 @@ func _input(event: InputEvent) -> void:
 		else:
 			lock_target = find_closest_target()
 			is_locked_on = lock_target != null
-	
-	if event.is_action_pressed("ui_left"):
-		PlayerEvents.take_damage.emit(30)
-		$TakeDamageTrauma.cause_trauma()
 
 
 func _physics_process(delta: float) -> void:
@@ -97,7 +93,6 @@ func _on_water_exited(area: Area3D):
 
 # Player takes damage
 func _on_hurt_box_area_entered(area: Area3D) -> void:
-	PlayerEvents.take_damage.emit(10)
 	$TakeDamageTrauma.cause_trauma()
 
 func _on_death():

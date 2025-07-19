@@ -13,13 +13,15 @@ func _ready() -> void:
 func check_death():
 	if value <= 0:
 		PlayerEvents.death.emit()
+		return true
 
 
-func _on_take_damage(damage: float):
+func _on_take_damage(damage: float, attack_type: String):
 	if damage > 0:
 		$Timer.start()
 		value -= damage
-		check_death()
+		if !check_death():
+			get_tree().get_first_node_in_group("player").get_node("StateMachine").transition_to("Hurt" + attack_type.capitalize())
 	else:
 		var new_value = min(value - damage, 100)
 		var tween = get_tree().create_tween()

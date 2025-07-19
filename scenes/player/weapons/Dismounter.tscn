@@ -134,6 +134,8 @@ skeleton = NodePath("")
 script = ExtResource("8_qttv6")
 
 [node name="TraumaCauser" parent="." instance=ExtResource("9_mjha1")]
+collision_layer = 128
+collision_mask = 128
 trauma_amount = 0.4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TraumaCauser"]

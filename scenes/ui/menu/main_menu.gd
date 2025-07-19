@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_play_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/Swamp3.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/Swamp.tscn")
 
 
 func _on_play_button_2_pressed() -> void:

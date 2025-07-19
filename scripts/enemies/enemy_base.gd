@@ -6,6 +6,8 @@ extends CharacterBody3D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 
+var damage: float
+var attack_type: String
 
 
 func _process(delta: float) -> void:
@@ -29,3 +31,7 @@ func disable_colisions():
 	$Hitbox.set_deferred("monitoring", false)
 	$Hitbox.set_deferred("monitorable", false)
 	$CollisionShape3D.set_deferred("disabled", true)
+
+
+func _on_hitbox_area_entered(area: Area3D) -> void:
+	PlayerEvents.take_damage.emit(damage, attack_type)
