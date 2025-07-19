@@ -92,4 +92,4 @@ textures/default_filters/use_nearest_mipmap_filter=true
 textures/decals/filter=2
 textures/light_projectors/filter=2
 occlusion_culling/use_occlusion_culling=true
-mesh_lod/lod_change/threshold_pixels=10.0
+mesh_lod/lod_change/threshold_pixels=15.0
