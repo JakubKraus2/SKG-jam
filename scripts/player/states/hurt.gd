@@ -1,4 +1,5 @@
 extends State
+class_name PlayerHurtState
 
 
 @export var animation: String = "hurt_normal"

@@ -554,6 +554,7 @@ script = ExtResource("10_5qosj")
 damage = 15.0
 animation = "attack_jump"
 attack_move_speed = 10.0
+attack_type = "launch"
 
 [node name="Death" type="Node" parent="StateMachine"]
 script = ExtResource("11_tovdb")
