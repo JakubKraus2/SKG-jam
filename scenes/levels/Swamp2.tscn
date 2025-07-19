@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://btjt151j26kvy"]
+[gd_scene load_steps=27 format=3 uid="uid://btjt151j26kvy"]
 
 [ext_resource type="PackedScene" uid="uid://bklp7vflcp26y" path="res://assets/models/levels/swamp2.glb" id="1_rrkde"]
 [ext_resource type="ArrayOccluder3D" uid="uid://b8olt87s6xrpt" path="res://resources/occluders/Swamp2.occ" id="2_apy12"]
@@ -7,6 +7,7 @@
 [ext_resource type="LightmapGIData" uid="uid://ble5vkgfgdhf2" path="res://resources/light_maps/Swamp2.lmbake" id="3_apy12"]
 [ext_resource type="PackedScene" uid="uid://dgfda6utyfxjn" path="res://scenes/player/player.tscn" id="3_ckna2"]
 [ext_resource type="Material" uid="uid://b7q8tg41ex4qw" path="res://scenes/materials/water.tres" id="5_eyyxj"]
+[ext_resource type="AudioStream" uid="uid://dji6w5xqqture" path="res://assets/sounds/environment/frogs.wav" id="8_w8q1y"]
 
 [sub_resource type="Gradient" id="Gradient_rrkde"]
 offsets = PackedFloat32Array(0, 0.576271, 1)
@@ -104,9 +105,6 @@ occluder = ExtResource("2_apy12")
 visible = false
 quality = 0
 light_data = ExtResource("3_apy12")
-
-[node name="Plane" parent="." index="4"]
-visibility_range_end = 70.0
 
 [node name="Grass" parent="Plane" index="0"]
 visibility_range_end = 40.0
@@ -6693,3 +6691,19 @@ visibility_range_end = 70.0
 
 [node name="Player" parent="." index="34" instance=ExtResource("3_ckna2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1777, -0.692516, 116.382)
+
+[node name="FrogsAudio" type="AudioStreamPlayer3D" parent="." index="35"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.714, 11.314, 89.376)
+stream = ExtResource("8_w8q1y")
+volume_db = 8.0
+unit_size = 50.0
+autoplay = true
+max_distance = 40.0
+
+[node name="FrogsAudio2" type="AudioStreamPlayer3D" parent="." index="36"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4862, 16.7944, 49.5837)
+stream = ExtResource("8_w8q1y")
+volume_db = 8.0
+unit_size = 50.0
+autoplay = true
+max_distance = 40.0

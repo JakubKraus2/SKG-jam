@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="SKG-jam"
-run/main_scene="uid://cxx1rh1ty24ld"
+run/main_scene="uid://btjt151j26kvy"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 PlayerEvents="*res://scripts/globals/player_events.gd"
+Music="*res://scenes/globals/music.tscn"
 
 [display]
 

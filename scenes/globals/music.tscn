@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dskra370gh8xy"]
+
+[ext_resource type="AudioStream" uid="uid://spmm8870qujr" path="res://assets/sounds/music/crickets.wav" id="1_ejqpe"]
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_ejqpe")
+autoplay = true
