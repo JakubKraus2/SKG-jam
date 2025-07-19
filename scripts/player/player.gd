@@ -24,7 +24,7 @@ var camera_input := Vector2.ZERO
 
 @export_group("Lock-on")
 var is_locked_on: bool = false
-var lock_target = null #make this characterBody3D in the future
+var lock_target: CharacterBody3D = null
 @export var lock_range: float = 15.0
 
 var footsteps_water = load("res://resources/player/footsteps_water.tres")
@@ -80,7 +80,6 @@ func find_closest_target() -> Node3D:
 	var min_distance := lock_range
 	
 	for enemy in get_tree().get_nodes_in_group("enemies"):
-		if not enemy is Node3D: continue
 		var distance = global_position.distance_to(enemy.global_position)
 		if distance < min_distance:
 			min_distance = distance

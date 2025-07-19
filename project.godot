@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SKG-jam"
-run/main_scene="uid://btjt151j26kvy"
+run/main_scene="uid://b1uu3g60ynfn6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -85,6 +85,7 @@ light_attack={
 3d_physics/layer_4="player_weapon"
 3d_physics/layer_5="water"
 3d_physics/layer_6="hazards"
+3d_physics/layer_7="invis_walls"
 
 [rendering]
 

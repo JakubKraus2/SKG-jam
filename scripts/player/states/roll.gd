@@ -8,6 +8,7 @@ var queue_attack: bool = false
 
 func enter(_msg := {}) -> void:
 	queue_attack = false
+	$"../../HurtBox/CollisionShape3D".disabled = true
 	var player = state_machine.owner
 	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down", 0.4)
 	
@@ -42,6 +43,9 @@ func enter(_msg := {}) -> void:
 		var tween = get_tree().create_tween()
 		tween.tween_property($"../../Armature/Skeleton3D/BaseAttachment/BloodDecal", "modulate", Color(1, 1, 1, 0), 0.5)
 		tween.tween_property($"../../Armature/Skeleton3D/BaseAttachment/BloodDecal2", "modulate", Color(1, 1, 1, 0), 0.5)
+
+func exit() -> void:
+	$"../../HurtBox/CollisionShape3D".disabled = false
 
 func physics_update(delta: float) -> void:
 	var player = state_machine.owner
