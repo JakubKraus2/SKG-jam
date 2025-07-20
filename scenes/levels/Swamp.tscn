@@ -136,7 +136,7 @@ debug_color = Color(1, 1, 0, 1)
 [node name="Hint2" type="Area3D" parent="HintEvents"]
 collision_layer = 0
 script = ExtResource("9_xuasn")
-text = "Attacking enemies will quench your bloodthirst"
+text = "Attacking enemies with [LEFT CLICK] will partially quench you hunger"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HintEvents/Hint2"]
 transform = Transform3D(0.976687, 0, 0.214667, 0, 1, 0, -0.214667, 0, 0.976687, -9.29134, 0.769358, 94.6463)
@@ -153,7 +153,18 @@ transform = Transform3D(0.964095, 0, -0.265556, 0, 1, 0, 0.265556, 0, 0.964095, 
 shape = SubResource("BoxShape3D_c8tg7")
 debug_color = Color(1, 1, 0, 1)
 
+[node name="Hint4" type="Area3D" parent="HintEvents"]
+collision_layer = 0
+script = ExtResource("9_xuasn")
+text = "Press [MIDDLE MOUSE BUTTON] to lock onto enemy"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HintEvents/Hint4"]
+transform = Transform3D(0.99996, 0, 0.00897086, 0, 1, 0, -0.00897086, 0, 0.99996, 1.12076, 1.19998, 28.5052)
+shape = SubResource("BoxShape3D_c8tg7")
+debug_color = Color(1, 1, 0, 1)
+
 [connection signal="body_entered" from="BossEvent" to="BossEvent" method="_on_body_entered"]
 [connection signal="body_entered" from="HintEvents/Hint1" to="HintEvents/Hint1" method="_on_body_entered"]
 [connection signal="body_entered" from="HintEvents/Hint2" to="HintEvents/Hint2" method="_on_body_entered"]
 [connection signal="body_entered" from="HintEvents/Hint3" to="HintEvents/Hint3" method="_on_body_entered"]
+[connection signal="body_entered" from="HintEvents/Hint4" to="HintEvents/Hint4" method="_on_body_entered"]

@@ -2,7 +2,9 @@ extends HintInteraction
 
 
 func _ready() -> void:
-	super()
+	if PlayerEvents.boss_activated:
+		queue_free()
+		return
 	$"../../HealthBar".hide()
 	$"../../HealthBar".set_process_mode(Node.PROCESS_MODE_DISABLED)
 	$"../../HealthBar".set_modulate(Color(1, 1, 1, 0))
