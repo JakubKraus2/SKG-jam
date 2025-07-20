@@ -1,4 +1,5 @@
 extends State
+class_name EnemyDeathState
 
 
 func enter(_msg := {}) -> void:

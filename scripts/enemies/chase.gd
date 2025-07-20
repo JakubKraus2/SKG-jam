@@ -1,4 +1,5 @@
 extends State
+class_name EnemyMoveState
 
 
 @export var can_move: bool = true

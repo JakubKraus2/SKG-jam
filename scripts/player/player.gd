@@ -63,7 +63,7 @@ func _physics_process(delta: float) -> void:
 		var look_dir := movement_direction
 		var new_rot_y := atan2(-look_dir.x, -look_dir.z)
 		camera_pivot.rotation.y = lerp_angle(camera_pivot.rotation.y, new_rot_y, rotation_speed * delta)
-		camera_pivot.rotation.x = lerp_angle(camera_pivot.rotation.x, -0.2, rotation_speed * delta)
+		camera_pivot.rotation.x = lerp_angle(camera_pivot.rotation.x, lock_target.get_node("LockOn").position.y/5 - 0.4, rotation_speed * delta)
 	else:
 		camera_pivot.rotation.x += camera_input.y * delta
 		camera_pivot.rotation.x = clamp(camera_pivot.rotation.x, camera_tilt_down_limit, camera_tilt_up_limit)
@@ -94,6 +94,8 @@ func _on_water_exited(area: Area3D):
 # Player takes damage
 func _on_hurt_box_area_entered(area: Area3D) -> void:
 	$TakeDamageTrauma.cause_trauma()
+	$HurtAudio.play()
 
 func _on_death():
-	$StateMachine.transition_to("Death")
+	if $StateMachine.state.name != "Death":
+		$StateMachine.transition_to("Death")
