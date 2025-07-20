@@ -41,4 +41,4 @@ func increase_blood_decal():
 		decal.set_modulate(Color(1, 1, 1, opacity_increase))
 
 func gain_hp():
-	PlayerEvents.take_damage.emit(-10, "")
+	PlayerEvents.take_damage.emit(-8, "")

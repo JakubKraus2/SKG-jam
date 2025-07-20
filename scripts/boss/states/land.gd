@@ -8,6 +8,9 @@ func enter(_msg := {}) -> void:
 	owner.anim_player.play("land")
 	owner.velocity = Vector3.ZERO
 	owner.anim_player.animation_finished.connect(_on_animation_finished)
+	$"../../AudioAttacks".play()
+	$"../../TraumaCauser".cause_trauma()
+	$"../../DustParticles3".restart()
 
 func exit() -> void:
 	owner.anim_player.animation_finished.disconnect(_on_animation_finished)

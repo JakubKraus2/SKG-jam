@@ -3395,7 +3395,7 @@ visible = false
 shape = SubResource("CapsuleShape3D_28m0y")
 
 [node name="HurtBox" type="Area3D" parent="."]
-transform = Transform3D(0.999901, 0, 0, 0, 0.999789, 0.0144391, 0, -0.0144392, 0.999788, 0, -0.0217552, -0.0369982)
+transform = Transform3D(0.999901, 0, 0, 0, 0.999789, 0.0144391, 0, -0.0144392, 0.999787, 0, -0.0217552, -0.0369982)
 collision_mask = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]

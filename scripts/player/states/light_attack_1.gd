@@ -54,6 +54,7 @@ func enter(_msg := {}) -> void:
 func exit() -> void:
 	var player = state_machine.owner
 	player.anim_player.animation_finished.disconnect(_on_animation_finished)
+	$"../../Armature/Skeleton3D/Weapon/Cube_003/Hitbox/CollisionShape3D".set_deferred("disabled", true)
 	#PlayerEvents.take_damage.disconnect(_on_take_damage)
 
 func physics_update(delta: float) -> void:
