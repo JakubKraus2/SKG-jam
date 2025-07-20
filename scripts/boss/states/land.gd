@@ -11,6 +11,8 @@ func enter(_msg := {}) -> void:
 	$"../../AudioAttacks".play()
 	$"../../TraumaCauser".cause_trauma()
 	$"../../DustParticles3".restart()
+	Music.set_stream(load("res://assets/sounds/music/boss_music.wav"))
+	Music.play()
 
 func exit() -> void:
 	owner.anim_player.animation_finished.disconnect(_on_animation_finished)
