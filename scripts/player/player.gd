@@ -37,6 +37,8 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$CamOrigin/SpringArm3D.add_excluded_object(self)
 	PlayerEvents.death.connect(_on_death)
+	if PlayerEvents.boss_activated == true:
+		position = Vector3(0.178, -0.547, 27.382)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
