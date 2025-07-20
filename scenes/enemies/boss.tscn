@@ -4637,12 +4637,12 @@ shape = SubResource("CapsuleShape3D_5ogqy")
 disabled = true
 
 [node name="RightHandCollision" type="CollisionShape3D" parent="Hitbox"]
-transform = Transform3D(0.858648, 0.0515194, 0.509586, 0.492191, 0.192169, -0.848789, -0.141682, 0.97981, 0.139678, -1.76309, 0.185628, 1.81745)
+transform = Transform3D(0.858648, 0.0515194, 0.509586, 0.492191, 0.192169, -0.848789, -0.141682, 0.979809, 0.139678, -1.76309, 0.185628, 1.81745)
 shape = SubResource("CapsuleShape3D_50mb2")
 disabled = true
 
 [node name="LeftHandCollision" type="CollisionShape3D" parent="Hitbox"]
-transform = Transform3D(0.741054, 0.444035, -0.503312, 0.0320015, -0.772244, -0.634179, -0.670476, 0.453919, -0.586564, 1.76303, 0.556724, -0.606389)
+transform = Transform3D(0.741054, 0.444035, -0.503311, 0.0320015, -0.772243, -0.634179, -0.670476, 0.453919, -0.586563, 1.76303, 0.556724, -0.606389)
 shape = SubResource("CapsuleShape3D_50mb2")
 disabled = true
 

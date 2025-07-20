@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://kmjdoq3bsfhf" path="res://scripts/enemies/chase.gd" id="7_2je13"]
 [ext_resource type="Script" uid="uid://cm51prip1u4yb" path="res://scripts/enemies/idle.gd" id="7_jum5t"]
 [ext_resource type="Script" uid="uid://bmqp8f8mqhcmj" path="res://scripts/enemies/hurt.gd" id="9_uvqvg"]
-[ext_resource type="Script" uid="uid://c3n8iujch55y8" path="res://scripts/enemies/attack.gd" id="10_5qosj"]
+[ext_resource type="Script" uid="uid://3amabgwwc542" path="res://scripts/enemies/attack2.gd" id="10_tovdb"]
 [ext_resource type="Script" uid="uid://dv4mgq8ynxdo0" path="res://scripts/enemies/death.gd" id="11_tovdb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pupi4"]
@@ -463,7 +463,7 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(1, 1.26029e-07, -3.60328e-08, -1.26029e-07, 0.848868, -0.528604, -3.60323e-08, 0.528604, 0.848868, -2.13929e-14, 0.610396, -2.98023e-08)
 bones/1/enabled = true
 bones/1/position = Vector3(-2.13929e-14, 0.610396, -2.98023e-08)
-bones/1/rotation = Quaternion(0.274892, -1.29327e-13, -6.55393e-08, 0.961475)
+bones/1/rotation = Quaternion(0.274892, -1.3079e-13, -6.55393e-08, 0.961475)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Bone.002"
 bones/2/parent = 1
@@ -486,7 +486,7 @@ mesh = SubResource("ArrayMesh_ex08n")
 skin = SubResource("Skin_13h20")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(1, 8.95728e-13, -3.89414e-07, -3.89414e-07, 1.70991e-06, -1, -2.47691e-13, 1, 1.70991e-06, 1.70136e-12, 0.34193, -0.0258645)
+transform = Transform3D(1, 8.81517e-13, -3.89414e-07, -3.89414e-07, 1.70898e-06, -1, -2.30482e-13, 1, 1.70898e-06, 1.68383e-12, 0.34193, -0.0258645)
 bone_name = "Bone.002"
 bone_idx = 2
 
@@ -495,7 +495,7 @@ remote_path = NodePath("../../../../HurtBox")
 update_scale = false
 
 [node name="HeadAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(1, 5.40012e-13, -4.76838e-07, -2.57333e-07, -0.841878, -0.539667, -4.0144e-07, 0.539667, -0.841878, 3.10545e-12, 0.341932, 1.51293)
+transform = Transform3D(1, 5.96856e-13, -4.76838e-07, -2.57333e-07, -0.841878, -0.539668, -4.0144e-07, 0.539668, -0.841878, 3.06605e-12, 0.341932, 1.51293)
 bone_name = "Bone.003"
 bone_idx = 3
 
@@ -509,7 +509,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.4
 shape = SubResource("CapsuleShape3D_6dvw2")
 
 [node name="HurtBox" type="Area3D" parent="."]
-transform = Transform3D(1, 9.13552e-13, -3.99326e-20, 0, -4.37113e-08, -0.999999, -9.13553e-13, 0.999999, -4.37113e-08, 1.70136e-12, 0.34193, -0.0258645)
+transform = Transform3D(1, 8.95981e-13, -3.91646e-20, 0, -4.37113e-08, -0.999999, -8.95982e-13, 0.999999, -4.37113e-08, 1.68383e-12, 0.34193, -0.0258645)
 collision_layer = 2
 collision_mask = 8
 
@@ -518,7 +518,7 @@ transform = Transform3D(1, 0, -1.00974e-28, -1.69407e-21, 1, -3.55271e-15, 5.048
 shape = SubResource("CapsuleShape3D_ex08n")
 
 [node name="Hitbox" type="Area3D" parent="."]
-transform = Transform3D(1, -4.48708e-08, -4.01634e-07, -4.01634e-07, -0.220687, -0.975344, -4.48708e-08, 0.975344, -0.220687, 3.10545e-12, 0.341932, 1.51293)
+transform = Transform3D(1, -4.48708e-08, -4.01634e-07, -4.01634e-07, -0.220687, -0.975344, -4.48708e-08, 0.975344, -0.220687, 3.06605e-12, 0.341932, 1.51293)
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
@@ -550,10 +550,9 @@ script = ExtResource("7_2je13")
 script = ExtResource("9_uvqvg")
 
 [node name="Attack" type="Node" parent="StateMachine"]
-script = ExtResource("10_5qosj")
+script = ExtResource("10_tovdb")
 damage = 15.0
 animation = "attack_jump"
-attack_move_speed = 10.0
 
 [node name="Death" type="Node" parent="StateMachine"]
 script = ExtResource("11_tovdb")
