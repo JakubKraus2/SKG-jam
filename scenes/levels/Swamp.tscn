@@ -88,10 +88,10 @@ transform = Transform3D(0.958178, 0, 0.286173, 0, 1, 0, -0.286173, 0, 0.958178, 
 transform = Transform3D(0.755396, 0, 0.655268, 0, 1, 0, -0.655268, 0, 0.755396, 1.33469, -1.06915, 47.1641)
 
 [node name="maggot6" parent="." instance=ExtResource("4_n1tup")]
-transform = Transform3D(0.345642, 0, -0.938366, 0, 1, 0, 0.938366, 0, 0.345642, 1.16633, -1.14654, 38.4953)
+transform = Transform3D(0.345642, 0, -0.938366, 0, 1, 0, 0.938366, 0, 0.345642, 2.25202, -1.14654, 40.7174)
 
 [node name="maggot7" parent="." instance=ExtResource("4_n1tup")]
-transform = Transform3D(0.65627, 0, 0.754526, 0, 1, 0, -0.754526, 0, 0.65627, -0.673223, -0.98457, 30.4142)
+transform = Transform3D(0.65627, 0, 0.754526, 0, 1, 0, -0.754526, 0, 0.65627, -0.959752, -0.984569, 34.4395)
 
 [node name="boss" parent="." instance=ExtResource("5_xrwi1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.88225, 20, 0.857465)
@@ -157,10 +157,10 @@ debug_color = Color(1, 1, 0, 1)
 [node name="Hint4" type="Area3D" parent="HintEvents"]
 collision_layer = 0
 script = ExtResource("9_xuasn")
-text = "Press [MIDDLE MOUSE BUTTON] to lock onto enemy"
+text = "Press [MIDDLE MOUSE BUTTON] to lock onto an enemy"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HintEvents/Hint4"]
-transform = Transform3D(0.99996, 0, 0.00897086, 0, 1, 0, -0.00897086, 0, 0.99996, 1.12076, 1.19998, 28.5052)
+transform = Transform3D(0.99996, 0, 0.00897086, 0, 1, 0, -0.00897086, 0, 0.99996, -0.416978, 1.19998, 31.5832)
 shape = SubResource("BoxShape3D_c8tg7")
 debug_color = Color(1, 1, 0, 1)
 

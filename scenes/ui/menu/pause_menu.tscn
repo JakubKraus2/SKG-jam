@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxyrjqrgn3xc6"]
+[gd_scene load_steps=10 format=3 uid="uid://cxyrjqrgn3xc6"]
 
 [ext_resource type="FontFile" uid="uid://c54oki7w861qe" path="res://assets/fonts/ReturnOfThePixels-Regular.ttf" id="1_q0dby"]
 [ext_resource type="Script" uid="uid://chmtk3w1fyha0" path="res://scripts/ui/menu/pause_menu.gd" id="1_sda51"]
 [ext_resource type="PackedScene" uid="uid://byov0k4shc0lk" path="res://scenes/ui/menu/settings.tscn" id="3_4ko1u"]
+[ext_resource type="AudioStream" uid="uid://re6586ljytu1" path="res://assets/sounds/ui/button_hover.wav" id="4_3gxys"]
+[ext_resource type="AudioStream" uid="uid://26yrsub3spke" path="res://assets/sounds/ui/button_confirm.wav" id="5_cxt63"]
 
 [sub_resource type="Gradient" id="Gradient_sda51"]
 offsets = PackedFloat32Array(0.668342, 1)
@@ -178,7 +180,21 @@ vertical_alignment = 1
 visible = false
 layout_mode = 1
 
+[node name="AudioHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3gxys")
+
+[node name="AudioConfirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_cxt63")
+
+[connection signal="mouse_entered" from="ButtonContainer/ResumeButton" to="." method="_on_resume_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonContainer/ResumeButton" to="." method="_on_resume_button_mouse_exited"]
 [connection signal="pressed" from="ButtonContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="mouse_entered" from="ButtonContainer/OptionsButton" to="." method="_on_options_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonContainer/OptionsButton" to="." method="_on_options_button_mouse_exited"]
 [connection signal="pressed" from="ButtonContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="ButtonContainer/MainMenuButton" to="." method="_on_main_menu_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonContainer/MainMenuButton" to="." method="_on_main_menu_button_mouse_exited"]
 [connection signal="pressed" from="ButtonContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="mouse_entered" from="ButtonContainer/ExitGameButton" to="." method="_on_exit_game_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonContainer/ExitGameButton" to="." method="_on_exit_game_button_mouse_exited"]
 [connection signal="pressed" from="ButtonContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]

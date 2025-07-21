@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://tyfec65wkfc5"]
+[gd_scene load_steps=6 format=3 uid="uid://tyfec65wkfc5"]
 
 [ext_resource type="Texture2D" uid="uid://ttr711gli7cj" path="res://assets/ui/hud/dmg_bar_progress.png" id="1_0t8g1"]
 [ext_resource type="Script" uid="uid://cgwshajy0dbjr" path="res://scripts/ui/menu/credits.gd" id="1_iqq3d"]
 [ext_resource type="FontFile" uid="uid://c54oki7w861qe" path="res://assets/fonts/ReturnOfThePixels-Regular.ttf" id="2_iqq3d"]
+[ext_resource type="AudioStream" uid="uid://re6586ljytu1" path="res://assets/sounds/ui/button_hover.wav" id="4_67tne"]
+[ext_resource type="AudioStream" uid="uid://26yrsub3spke" path="res://assets/sounds/ui/button_confirm.wav" id="5_y7ljl"]
 
 [node name="Credits" type="Control"]
 modulate = Color(1, 1, 1, 0.862745)
@@ -154,4 +156,12 @@ text = "Close"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AudioHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_67tne")
+
+[node name="AudioConfirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_y7ljl")
+
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

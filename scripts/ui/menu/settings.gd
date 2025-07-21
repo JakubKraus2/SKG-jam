@@ -51,6 +51,7 @@ func _on_apply_button_pressed() -> void:
 	Settings.window_mode = temp_window_mode
 	AudioServer.set_bus_volume_db(0, Settings.volume)
 	$WindowContainer/OptionButton.select(Settings.window_mode)
+	$AudioConfirm.play()
 
 
 func _on_option_button_item_selected(index: int) -> void:
@@ -62,3 +63,18 @@ func _on_option_button_item_selected(index: int) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		2:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+
+
+func _on_apply_button_mouse_entered() -> void:
+	$ButtonContainer/ApplyButton/Label.modulate = Color(0.563, 0.223, 0.204)
+	$AudioHover.play()
+
+func _on_cancel_button_mouse_entered() -> void:
+	$ButtonContainer/CancelButton/Label.modulate = Color(0.563, 0.223, 0.204)
+	$AudioHover.play()
+
+func _on_apply_button_mouse_exited() -> void:
+	$ButtonContainer/ApplyButton/Label.modulate = Color(1.0, 1.0, 1.0)
+
+func _on_cancel_button_mouse_exited() -> void:
+	$ButtonContainer/CancelButton/Label.modulate = Color(1.0, 1.0, 1.0)

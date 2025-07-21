@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkusldyj3lg6a"]
+[gd_scene load_steps=12 format=3 uid="uid://dkusldyj3lg6a"]
 
 [ext_resource type="FontFile" uid="uid://c54oki7w861qe" path="res://assets/fonts/ReturnOfThePixels-Regular.ttf" id="1_eip10"]
 [ext_resource type="Script" uid="uid://gffi431d5qj5" path="res://scenes/ui/menu/main_menu.gd" id="2_araup"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://byov0k4shc0lk" path="res://scenes/ui/menu/settings.tscn" id="4_araup"]
 [ext_resource type="PackedScene" uid="uid://tyfec65wkfc5" path="res://scenes/ui/menu/credits.tscn" id="5_boguu"]
 [ext_resource type="Texture2D" uid="uid://bw1xgqvq7brfl" path="res://assets/ui/menu/title.png" id="6_8dn53"]
+[ext_resource type="AudioStream" uid="uid://re6586ljytu1" path="res://assets/sounds/ui/button_hover.wav" id="7_xgmfj"]
+[ext_resource type="AudioStream" uid="uid://26yrsub3spke" path="res://assets/sounds/ui/button_confirm.wav" id="8_rxtbd"]
 
 [sub_resource type="Theme" id="Theme_m1kxf"]
 Label/font_sizes/font_size = 32
@@ -209,6 +211,12 @@ offset_right = 461.0
 offset_bottom = 288.0
 grow_horizontal = 2
 texture = ExtResource("6_8dn53")
+
+[node name="AudioHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xgmfj")
+
+[node name="AudioConfirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_rxtbd")
 
 [connection signal="mouse_entered" from="ButtonContainer/PlayButton" to="." method="_on_play_button_mouse_entered"]
 [connection signal="mouse_exited" from="ButtonContainer/PlayButton" to="." method="_on_play_button_mouse_exited"]
