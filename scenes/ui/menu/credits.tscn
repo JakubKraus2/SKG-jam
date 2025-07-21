@@ -1,0 +1,157 @@
+[gd_scene load_steps=4 format=3 uid="uid://tyfec65wkfc5"]
+
+[ext_resource type="Texture2D" uid="uid://ttr711gli7cj" path="res://assets/ui/hud/dmg_bar_progress.png" id="1_0t8g1"]
+[ext_resource type="Script" uid="uid://cgwshajy0dbjr" path="res://scripts/ui/menu/credits.gd" id="1_iqq3d"]
+[ext_resource type="FontFile" uid="uid://c54oki7w861qe" path="res://assets/fonts/ReturnOfThePixels-Regular.ttf" id="2_iqq3d"]
+
+[node name="Credits" type="Control"]
+modulate = Color(1, 1, 1, 0.862745)
+custom_minimum_size = Vector2(1088, 612)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -544.0
+offset_top = -306.0
+offset_right = 544.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iqq3d")
+
+[node name="Bcg" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 0.862745)
+custom_minimum_size = Vector2(1088, 612)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -544.0
+offset_top = -306.0
+offset_right = 544.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0t8g1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(924.8, 520.2)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -462.4
+offset_top = -260.1
+offset_right = 462.4
+offset_bottom = 260.1
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="What" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(462, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iqq3d")
+theme_override_font_sizes/font_size = 14
+text = "Frogs sound effect by:"
+
+[node name="Who" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(462, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.760203, 3.70607e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("2_iqq3d")
+theme_override_font_sizes/font_size = 14
+text = "juskiddink on https://freesound.org/"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="What" type="Label" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(462, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iqq3d")
+theme_override_font_sizes/font_size = 14
+text = "Player weapon and footstep sound effects and by:"
+
+[node name="Who" type="Label" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(462, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.760203, 3.70607e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("2_iqq3d")
+theme_override_font_sizes/font_size = 14
+text = "tommusic.itch.io"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="What" type="Label" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(462, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iqq3d")
+theme_override_font_sizes/font_size = 14
+text = "Player hurt sounds by:"
+
+[node name="Who" type="Label" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(462, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.760203, 3.70607e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("2_iqq3d")
+theme_override_font_sizes/font_size = 14
+text = "@danielsoundsgood"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 80.0
+offset_top = 176.0
+offset_right = 1008.0
+offset_bottom = 199.0
+theme_override_fonts/font = ExtResource("2_iqq3d")
+theme_override_font_sizes/font_size = 14
+text = "And more from freesound.org"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -96.0
+offset_right = 64.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -11.5
+offset_right = 29.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_iqq3d")
+text = "Close"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

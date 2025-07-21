@@ -11,6 +11,7 @@ func _input(event: InputEvent) -> void:
 		if visible:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else:
+			$Settings.hide()
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
@@ -25,6 +26,8 @@ func _on_options_button_pressed() -> void:
 
 
 func _on_main_menu_button_pressed() -> void:
+	Transitions.get_node("AnimationPlayer").play("show")
+	await Transitions.get_node("AnimationPlayer").animation_finished
 	get_tree().change_scene_to_file("res://scenes/ui/menu/main_menu.tscn")
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 

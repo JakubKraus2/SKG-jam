@@ -33,6 +33,7 @@ var current_surface_type = "ground"
 
 
 func _ready() -> void:
+	Transitions.get_node("AnimationPlayer").play("hide")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$CamOrigin/SpringArm3D.add_excluded_object(self)
 	PlayerEvents.death.connect(_on_death)
