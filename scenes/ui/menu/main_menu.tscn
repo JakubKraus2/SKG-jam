@@ -1,12 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkusldyj3lg6a"]
+[gd_scene load_steps=8 format=3 uid="uid://dkusldyj3lg6a"]
 
 [ext_resource type="FontFile" uid="uid://c54oki7w861qe" path="res://assets/fonts/ReturnOfThePixels-Regular.ttf" id="1_eip10"]
 [ext_resource type="Script" uid="uid://gffi431d5qj5" path="res://scenes/ui/menu/main_menu.gd" id="2_araup"]
 [ext_resource type="Texture2D" uid="uid://6bws7s8xhhuq" path="res://scenes/ui/menu/pick04.png" id="3_eip10"]
+[ext_resource type="PackedScene" uid="uid://byov0k4shc0lk" path="res://scenes/ui/menu/settings.tscn" id="4_araup"]
 
 [sub_resource type="Theme" id="Theme_m1kxf"]
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_eip10")
+
+[sub_resource type="Gradient" id="Gradient_eip10"]
+offsets = PackedFloat32Array(0.266332, 0.864322)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_araup"]
+gradient = SubResource("Gradient_eip10")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.55)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -25,6 +37,21 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_eip10")
 
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_araup")
+
 [node name="ButtonContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -32,16 +59,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = 32.0
-offset_right = 128.0
-offset_bottom = 224.0
+offset_left = -224.0
+offset_top = -56.0
+offset_right = 224.0
+offset_bottom = 296.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 48
+theme_override_constants/separation = 28
 
 [node name="PlayButton" type="TextureButton" parent="ButtonContainer"]
-custom_minimum_size = Vector2(150, 40)
+custom_minimum_size = Vector2(320, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -52,13 +79,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.701611, 0.707227, 0.584798, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
 text = "Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
 [node name="PlayButton2" type="TextureButton" parent="ButtonContainer"]
-custom_minimum_size = Vector2(230, 40)
+custom_minimum_size = Vector2(320, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -69,13 +103,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.701611, 0.707227, 0.584798, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
 text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
 [node name="PlayButton3" type="TextureButton" parent="ButtonContainer"]
-custom_minimum_size = Vector2(220, 40)
+custom_minimum_size = Vector2(320, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -86,13 +127,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.701611, 0.707227, 0.584798, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
 text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
 [node name="PlayButton4" type="TextureButton" parent="ButtonContainer"]
-custom_minimum_size = Vector2(300, 40)
+custom_minimum_size = Vector2(320, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -103,6 +151,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.701611, 0.707227, 0.584798, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
 text = "Exit Game"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -115,16 +170,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -320.0
-offset_top = -250.0
-offset_right = 320.0
-offset_bottom = -150.0
+offset_left = -384.0
+offset_top = -276.0
+offset_right = 384.0
+offset_bottom = -156.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 80
+theme_override_colors/font_color = Color(0.545746, 0.210888, 0.152284, 1)
+theme_override_colors/font_shadow_color = Color(0.126926, 0.0234951, 0.0112965, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 96
 text = "LeechBorne"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Settings" parent="." instance=ExtResource("4_araup")]
+visible = false
+layout_mode = 1
 
 [connection signal="mouse_entered" from="ButtonContainer/PlayButton" to="." method="_on_play_button_mouse_entered"]
 [connection signal="mouse_exited" from="ButtonContainer/PlayButton" to="." method="_on_play_button_mouse_exited"]

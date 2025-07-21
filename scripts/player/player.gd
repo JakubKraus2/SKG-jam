@@ -8,7 +8,6 @@ extends CharacterBody3D
 @export var stop_threshold := 5.0
 
 @export_group("Camera")
-@export_range(0.0, 1.0) var mouse_sensitivity := 0.05
 @export var camera_tilt_up_limit := PI / 4
 @export var camera_tilt_down_limit := -PI / 3
 
@@ -42,8 +41,8 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		camera_input.x = -event.relative.x * mouse_sensitivity
-		camera_input.y = -event.relative.y * mouse_sensitivity
+		camera_input.x = -event.relative.x * Settings.mouse_sensitivity
+		camera_input.y = -event.relative.y * Settings.mouse_sensitivity
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("lock_on"):

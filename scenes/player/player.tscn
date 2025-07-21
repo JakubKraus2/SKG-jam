@@ -3346,7 +3346,7 @@ normal_fade = 0.43
 cull_mask = 1048574
 
 [node name="Weapon" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.928918, -0.369896, 0.0169326, 0.128727, 0.27972, -0.951411, 0.347188, 0.885964, 0.307454, 0.348971, 1.45293, -0.288091)
+transform = Transform3D(0.928918, -0.369896, 0.0169327, 0.128728, 0.27972, -0.951411, 0.347188, 0.885964, 0.307454, 0.348971, 1.45293, -0.288091)
 bone_name = "Cube.003"
 bone_idx = 10
 
@@ -3379,7 +3379,7 @@ update_rotation = false
 update_scale = false
 
 [node name="LeftFoot" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.985185, -0.169927, 0.0231278, 0.0248677, -0.274988, -0.961126, 0.169681, -0.946312, 0.27514, -0.146637, 0.0696406, 0.00320504)
+transform = Transform3D(-0.985185, -0.169927, 0.0231278, 0.0248677, -0.274988, -0.961126, 0.169681, -0.946312, 0.27514, -0.146637, 0.0696406, 0.00320505)
 bone_name = "Foot.L"
 bone_idx = 20
 
@@ -3525,7 +3525,7 @@ color = Color(0.251328, 0.269565, 0.246201, 1)
 color_ramp = SubResource("Gradient_pk8ii")
 
 [node name="WaterParticleLeft" type="CPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.146637, 0.0696406, 0.00320504)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.146637, 0.0696406, 0.00320505)
 emitting = false
 lifetime = 0.5
 one_shot = true

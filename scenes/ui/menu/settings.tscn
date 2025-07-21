@@ -1,0 +1,196 @@
+[gd_scene load_steps=4 format=3 uid="uid://byov0k4shc0lk"]
+
+[ext_resource type="Script" uid="uid://628jd0yrqk4w" path="res://scripts/ui/menu/settings.gd" id="1_amste"]
+[ext_resource type="Texture2D" uid="uid://ttr711gli7cj" path="res://assets/ui/hud/dmg_bar_progress.png" id="2_i45fl"]
+[ext_resource type="FontFile" uid="uid://c54oki7w861qe" path="res://assets/fonts/ReturnOfThePixels-Regular.ttf" id="3_lbswb"]
+
+[node name="Settings" type="Control"]
+modulate = Color(1, 1, 1, 0.862745)
+custom_minimum_size = Vector2(1088, 612)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -544.0
+offset_top = -306.0
+offset_right = 544.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_amste")
+
+[node name="Bcg" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 0.862745)
+custom_minimum_size = Vector2(1088, 612)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -544.0
+offset_top = -306.0
+offset_right = 544.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i45fl")
+
+[node name="SliderContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(979.2, 550.8)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.0
+offset_top = -275.0
+offset_right = 489.2
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Volume" type="HBoxContainer" parent="SliderContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SliderContainer/Volume"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lbswb")
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="SliderContainer/Volume"]
+custom_minimum_size = Vector2(320, 64)
+layout_mode = 2
+min_value = -20.0
+max_value = 20.0
+
+[node name="CurrentValueLabel" type="Label" parent="SliderContainer/Volume"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lbswb")
+theme_override_font_sizes/font_size = 12
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sensitivity" type="HBoxContainer" parent="SliderContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SliderContainer/Sensitivity"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lbswb")
+theme_override_font_sizes/font_size = 20
+text = "Mouse Sensitivity"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SensitivitySlider" type="HSlider" parent="SliderContainer/Sensitivity"]
+custom_minimum_size = Vector2(320, 64)
+layout_mode = 2
+min_value = 0.01
+max_value = 0.2
+step = 0.01
+value = 0.1
+
+[node name="CurrentValueLabel" type="Label" parent="SliderContainer/Sensitivity"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lbswb")
+theme_override_font_sizes/font_size = 12
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WindowContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -339.2
+offset_top = 72.0
+offset_right = -83.2
+offset_bottom = 128.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="WindowContainer"]
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lbswb")
+theme_override_font_sizes/font_size = 20
+text = "Window Mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="WindowContainer"]
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lbswb")
+theme_override_font_sizes/font_size = 14
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless"
+popup/item_1/id = 1
+popup/item_2/text = "Fullscreen"
+popup/item_2/id = 2
+
+[node name="ButtonContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -112.0
+offset_right = 400.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 480
+
+[node name="ApplyButton" type="TextureButton" parent="ButtonContainer"]
+custom_minimum_size = Vector2(160, 48)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ButtonContainer/ApplyButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_lbswb")
+text = "Apply"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CancelButton" type="TextureButton" parent="ButtonContainer"]
+custom_minimum_size = Vector2(160, 48)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ButtonContainer/CancelButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_lbswb")
+text = "Cancel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="value_changed" from="SliderContainer/Volume/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="SliderContainer/Sensitivity/SensitivitySlider" to="." method="_on_sensitivity_slider_value_changed"]
+[connection signal="item_selected" from="WindowContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="ButtonContainer/ApplyButton" to="." method="_on_apply_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/CancelButton" to="." method="_on_cancel_button_pressed"]

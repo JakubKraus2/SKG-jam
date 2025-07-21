@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SKG-jam"
-run/main_scene="uid://b1uu3g60ynfn6"
+run/main_scene="uid://dkusldyj3lg6a"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 PlayerEvents="*res://scripts/globals/player_events.gd"
 Music="*res://scenes/globals/music.tscn"
+Settings="*res://scripts/globals/settings.gd"
 
 [display]
 
