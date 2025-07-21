@@ -1,34 +1,103 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+@export_group("Movement")
+@export var run_speed := 6.0
+@export var run_acceleration := 50.0
+@export var rotation_speed := 10.0
+@export var stop_threshold := 5.0
 
-@onready var pivot = $CamOrigin
-@export var sens = 0.05
+@export_group("Camera")
+@export var camera_tilt_up_limit := PI / 4
+@export var camera_tilt_down_limit := -PI / 3
 
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity := -9.8
+var camera_input := Vector2.ZERO
+@onready var movement_direction := Vector3.FORWARD
+@onready var spawn_position := global_position
 
-func _ready():
+@onready var camera_pivot: Node3D = $CamOrigin
+@onready var camera: Camera3D = $CamOrigin/SpringArm3D/Camera3D
+@onready var body_mesh = $Armature
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
+
+@export_group("Lock-on")
+var is_locked_on: bool = false
+var lock_target: CharacterBody3D = null
+@export var lock_range: float = 15.0
+
+var footsteps_water = load("res://resources/player/footsteps_water.tres")
+var footsteps_ground = load("res://resources/player/footsteps_ground.tres")
+
+var current_surface_type = "ground"
+
+
+func _ready() -> void:
+	Transitions.get_node("AnimationPlayer").play("hide")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
-func _input(event):
-	if event is InputEventMouseMotion:
-		rotate_y(deg_to_rad(-event.relative.x * sens))
-		pivot.rotate_x(deg_to_rad(-event.relative.y * sens))
-		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
-		
-func _physics_process(delta):
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-	
-	var input_dir = Input.get_vector("left", "right", "up", "down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+	$CamOrigin/SpringArm3D.add_excluded_object(self)
+	PlayerEvents.death.connect(_on_death)
+	if PlayerEvents.boss_activated == true:
+		position = Vector3(0.178, -0.547, 27.382)
 
-	move_and_slide()
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		camera_input.x = -event.relative.x * Settings.mouse_sensitivity
+		camera_input.y = -event.relative.y * Settings.mouse_sensitivity
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("lock_on"):
+		if is_locked_on:
+			lock_target.get_node("LockOn").hide()
+			is_locked_on = false
+			lock_target = null
+		else:
+			lock_target = find_closest_target()
+			is_locked_on = lock_target != null
+
+
+func _physics_process(delta: float) -> void:
+	if is_locked_on and lock_target:
+		var to_target = (lock_target.global_position - global_position)
+		to_target.y = 0
+		movement_direction = to_target.normalized()
+	
+		var look_dir := movement_direction
+		var new_rot_y := atan2(-look_dir.x, -look_dir.z)
+		camera_pivot.rotation.y = lerp_angle(camera_pivot.rotation.y, new_rot_y, rotation_speed * delta)
+		camera_pivot.rotation.x = lerp_angle(camera_pivot.rotation.x, lock_target.get_node("LockOn").position.y/5 - 0.4, rotation_speed * delta)
+	else:
+		camera_pivot.rotation.x += camera_input.y * delta
+		camera_pivot.rotation.x = clamp(camera_pivot.rotation.x, camera_tilt_down_limit, camera_tilt_up_limit)
+		camera_pivot.rotation.y += camera_input.x * delta
+		camera_input = Vector2.ZERO
+
+
+func find_closest_target() -> Node3D:
+	var result = null
+	var min_distance := lock_range
+	
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		var distance = global_position.distance_to(enemy.global_position)
+		if distance < min_distance:
+			min_distance = distance
+			result = enemy
+	if result:
+		result.get_node("LockOn").show()
+	return result
+
+
+func _on_water_entered(area: Area3D):
+	current_surface_type = "water"
+
+func _on_water_exited(area: Area3D):
+	current_surface_type = "ground"
+
+# Player takes damage
+func _on_hurt_box_area_entered(area: Area3D) -> void:
+	$TakeDamageTrauma.cause_trauma()
+	$HurtAudio.play()
+
+func _on_death():
+	if $StateMachine.state.name != "Death":
+		$StateMachine.transition_to("Death")

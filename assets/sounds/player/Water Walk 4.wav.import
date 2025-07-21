@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cg6ds152ddphn"
+path="res://.godot/imported/Water Walk 4.wav-02d0835e8e5d0a00b8b51706b89ec904.sample"
+
+[deps]
+
+source_file="res://assets/sounds/player/Water Walk 4.wav"
+dest_files=["res://.godot/imported/Water Walk 4.wav-02d0835e8e5d0a00b8b51706b89ec904.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,112 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkusldyj3lg6a"]
+
+[ext_resource type="FontFile" uid="uid://c54oki7w861qe" path="res://assets/fonts/ReturnOfThePixels-Regular.ttf" id="1_fe2o3"]
+[ext_resource type="Texture2D" uid="uid://ttr711gli7cj" path="res://assets/ui/hud/dmg_bar_progress.png" id="2_1g8jr"]
+
+[sub_resource type="Theme" id="Theme_m1kxf"]
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_fe2o3")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme = SubResource("Theme_m1kxf")
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1g8jr")
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 48
+
+[node name="PlayButton" type="TextureButton" parent="ButtonContainer"]
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="ButtonContainer/PlayButton"]
+self_modulate = Color(0.563062, 0.222809, 0.20378, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PlayButton2" type="TextureButton" parent="ButtonContainer"]
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="ButtonContainer/PlayButton2"]
+self_modulate = Color(0.563062, 0.222809, 0.20378, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PlayButton3" type="TextureButton" parent="ButtonContainer"]
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="ButtonContainer/PlayButton3"]
+self_modulate = Color(0.563062, 0.222809, 0.20378, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -250.0
+offset_right = 320.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "LeechBorne"
+horizontal_alignment = 1
+vertical_alignment = 1

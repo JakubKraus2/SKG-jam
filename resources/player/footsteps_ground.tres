@@ -1,0 +1,16 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=6 format=3 uid="uid://4dd0m55c5hw8"]
+
+[ext_resource type="AudioStream" uid="uid://b8u8glbbvcqi3" path="res://assets/sounds/player/Dirt Walk 1.wav" id="1_c5jrn"]
+[ext_resource type="AudioStream" uid="uid://dvdnn64bm3rjk" path="res://assets/sounds/player/Dirt Walk 2.wav" id="2_0njth"]
+[ext_resource type="AudioStream" uid="uid://hwybgqijghvo" path="res://assets/sounds/player/Dirt Walk 3.wav" id="3_2nq2h"]
+[ext_resource type="AudioStream" uid="uid://dlb5yaaomj55c" path="res://assets/sounds/player/Dirt Walk 4.wav" id="4_xflre"]
+[ext_resource type="AudioStream" uid="uid://cxpm6q0vp1hev" path="res://assets/sounds/player/Dirt Walk 5.wav" id="5_u0ias"]
+
+[resource]
+random_pitch = 1.2
+streams_count = 5
+stream_0/stream = ExtResource("1_c5jrn")
+stream_1/stream = ExtResource("2_0njth")
+stream_2/stream = ExtResource("3_2nq2h")
+stream_3/stream = ExtResource("4_xflre")
+stream_4/stream = ExtResource("5_u0ias")

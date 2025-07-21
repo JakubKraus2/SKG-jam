@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://djvtwfwfw7h43"]
+
+[ext_resource type="Shader" uid="uid://b66xco1md8cb" path="res://scripts/shaders/blood.tres" id="1_60c1y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e6avn"]
+render_priority = 0
+shader = ExtResource("1_60c1y")
+
+[sub_resource type="QuadMesh" id="QuadMesh_xuhob"]
+size = Vector2(0.3, 0.3)
+
+[sub_resource type="Curve" id="Curve_60c1y"]
+_data = [Vector2(0, 1), 0.0, -0.0841499, 0, 0, Vector2(1, 0.2), -1.68851, 0.0, 0, 0]
+point_count = 2
+
+[node name="ImpactParticle" type="CPUParticles3D"]
+material_override = SubResource("ShaderMaterial_e6avn")
+amount = 16
+lifetime = 0.5
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_xuhob")
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 2.0
+initial_velocity_max = 4.0
+damping_max = 0.5
+angle_max = 180.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_60c1y")
