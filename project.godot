@@ -21,6 +21,7 @@ PlayerEvents="*res://scripts/globals/player_events.gd"
 Music="*res://scenes/globals/music.tscn"
 Settings="*res://scripts/globals/settings.gd"
 Transitions="*res://scenes/globals/transitions.tscn"
+VictoryPopup="*res://scenes/ui/hud/victory_popup.tscn"
 
 [display]
 

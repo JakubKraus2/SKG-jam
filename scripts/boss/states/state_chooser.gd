@@ -34,7 +34,7 @@ func enter(_msg := {}) -> void:
 			options.append("AttackLeft")
 			options.append("AttackCombo1")	
 	# Mid range
-	elif distance > owner.nav_agent.get_target_desired_distance()*2:
+	elif distance > owner.nav_agent.get_target_desired_distance()*2 && distance < owner.nav_agent.get_target_desired_distance()*4:
 		options.clear()
 		options.append("AttackJump")
 	

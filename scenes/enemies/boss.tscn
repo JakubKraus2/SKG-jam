@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://cy41f5wkheugg"]
+[gd_scene load_steps=61 format=4 uid="uid://cy41f5wkheugg"]
 
 [ext_resource type="Script" uid="uid://ualwligdhd3m" path="res://scripts/boss/boss.gd" id="1_3e6u2"]
 [ext_resource type="Texture2D" uid="uid://b47k7t43u41un" path="res://assets/models/entities/boss/boss_boss_skin.png" id="1_yye4w"]
@@ -30,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://sm3lb5blo21r" path="res://assets/sounds/enemies/windup_1.wav" id="27_pno13"]
 [ext_resource type="AudioStream" uid="uid://334htpgea7fy" path="res://assets/sounds/enemies/windup_2.wav" id="28_h31u4"]
 [ext_resource type="AudioStream" uid="uid://bo7pry3j7sf6k" path="res://assets/sounds/enemies/windup_3.wav" id="29_mh1rq"]
+[ext_resource type="PackedScene" uid="uid://ixfvanambavt" path="res://scenes/ui/hud/hints.tscn" id="31_h31u4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruegu"]
 resource_name = "teeth"
@@ -4573,7 +4574,7 @@ mesh = SubResource("ArrayMesh_bq8g3")
 skin = SubResource("Skin_edixr")
 
 [node name="HurtBoxAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(3.57628e-07, 1.19209e-07, -1, -0.708134, 0.706078, -1.19209e-07, 0.706078, 0.708134, 3.57628e-07, 0, 0.892328, 0)
+transform = Transform3D(1.37091e-06, 5.66244e-07, -1, -0.708134, 0.706078, -5.36442e-07, 0.706078, 0.708134, 1.37091e-06, 0, 0.892328, 0)
 bone_name = "Base"
 bone_idx = 0
 
@@ -4582,7 +4583,7 @@ remote_path = NodePath("../../../../HurtBox")
 update_scale = false
 
 [node name="LockOnAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(3.52254e-07, 1.13772e-07, -1, -0.795922, 0.6054, -1.61621e-07, 0.6054, 0.795922, 3.24506e-07, 1.24498e-07, 1.58868, 0.811545)
+transform = Transform3D(1.29691e-06, 6.91867e-07, -1, -0.795922, 0.605399, -5.78853e-07, 0.605399, 0.795922, 1.33779e-06, 6.82162e-07, 1.58868, 0.811545)
 bone_name = "Spine2"
 bone_idx = 2
 
@@ -4592,7 +4593,7 @@ update_rotation = false
 update_scale = false
 
 [node name="RightHand" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.858819, 0.0515295, 0.50968, 0.492288, 0.192207, -0.848946, -0.14171, 0.980001, 0.139704, -1.76309, 0.185628, 1.81745)
+transform = Transform3D(0.85882, 0.0515302, 0.50968, 0.492288, 0.192205, -0.848946, -0.141709, 0.980001, 0.139702, -1.76309, 0.185627, 1.81745)
 bone_name = "Hand.R"
 bone_idx = 8
 
@@ -4601,7 +4602,7 @@ remote_path = NodePath("../../../../Hitbox/RightHandCollision")
 update_scale = false
 
 [node name="LeftHand" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.741157, 0.444131, -0.503422, 0.032006, -0.77241, -0.634318, -0.670568, 0.454017, -0.586692, 1.76303, 0.556724, -0.606388)
+transform = Transform3D(0.741157, 0.444132, -0.503421, 0.0320081, -0.77241, -0.634318, -0.670568, 0.454016, -0.586693, 1.76304, 0.556726, -0.606389)
 bone_name = "Hand.L"
 bone_idx = 12
 
@@ -4614,7 +4615,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 shape = SubResource("CapsuleShape3D_yye4w")
 
 [node name="HurtBox" type="Area3D" parent="."]
-transform = Transform3D(3.41374e-07, 1.02911e-07, -0.999975, -0.708124, 0.706064, -1.69073e-07, 0.706068, 0.708121, 3.13908e-07, 0, 0.892328, 0)
+transform = Transform3D(1.3835e-06, 5.78878e-07, -0.999975, -0.708124, 0.706064, -5.7096e-07, 0.706068, 0.708121, 1.38677e-06, 0, 0.892328, 0)
 collision_layer = 2
 collision_mask = 8
 
@@ -4637,17 +4638,17 @@ shape = SubResource("CapsuleShape3D_5ogqy")
 disabled = true
 
 [node name="RightHandCollision" type="CollisionShape3D" parent="Hitbox"]
-transform = Transform3D(0.858648, 0.0515194, 0.509586, 0.492191, 0.192169, -0.848789, -0.141682, 0.979809, 0.139678, -1.76309, 0.185628, 1.81745)
+transform = Transform3D(0.858649, 0.0515195, 0.509585, 0.49219, 0.192166, -0.84879, -0.141681, 0.9798, 0.139676, -1.76309, 0.185627, 1.81745)
 shape = SubResource("CapsuleShape3D_50mb2")
 disabled = true
 
 [node name="LeftHandCollision" type="CollisionShape3D" parent="Hitbox"]
-transform = Transform3D(0.741054, 0.444035, -0.503311, 0.0320015, -0.772243, -0.634179, -0.670476, 0.453919, -0.586563, 1.76303, 0.556724, -0.606389)
+transform = Transform3D(0.741054, 0.444034, -0.503307, 0.0320037, -0.77224, -0.634175, -0.670476, 0.453916, -0.586561, 1.76304, 0.556727, -0.60639)
 shape = SubResource("CapsuleShape3D_50mb2")
 disabled = true
 
 [node name="LockOn" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24498e-07, 1.58868, 0.811545)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82162e-07, 1.58868, 0.811545)
 visible = false
 pixel_size = 0.001
 billboard = 1
@@ -4693,7 +4694,7 @@ attack_type = "knockdown"
 script = ExtResource("11_npgve")
 damage = 25.0
 animation = "attack_jump"
-attack_move_speed = 10.0
+attack_move_speed = 20.0
 attack_type = "knockdown"
 
 [node name="AttackRight" type="Node" parent="StateMachine"]
@@ -4855,6 +4856,8 @@ pitch_scale = 0.8
 max_distance = 30.0
 
 [node name="AudioFootsteps" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Hints" parent="." instance=ExtResource("31_h31u4")]
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
